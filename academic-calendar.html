@@ -4,13 +4,309 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Academic Calendar | Keshav Mahavidyalaya, Atru</title>
-  <meta name="description" content="Academic Calendar - Keshav Mahavidyalaya, Atru, Dist. Baran, Rajasthan.">
+  <meta name="description" content="Academic Calendar - Keshav Mahavidyalaya, Atru, Dist. Baran, Rajasthan. Academic planning, session activities, admission, teaching-learning, examination and student guidance.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    .calendar-hero-panel {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #ffffff;
+      border-radius: 24px;
+      padding: 36px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .calendar-hero-panel h2 {
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.2;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+
+    .calendar-hero-panel p {
+      color: #e5edf6;
+      margin-bottom: 14px;
+    }
+
+    .calendar-info-box {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    .calendar-info-box h3 {
+      color: #ffffff;
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .calendar-info-box ul {
+      color: #e5edf6;
+      margin-left: 18px;
+      font-weight: 700;
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .calendar-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+      transition: 0.25s ease;
+    }
+
+    .calendar-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .calendar-card span {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: #eef6ff;
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      margin-bottom: 13px;
+    }
+
+    .calendar-card h3 {
+      color: var(--primary);
+      font-size: 19px;
+      margin-bottom: 8px;
+    }
+
+    .calendar-card p {
+      color: var(--muted);
+      font-size: 15px;
+      margin: 0;
+    }
+
+    .timeline-wrap {
+      display: grid;
+      gap: 16px;
+    }
+
+    .timeline-row {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 18px;
+      align-items: stretch;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.04);
+    }
+
+    .timeline-month {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #ffffff;
+      padding: 20px;
+      display: grid;
+      align-content: center;
+    }
+
+    .timeline-month strong {
+      display: block;
+      font-size: 22px;
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+
+    .timeline-month span {
+      color: #ffe9a6;
+      font-weight: 800;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .7px;
+    }
+
+    .timeline-content {
+      padding: 20px;
+    }
+
+    .timeline-content h3 {
+      color: var(--primary);
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .timeline-content p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .calendar-layout {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .calendar-panel {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+    }
+
+    .calendar-panel h3 {
+      color: var(--primary);
+      font-size: 26px;
+      margin-bottom: 12px;
+    }
+
+    .calendar-panel p {
+      color: var(--muted);
+      margin-bottom: 13px;
+    }
+
+    .student-guide-list {
+      display: grid;
+      gap: 13px;
+      margin-top: 18px;
+    }
+
+    .student-guide-item {
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 13px;
+      background: #f8fbff;
+      border: 1px solid #e8f1ff;
+      border-radius: 16px;
+      padding: 15px;
+      align-items: flex-start;
+    }
+
+    .student-guide-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: var(--primary);
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+
+    .student-guide-item strong {
+      color: var(--primary);
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .student-guide-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .calendar-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 18px;
+      background: #ffffff;
+    }
+
+    .calendar-table th,
+    .calendar-table td {
+      border: 1px solid var(--border);
+      padding: 13px 14px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .calendar-table th {
+      background: #eef6ff;
+      color: var(--primary);
+      font-weight: 900;
+    }
+
+    .calendar-table td {
+      color: var(--muted);
+    }
+
+    .calendar-cta {
+      background: linear-gradient(115deg, rgba(11, 39, 70, 0.96), rgba(18, 60, 105, 0.9)), url("https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1600&q=80") center/cover;
+      color: #ffffff;
+      border-radius: 24px;
+      padding: 38px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .calendar-cta h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .calendar-cta p {
+      color: #e5edf6;
+    }
+
+    @media (max-width: 1080px) {
+      .calendar-hero-panel,
+      .calendar-layout,
+      .calendar-cta {
+        grid-template-columns: 1fr;
+      }
+
+      .calendar-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .timeline-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .calendar-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .calendar-hero-panel,
+      .calendar-panel,
+      .calendar-cta {
+        padding: 26px;
+      }
+
+      .student-guide-item {
+        grid-template-columns: 1fr;
+      }
+
+      .calendar-table th,
+      .calendar-table td {
+        display: block;
+        width: 100%;
+      }
+    }
+  </style>
 </head>
+
 <body>
+
   <div class="topbar">
     <div class="container topbar-inner">
       <div class="topbar-left">
@@ -24,6 +320,7 @@
       </div>
     </div>
   </div>
+
   <header class="header">
     <div class="container header-main">
       <a class="brand" href="index.html">
@@ -33,162 +330,500 @@
           <p>Atru, Dist. Baran, Rajasthan</p>
         </div>
       </a>
+
       <div class="header-actions">
         <a class="btn btn-outline" href="contact.html">Contact</a>
         <a class="btn btn-primary" href="https://forms.gle/" target="_blank" rel="noopener">Apply Online</a>
         <button class="menu-toggle" onclick="toggleMenu()">Menu</button>
       </div>
     </div>
+
     <nav class="nav-wrap" id="mainNav">
       <div class="container">
-<ul class="nav">
-  <li><a href="index.html">Home</a></li>
-  <li>
-    <a href="about-organization.html">About</a>
-    <ul class="dropdown">
-      <li><a href="about-organization.html">About Organization</a></li>
-      <li><a href="vision-mission.html">Vision Mission</a></li>
-      <li><a href="chairmans-desk.html">Chairman's Desk</a></li>
-      <li><a href="directors-desk.html">Director's Desk</a></li>
-      <li><a href="principals-desk.html">Principal's Desk</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="admission-process.html">Admissions</a>
-    <ul class="dropdown">
-      <li><a href="admission-process.html">Admission Process</a></li>
-      <li><a href="itep-admission-2026-27-open.html">ITEP Admission 2026-27 Open</a></li>
-      <li><a href="https://forms.gle/" target="_blank" rel="noopener">Apply Online</a></li>
-      <li><a href="rules-and-regulations.html">Rules and Regulations</a></li>
-      <li><a href="https://sjmsnew.rajasthan.gov.in/" target="_blank" rel="noopener">Scholarship</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="programme.html">Academics</a>
-    <ul class="dropdown">
-      <li><a href="programme.html">Programme</a></li>
-      <li><a href="academic-calendar.html">Academic Calendar</a></li>
-      <li><a href="syllabus.html">Syllabus</a></li>
-      <li><a href="department.html">Department</a></li>
-      <li><a href="curriculum-feedback.html">Curriculum Feedback</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="admission-process.html">Student Zone</a>
-    <ul class="dropdown">
-      <li><a href="admission-process.html">Admission Process</a></li>
-      <li><a href="examination.html">Examination</a></li>
-      <li><a href="result.html">Result</a></li>
-      <li><a href="campus-placement.html">Campus Placement</a></li>
-      <li><a href="student-list-faculty-list.html">Student List & Faculty List</a></li>
-      <li><a href="faqs.html">FAQs</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="self-study-report-cycle-01.html">NAAC</a>
-    <ul class="dropdown mega">
-      <li><a href="self-study-report-cycle-01.html">Self Study Report</a></li>
-      <li><a href="criterion-1-curricular-aspects.html">Criterion 1</a></li>
-      <li><a href="criterion-2-teaching-learning-and-evaluation.html">Criterion 2</a></li>
-      <li><a href="criterion-3.html">Criterion 3</a></li>
-      <li><a href="criterion-4.html">Criterion 4</a></li>
-      <li><a href="criterion-5.html">Criterion 5</a></li>
-      <li><a href="criterion-6.html">Criterion 6</a></li>
-      <li><a href="criterion7.html">Criterion 7</a></li>
-      <li><a href="dvv-clarification.html">DVV Clarification</a></li>
-      <li><a href="naac-certificate.html">NAAC Certificate</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="iqac.html">IQAC</a>
-    <ul class="dropdown">
-      <li><a href="iqac.html">IQAC</a></li>
-      <li><a href="committee.html">Committee</a></li>
-      <li><a href="feedback-policy.html">Feedback Policy</a></li>
-      <li><a href="important-audit.html">Important Audit</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="approvals-affiliation.html">Approvals</a>
-    <ul class="dropdown">
-      <li><a href="govt-noc.html">GOVT NOC</a></li>
-      <li><a href="ncte-order.html">NCTE Order</a></li>
-      <li><a href="university-affiliation.html">University Affiliation</a></li>
-      <li><a href="approvals-affiliation.html">Approvals/Affiliation</a></li>
-      <li><a href="affiliation.html">Affiliation</a></li>
-      <li><a href="national-institutional-ranking-framework-nirf-2026.html">NIRF 2026</a></li>
-      <li><a href="khasra-no-institution.html">Khasra no Institution</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="laboratories.html">Facilities</a>
-    <ul class="dropdown">
-      <li><a href="laboratories.html">Laboratories</a></li>
-      <li><a href="library.html">Library</a></li>
-      <li><a href="playground.html">Playground</a></li>
-      <li><a href="nss.html">NSS</a></li>
-      <li><a href="skill-development.html">Skill Development</a></li>
-      <li><a href="seminar-workshop.html">Seminar-Workshop</a></li>
-      <li><a href="ict-facilities.html">ICT Facilities</a></li>
-      <li><a href="computer-lab.html">Computer Lab</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="photo-gallery.html">Gallery</a>
-    <ul class="dropdown">
-      <li><a href="photo-gallery.html">Photo Gallery</a></li>
-      <li><a href="video-gallery.html">Video Gallery</a></li>
-      <li><a href="downloads.html">Downloads</a></li>
-    </ul>
-  </li>
-  <li><a href="contact.html">Contact</a></li>
-</ul>
-</div>
+        <ul class="nav">
+          <li><a href="index.html">Home</a></li>
+
+          <li>
+            <a href="about-organization.html">About</a>
+            <ul class="dropdown">
+              <li><a href="about-organization.html">About Organization</a></li>
+              <li><a href="vision-mission.html">Vision Mission</a></li>
+              <li><a href="chairmans-desk.html">Chairman's Desk</a></li>
+              <li><a href="directors-desk.html">Director's Desk</a></li>
+              <li><a href="principals-desk.html">Principal's Desk</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="admission-process.html">Admissions</a>
+            <ul class="dropdown">
+              <li><a href="admission-process.html">Admission Process</a></li>
+              <li><a href="itep-admission-2026-27-open.html">ITEP Admission 2026-27 Open</a></li>
+              <li><a href="https://forms.gle/" target="_blank" rel="noopener">Apply Online</a></li>
+              <li><a href="rules-and-regulations.html">Rules and Regulations</a></li>
+              <li><a href="https://sjmsnew.rajasthan.gov.in/" target="_blank" rel="noopener">Scholarship</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="programme.html">Academics</a>
+            <ul class="dropdown">
+              <li><a href="programme.html">Programme</a></li>
+              <li><a href="academic-calendar.html">Academic Calendar</a></li>
+              <li><a href="syllabus.html">Syllabus</a></li>
+              <li><a href="department.html">Department</a></li>
+              <li><a href="curriculum-feedback.html">Curriculum Feedback</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="admission-process.html">Student Zone</a>
+            <ul class="dropdown">
+              <li><a href="admission-process.html">Admission Process</a></li>
+              <li><a href="examination.html">Examination</a></li>
+              <li><a href="result.html">Result</a></li>
+              <li><a href="campus-placement.html">Campus Placement</a></li>
+              <li><a href="student-list-faculty-list.html">Student List & Faculty List</a></li>
+              <li><a href="faqs.html">FAQs</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="self-study-report-cycle-01.html">NAAC</a>
+            <ul class="dropdown mega">
+              <li><a href="self-study-report-cycle-01.html">Self Study Report</a></li>
+              <li><a href="criterion-1-curricular-aspects.html">Criterion 1</a></li>
+              <li><a href="criterion-2-teaching-learning-and-evaluation.html">Criterion 2</a></li>
+              <li><a href="criterion-3.html">Criterion 3</a></li>
+              <li><a href="criterion-4.html">Criterion 4</a></li>
+              <li><a href="criterion-5.html">Criterion 5</a></li>
+              <li><a href="criterion-6.html">Criterion 6</a></li>
+              <li><a href="criterion7.html">Criterion 7</a></li>
+              <li><a href="dvv-clarification.html">DVV Clarification</a></li>
+              <li><a href="naac-certificate.html">NAAC Certificate</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="iqac.html">IQAC</a>
+            <ul class="dropdown">
+              <li><a href="iqac.html">IQAC</a></li>
+              <li><a href="committee.html">Committee</a></li>
+              <li><a href="feedback-policy.html">Feedback Policy</a></li>
+              <li><a href="important-audit.html">Important Audit</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="approvals-affiliation.html">Approvals</a>
+            <ul class="dropdown">
+              <li><a href="govt-noc.html">GOVT NOC</a></li>
+              <li><a href="ncte-order.html">NCTE Order</a></li>
+              <li><a href="university-affiliation.html">University Affiliation</a></li>
+              <li><a href="approvals-affiliation.html">Approvals/Affiliation</a></li>
+              <li><a href="affiliation.html">Affiliation</a></li>
+              <li><a href="national-institutional-ranking-framework-nirf-2026.html">NIRF 2026</a></li>
+              <li><a href="khasra-no-institution.html">Khasra no Institution</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="laboratories.html">Facilities</a>
+            <ul class="dropdown">
+              <li><a href="laboratories.html">Laboratories</a></li>
+              <li><a href="library.html">Library</a></li>
+              <li><a href="playground.html">Playground</a></li>
+              <li><a href="nss.html">NSS</a></li>
+              <li><a href="skill-development.html">Skill Development</a></li>
+              <li><a href="seminar-workshop.html">Seminar-Workshop</a></li>
+              <li><a href="ict-facilities.html">ICT Facilities</a></li>
+              <li><a href="computer-lab.html">Computer Lab</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="photo-gallery.html">Gallery</a>
+            <ul class="dropdown">
+              <li><a href="photo-gallery.html">Photo Gallery</a></li>
+              <li><a href="video-gallery.html">Video Gallery</a></li>
+              <li><a href="downloads.html">Downloads</a></li>
+            </ul>
+          </li>
+
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
 
   <main>
+
     <section class="page-hero">
       <div class="container">
         <div class="breadcrumb"><a href="index.html">Home</a> / Academic Calendar</div>
         <h2>Academic Calendar</h2>
-        <p>Academic programmes, departments, calendar, syllabus and curriculum information.</p>
+        <p>
+          Academic planning page for session activities, teaching-learning schedule, examination preparation, student events and institutional updates.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="calendar-hero-panel">
+          <div>
+            <span class="badge">Academic Planning</span>
+            <h2>Structured Academic Year for Students</h2>
+            <p>
+              The academic calendar helps students, faculty members and parents understand the overall academic flow of the session. It provides direction for admissions, teaching-learning, internal activities, examinations, student support and institutional events.
+            </p>
+            <p>
+              Students should regularly follow the academic calendar along with syllabus, examination, result and notice-related information so that they remain prepared throughout the session.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="syllabus.html">View Syllabus</a>
+              <a class="btn btn-outline" href="examination.html">Examination</a>
+              <a class="btn btn-outline" href="programme.html">Programmes</a>
+            </div>
+          </div>
+
+          <aside class="calendar-info-box">
+            <h3>Calendar Covers</h3>
+            <ul>
+              <li>Admission and orientation</li>
+              <li>Teaching-learning schedule</li>
+              <li>Academic activities</li>
+              <li>Internal preparation</li>
+              <li>Examination and result support</li>
+              <li>Student development activities</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-title">
+          <span>Academic Calendar Sections</span>
+          <h2>Key Areas of Academic Planning</h2>
+          <p>
+            The academic calendar is not only a date sheet. It is a planning tool for students and the institution.
+          </p>
+        </div>
+
+        <div class="calendar-grid">
+          <div class="calendar-card">
+            <span>01</span>
+            <h3>Admission Phase</h3>
+            <p>Admission process, document guidance, programme selection and student registration support.</p>
+          </div>
+
+          <div class="calendar-card">
+            <span>02</span>
+            <h3>Orientation</h3>
+            <p>Initial academic guidance for students to understand college rules, programmes and support services.</p>
+          </div>
+
+          <div class="calendar-card">
+            <span>03</span>
+            <h3>Teaching-Learning</h3>
+            <p>Regular classes, syllabus coverage, subject guidance and academic progress monitoring.</p>
+          </div>
+
+          <div class="calendar-card">
+            <span>04</span>
+            <h3>Internal Activities</h3>
+            <p>Class tests, assignments, practical work, seminars, workshops and student participation activities.</p>
+          </div>
+
+          <div class="calendar-card">
+            <span>05</span>
+            <h3>Student Support</h3>
+            <p>Syllabus, examination, result, library, laboratories, ICT and academic assistance.</p>
+          </div>
+
+          <div class="calendar-card">
+            <span>06</span>
+            <h3>Quality Initiatives</h3>
+            <p>IQAC activities, feedback, institutional documentation and academic improvement processes.</p>
+          </div>
+
+          <div class="calendar-card">
+            <span>07</span>
+            <h3>Examination</h3>
+            <p>Exam preparation, schedule awareness, internal readiness and result-related support.</p>
+          </div>
+
+          <div class="calendar-card">
+            <span>08</span>
+            <h3>Co-Curricular Activities</h3>
+            <p>NSS, skill development, seminars, workshops, gallery activities and student engagement.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <span>Tentative Academic Flow</span>
+          <h2>Session Planning Overview</h2>
+          <p>
+            This section can be updated with exact official dates whenever the college finalizes the academic calendar PDF or notice.
+          </p>
+        </div>
+
+        <div class="timeline-wrap">
+          <div class="timeline-row">
+            <div class="timeline-month">
+              <strong>Phase 01</strong>
+              <span>Admission</span>
+            </div>
+            <div class="timeline-content">
+              <h3>Admission, Counselling and Document Verification</h3>
+              <p>
+                Students review programme details, fill the admission form, prepare documents and contact the college office for confirmation and support.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-row">
+            <div class="timeline-month">
+              <strong>Phase 02</strong>
+              <span>Orientation</span>
+            </div>
+            <div class="timeline-content">
+              <h3>Student Orientation and Academic Introduction</h3>
+              <p>
+                Students are introduced to college rules, academic programmes, departments, syllabus, facilities, examination system and student support sections.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-row">
+            <div class="timeline-month">
+              <strong>Phase 03</strong>
+              <span>Learning</span>
+            </div>
+            <div class="timeline-content">
+              <h3>Regular Classes and Syllabus Coverage</h3>
+              <p>
+                Faculty members conduct regular teaching-learning activities and students follow syllabus, classroom instructions and academic calendar updates.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-row">
+            <div class="timeline-month">
+              <strong>Phase 04</strong>
+              <span>Activities</span>
+            </div>
+            <div class="timeline-content">
+              <h3>Seminars, Workshops and Student Development</h3>
+              <p>
+                Students participate in academic, co-curricular, NSS, skill development and campus activities for overall development.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-row">
+            <div class="timeline-month">
+              <strong>Phase 05</strong>
+              <span>Assessment</span>
+            </div>
+            <div class="timeline-content">
+              <h3>Internal Preparation and Examination Readiness</h3>
+              <p>
+                Students prepare for examinations through syllabus revision, faculty guidance, assignments, practical work and academic support.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-row">
+            <div class="timeline-month">
+              <strong>Phase 06</strong>
+              <span>Result</span>
+            </div>
+            <div class="timeline-content">
+              <h3>Examination, Result and Academic Progress</h3>
+              <p>
+                Students follow examination notices, result updates and next academic instructions through the student zone and college communication channels.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container calendar-layout">
+        <article class="calendar-panel">
+          <h3>Student Guidance for Academic Calendar</h3>
+          <p>
+            Students should use the academic calendar as a planning document throughout the academic session. It helps them stay prepared for classes, assignments, practical work, examinations and student activities.
+          </p>
+
+          <div class="student-guide-list">
+            <div class="student-guide-item">
+              <div class="student-guide-icon">A</div>
+              <div>
+                <strong>Track Important Dates</strong>
+                <p>Students should regularly check important dates related to admission, classes, examinations and student activities.</p>
+              </div>
+            </div>
+
+            <div class="student-guide-item">
+              <div class="student-guide-icon">B</div>
+              <div>
+                <strong>Follow the Syllabus</strong>
+                <p>Use the syllabus page with the academic calendar to plan study targets and examination preparation.</p>
+              </div>
+            </div>
+
+            <div class="student-guide-item">
+              <div class="student-guide-icon">C</div>
+              <div>
+                <strong>Prepare for Examination</strong>
+                <p>Students should plan revision, practical work, assignments and examination preparation according to the academic flow.</p>
+              </div>
+            </div>
+
+            <div class="student-guide-item">
+              <div class="student-guide-icon">D</div>
+              <div>
+                <strong>Participate in Activities</strong>
+                <p>Academic and co-curricular activities help students develop confidence, leadership and communication skills.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <aside class="sidebar">
+          <div class="side-box">
+            <h3>Academic Links</h3>
+            <ul>
+              <li><a href="programme.html">Programme</a></li>
+              <li><a href="department.html">Department</a></li>
+              <li><a href="academic-calendar.html">Academic Calendar</a></li>
+              <li><a href="syllabus.html">Syllabus</a></li>
+              <li><a href="curriculum-feedback.html">Curriculum Feedback</a></li>
+            </ul>
+          </div>
+
+          <div class="side-box">
+            <h3>Student Zone</h3>
+            <ul>
+              <li><a href="admission-process.html">Admission Process</a></li>
+              <li><a href="examination.html">Examination</a></li>
+              <li><a href="result.html">Result</a></li>
+              <li><a href="student-list-faculty-list.html">Student List & Faculty List</a></li>
+              <li><a href="faqs.html">FAQs</a></li>
+            </ul>
+          </div>
+
+          <div class="side-box">
+            <h3>Need Help?</h3>
+            <p>For academic calendar and programme-related enquiries, contact the college office.</p>
+            <br>
+            <a class="btn btn-primary" href="contact.html">Contact Office</a>
+          </div>
+        </aside>
       </div>
     </section>
 
     <section class="section">
       <div class="container content-layout">
         <article class="content-card">
-          <h3>Academic Calendar</h3>
-          
-          <p>This page has been created for <strong>Academic Calendar</strong> under the new Keshav Mahavidyalaya website structure.</p>
-          <p>The layout follows the same professional college website design with proper header, footer, internal navigation, page title, content card, related links and responsive mobile view.</p>
-          <table class="info-table">
-            <tr><th>Page Name</th><td>Academic Calendar</td></tr>
-            <tr><th>College</th><td>Keshav Mahavidyalaya, Atru</td></tr>
-            <tr><th>Status</th><td>Ready for official content, PDFs, images and CMS data.</td></tr>
+          <h3>Academic Calendar Reference Table</h3>
+          <p>
+            This table provides a structured reference for academic calendar categories. Exact dates can be updated when official dates are available.
+          </p>
+
+          <table class="calendar-table">
+            <tr>
+              <th>Category</th>
+              <th>Purpose</th>
+              <th>Related Page</th>
+            </tr>
+            <tr>
+              <td>Admissions</td>
+              <td>Admission process, application guidance, document verification and student enrolment.</td>
+              <td><a href="admission-process.html">Admission Process</a></td>
+            </tr>
+            <tr>
+              <td>Programmes</td>
+              <td>Department-wise academic programmes and subject structure.</td>
+              <td><a href="programme.html">Programme</a></td>
+            </tr>
+            <tr>
+              <td>Syllabus</td>
+              <td>Course content, subject requirements and study planning support.</td>
+              <td><a href="syllabus.html">Syllabus</a></td>
+            </tr>
+            <tr>
+              <td>Examination</td>
+              <td>Examination preparation, notices, schedule awareness and student instructions.</td>
+              <td><a href="examination.html">Examination</a></td>
+            </tr>
+            <tr>
+              <td>Result</td>
+              <td>Result-related information and academic progress updates.</td>
+              <td><a href="result.html">Result</a></td>
+            </tr>
+            <tr>
+              <td>Activities</td>
+              <td>Seminars, workshops, NSS, skill development and campus events.</td>
+              <td><a href="seminar-workshop.html">Seminar-Workshop</a></td>
+            </tr>
           </table>
-        
         </article>
-        
+
         <aside class="sidebar">
           <div class="side-box">
-            <h3>Related Links</h3>
-            <ul><li><a href="academic-calendar.html">Academic Calendar</a></li>
-<li><a href="curriculum-feedback.html">Curriculum Feedback</a></li>
-<li><a href="programme.html">Programme</a></li>
-<li><a href="department.html">Department</a></li></ul>
+            <h3>Facilities</h3>
+            <ul>
+              <li><a href="library.html">Library</a></li>
+              <li><a href="laboratories.html">Laboratories</a></li>
+              <li><a href="computer-lab.html">Computer Lab</a></li>
+              <li><a href="ict-facilities.html">ICT Facilities</a></li>
+              <li><a href="skill-development.html">Skill Development</a></li>
+            </ul>
           </div>
+
           <div class="side-box">
-            <h3>Need Help?</h3>
-            <p>For admission and general enquiry, contact the college office.</p>
-            <br>
-            <a class="btn btn-primary" href="contact.html">Contact Office</a>
+            <h3>Quality Links</h3>
+            <ul>
+              <li><a href="iqac.html">IQAC</a></li>
+              <li><a href="feedback-policy.html">Feedback Policy</a></li>
+              <li><a href="important-audit.html">Important Audit</a></li>
+              <li><a href="self-study-report-cycle-01.html">NAAC Repository</a></li>
+            </ul>
           </div>
         </aside>
-
       </div>
     </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="calendar-cta">
+          <div>
+            <h2>Plan Your Academic Session Properly</h2>
+            <p>
+              Use the academic calendar with syllabus, examination, result and programme pages to stay prepared throughout the year.
+            </p>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="syllabus.html">View Syllabus</a>
+            <a class="btn btn-outline" href="examination.html">Examination</a>
+            <a class="btn btn-outline" href="result.html">Result</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
@@ -199,6 +834,7 @@
         <p style="margin-top:10px;">Email: <a href="mailto:keshavcollege02@gmail.com">keshavcollege02@gmail.com</a></p>
         <p>Phone: 9929521506, 9636150093, 9460558050</p>
       </div>
+
       <div>
         <h4>Quick Links</h4>
         <ul>
@@ -208,6 +844,7 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
+
       <div>
         <h4>Important</h4>
         <ul>
@@ -217,6 +854,7 @@
           <li><a href="national-institutional-ranking-framework-nirf-2026.html">NIRF 2026</a></li>
         </ul>
       </div>
+
       <div>
         <h4>Student Zone</h4>
         <ul>
@@ -227,10 +865,12 @@
         </ul>
       </div>
     </div>
+
     <div class="footer-bottom">
       <div class="container">Copyright © 2007 All Right Reserved KESHAV MAHAVIDYALAYA</div>
     </div>
   </footer>
+
   <script src="assets/js/main.js"></script>
 </body>
 </html>
