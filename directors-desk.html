@@ -3,14 +3,308 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Director&#x27;s Desk | Keshav Mahavidyalaya, Atru</title>
-  <meta name="description" content="Director&#x27;s Desk - Keshav Mahavidyalaya, Atru, Dist. Baran, Rajasthan.">
+  <title>Director's Desk | Keshav Mahavidyalaya, Atru</title>
+  <meta name="description" content="Director's Desk - Keshav Mahavidyalaya, Atru, Dist. Baran, Rajasthan. Message from the Director, academic direction, institutional planning and student development.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    .director-lead {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .director-message {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .director-message::before {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      right: -90px;
+      top: -90px;
+      background: rgba(18, 60, 105, 0.08);
+    }
+
+    .director-message h3 {
+      color: var(--primary);
+      font-size: 28px;
+      margin-bottom: 16px;
+      position: relative;
+    }
+
+    .director-message p {
+      color: var(--muted);
+      margin-bottom: 13px;
+      position: relative;
+    }
+
+    .director-sign {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      position: relative;
+    }
+
+    .director-sign strong {
+      display: block;
+      color: var(--primary);
+      font-size: 20px;
+    }
+
+    .director-sign span {
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .director-profile {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #ffffff;
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      display: grid;
+      align-content: space-between;
+      gap: 22px;
+    }
+
+    .director-profile h3 {
+      color: #ffffff;
+      font-size: 28px;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .director-profile p {
+      color: #e5edf6;
+      margin-bottom: 12px;
+    }
+
+    .profile-mini-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .profile-mini-item {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 15px;
+      padding: 14px 16px;
+      font-weight: 700;
+    }
+
+    .profile-mini-item small {
+      display: block;
+      color: #ffe9a6;
+      font-weight: 900;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .admin-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .admin-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+      transition: 0.25s ease;
+    }
+
+    .admin-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .admin-card span {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: #eef6ff;
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .admin-card h3 {
+      color: var(--primary);
+      font-size: 20px;
+      margin-bottom: 9px;
+    }
+
+    .admin-card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .direction-layout {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .direction-panel {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+    }
+
+    .direction-panel h3 {
+      color: var(--primary);
+      font-size: 26px;
+      margin-bottom: 12px;
+    }
+
+    .direction-panel p {
+      color: var(--muted);
+      margin-bottom: 13px;
+    }
+
+    .direction-list {
+      display: grid;
+      gap: 13px;
+      margin-top: 18px;
+    }
+
+    .direction-item {
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 13px;
+      background: #f8fbff;
+      border: 1px solid #e8f1ff;
+      border-radius: 16px;
+      padding: 15px;
+      align-items: flex-start;
+    }
+
+    .direction-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: var(--primary);
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+
+    .direction-item strong {
+      display: block;
+      color: var(--primary);
+      margin-bottom: 3px;
+    }
+
+    .direction-item p {
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .academic-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      background: #ffffff;
+    }
+
+    .academic-table th,
+    .academic-table td {
+      border: 1px solid var(--border);
+      padding: 13px 14px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .academic-table th {
+      background: #eef6ff;
+      color: var(--primary);
+      font-weight: 900;
+      width: 32%;
+    }
+
+    .director-cta {
+      background: linear-gradient(115deg, rgba(11, 39, 70, 0.96), rgba(18, 60, 105, 0.9)), url("https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80") center/cover;
+      color: #ffffff;
+      border-radius: 24px;
+      padding: 38px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .director-cta h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .director-cta p {
+      color: #e5edf6;
+    }
+
+    @media (max-width: 1080px) {
+      .director-lead,
+      .direction-layout,
+      .director-cta {
+        grid-template-columns: 1fr;
+      }
+
+      .admin-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .admin-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .director-message,
+      .director-profile,
+      .direction-panel,
+      .director-cta {
+        padding: 26px;
+      }
+
+      .direction-item {
+        grid-template-columns: 1fr;
+      }
+
+      .academic-table th,
+      .academic-table td {
+        display: block;
+        width: 100%;
+      }
+    }
+  </style>
 </head>
+
 <body>
+
   <div class="topbar">
     <div class="container topbar-inner">
       <div class="topbar-left">
@@ -24,6 +318,7 @@
       </div>
     </div>
   </div>
+
   <header class="header">
     <div class="container header-main">
       <a class="brand" href="index.html">
@@ -33,163 +328,407 @@
           <p>Atru, Dist. Baran, Rajasthan</p>
         </div>
       </a>
+
       <div class="header-actions">
         <a class="btn btn-outline" href="contact.html">Contact</a>
         <a class="btn btn-primary" href="https://forms.gle/" target="_blank" rel="noopener">Apply Online</a>
         <button class="menu-toggle" onclick="toggleMenu()">Menu</button>
       </div>
     </div>
+
     <nav class="nav-wrap" id="mainNav">
       <div class="container">
-<ul class="nav">
-  <li><a href="index.html">Home</a></li>
-  <li>
-    <a href="about-organization.html">About</a>
-    <ul class="dropdown">
-      <li><a href="about-organization.html">About Organization</a></li>
-      <li><a href="vision-mission.html">Vision Mission</a></li>
-      <li><a href="chairmans-desk.html">Chairman's Desk</a></li>
-      <li><a href="directors-desk.html">Director's Desk</a></li>
-      <li><a href="principals-desk.html">Principal's Desk</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="admission-process.html">Admissions</a>
-    <ul class="dropdown">
-      <li><a href="admission-process.html">Admission Process</a></li>
-      <li><a href="itep-admission-2026-27-open.html">ITEP Admission 2026-27 Open</a></li>
-      <li><a href="https://forms.gle/" target="_blank" rel="noopener">Apply Online</a></li>
-      <li><a href="rules-and-regulations.html">Rules and Regulations</a></li>
-      <li><a href="https://sjmsnew.rajasthan.gov.in/" target="_blank" rel="noopener">Scholarship</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="programme.html">Academics</a>
-    <ul class="dropdown">
-      <li><a href="programme.html">Programme</a></li>
-      <li><a href="academic-calendar.html">Academic Calendar</a></li>
-      <li><a href="syllabus.html">Syllabus</a></li>
-      <li><a href="department.html">Department</a></li>
-      <li><a href="curriculum-feedback.html">Curriculum Feedback</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="admission-process.html">Student Zone</a>
-    <ul class="dropdown">
-      <li><a href="admission-process.html">Admission Process</a></li>
-      <li><a href="examination.html">Examination</a></li>
-      <li><a href="result.html">Result</a></li>
-      <li><a href="campus-placement.html">Campus Placement</a></li>
-      <li><a href="student-list-faculty-list.html">Student List & Faculty List</a></li>
-      <li><a href="faqs.html">FAQs</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="self-study-report-cycle-01.html">NAAC</a>
-    <ul class="dropdown mega">
-      <li><a href="self-study-report-cycle-01.html">Self Study Report</a></li>
-      <li><a href="criterion-1-curricular-aspects.html">Criterion 1</a></li>
-      <li><a href="criterion-2-teaching-learning-and-evaluation.html">Criterion 2</a></li>
-      <li><a href="criterion-3.html">Criterion 3</a></li>
-      <li><a href="criterion-4.html">Criterion 4</a></li>
-      <li><a href="criterion-5.html">Criterion 5</a></li>
-      <li><a href="criterion-6.html">Criterion 6</a></li>
-      <li><a href="criterion7.html">Criterion 7</a></li>
-      <li><a href="dvv-clarification.html">DVV Clarification</a></li>
-      <li><a href="naac-certificate.html">NAAC Certificate</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="iqac.html">IQAC</a>
-    <ul class="dropdown">
-      <li><a href="iqac.html">IQAC</a></li>
-      <li><a href="committee.html">Committee</a></li>
-      <li><a href="feedback-policy.html">Feedback Policy</a></li>
-      <li><a href="important-audit.html">Important Audit</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="approvals-affiliation.html">Approvals</a>
-    <ul class="dropdown">
-      <li><a href="govt-noc.html">GOVT NOC</a></li>
-      <li><a href="ncte-order.html">NCTE Order</a></li>
-      <li><a href="university-affiliation.html">University Affiliation</a></li>
-      <li><a href="approvals-affiliation.html">Approvals/Affiliation</a></li>
-      <li><a href="affiliation.html">Affiliation</a></li>
-      <li><a href="national-institutional-ranking-framework-nirf-2026.html">NIRF 2026</a></li>
-      <li><a href="khasra-no-institution.html">Khasra no Institution</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="laboratories.html">Facilities</a>
-    <ul class="dropdown">
-      <li><a href="laboratories.html">Laboratories</a></li>
-      <li><a href="library.html">Library</a></li>
-      <li><a href="playground.html">Playground</a></li>
-      <li><a href="nss.html">NSS</a></li>
-      <li><a href="skill-development.html">Skill Development</a></li>
-      <li><a href="seminar-workshop.html">Seminar-Workshop</a></li>
-      <li><a href="ict-facilities.html">ICT Facilities</a></li>
-      <li><a href="computer-lab.html">Computer Lab</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="photo-gallery.html">Gallery</a>
-    <ul class="dropdown">
-      <li><a href="photo-gallery.html">Photo Gallery</a></li>
-      <li><a href="video-gallery.html">Video Gallery</a></li>
-      <li><a href="downloads.html">Downloads</a></li>
-    </ul>
-  </li>
-  <li><a href="contact.html">Contact</a></li>
-</ul>
-</div>
+        <ul class="nav">
+          <li><a href="index.html">Home</a></li>
+
+          <li>
+            <a href="about-organization.html">About</a>
+            <ul class="dropdown">
+              <li><a href="about-organization.html">About Organization</a></li>
+              <li><a href="vision-mission.html">Vision Mission</a></li>
+              <li><a href="chairmans-desk.html">Chairman's Desk</a></li>
+              <li><a href="directors-desk.html">Director's Desk</a></li>
+              <li><a href="principals-desk.html">Principal's Desk</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="admission-process.html">Admissions</a>
+            <ul class="dropdown">
+              <li><a href="admission-process.html">Admission Process</a></li>
+              <li><a href="itep-admission-2026-27-open.html">ITEP Admission 2026-27 Open</a></li>
+              <li><a href="https://forms.gle/" target="_blank" rel="noopener">Apply Online</a></li>
+              <li><a href="rules-and-regulations.html">Rules and Regulations</a></li>
+              <li><a href="https://sjmsnew.rajasthan.gov.in/" target="_blank" rel="noopener">Scholarship</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="programme.html">Academics</a>
+            <ul class="dropdown">
+              <li><a href="programme.html">Programme</a></li>
+              <li><a href="academic-calendar.html">Academic Calendar</a></li>
+              <li><a href="syllabus.html">Syllabus</a></li>
+              <li><a href="department.html">Department</a></li>
+              <li><a href="curriculum-feedback.html">Curriculum Feedback</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="admission-process.html">Student Zone</a>
+            <ul class="dropdown">
+              <li><a href="admission-process.html">Admission Process</a></li>
+              <li><a href="examination.html">Examination</a></li>
+              <li><a href="result.html">Result</a></li>
+              <li><a href="campus-placement.html">Campus Placement</a></li>
+              <li><a href="student-list-faculty-list.html">Student List & Faculty List</a></li>
+              <li><a href="faqs.html">FAQs</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="self-study-report-cycle-01.html">NAAC</a>
+            <ul class="dropdown mega">
+              <li><a href="self-study-report-cycle-01.html">Self Study Report</a></li>
+              <li><a href="criterion-1-curricular-aspects.html">Criterion 1</a></li>
+              <li><a href="criterion-2-teaching-learning-and-evaluation.html">Criterion 2</a></li>
+              <li><a href="criterion-3.html">Criterion 3</a></li>
+              <li><a href="criterion-4.html">Criterion 4</a></li>
+              <li><a href="criterion-5.html">Criterion 5</a></li>
+              <li><a href="criterion-6.html">Criterion 6</a></li>
+              <li><a href="criterion7.html">Criterion 7</a></li>
+              <li><a href="dvv-clarification.html">DVV Clarification</a></li>
+              <li><a href="naac-certificate.html">NAAC Certificate</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="iqac.html">IQAC</a>
+            <ul class="dropdown">
+              <li><a href="iqac.html">IQAC</a></li>
+              <li><a href="committee.html">Committee</a></li>
+              <li><a href="feedback-policy.html">Feedback Policy</a></li>
+              <li><a href="important-audit.html">Important Audit</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="approvals-affiliation.html">Approvals</a>
+            <ul class="dropdown">
+              <li><a href="govt-noc.html">GOVT NOC</a></li>
+              <li><a href="ncte-order.html">NCTE Order</a></li>
+              <li><a href="university-affiliation.html">University Affiliation</a></li>
+              <li><a href="approvals-affiliation.html">Approvals/Affiliation</a></li>
+              <li><a href="affiliation.html">Affiliation</a></li>
+              <li><a href="national-institutional-ranking-framework-nirf-2026.html">NIRF 2026</a></li>
+              <li><a href="khasra-no-institution.html">Khasra no Institution</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="laboratories.html">Facilities</a>
+            <ul class="dropdown">
+              <li><a href="laboratories.html">Laboratories</a></li>
+              <li><a href="library.html">Library</a></li>
+              <li><a href="playground.html">Playground</a></li>
+              <li><a href="nss.html">NSS</a></li>
+              <li><a href="skill-development.html">Skill Development</a></li>
+              <li><a href="seminar-workshop.html">Seminar-Workshop</a></li>
+              <li><a href="ict-facilities.html">ICT Facilities</a></li>
+              <li><a href="computer-lab.html">Computer Lab</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="photo-gallery.html">Gallery</a>
+            <ul class="dropdown">
+              <li><a href="photo-gallery.html">Photo Gallery</a></li>
+              <li><a href="video-gallery.html">Video Gallery</a></li>
+              <li><a href="downloads.html">Downloads</a></li>
+            </ul>
+          </li>
+
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
 
   <main>
+
     <section class="page-hero">
       <div class="container">
-        <div class="breadcrumb"><a href="index.html">Home</a> / Director&#x27;s Desk</div>
-        <h2>Director&#x27;s Desk</h2>
-        <p>About Keshav Mahavidyalaya, its leadership, vision, mission and institutional values.</p>
+        <div class="breadcrumb"><a href="index.html">Home</a> / Director's Desk</div>
+        <h2>Director's Desk</h2>
+        <p>
+          A message from the Director highlighting academic direction, student support, institutional planning and the commitment of Keshav Mahavidyalaya toward quality education.
+        </p>
       </div>
     </section>
 
     <section class="section">
-      <div class="container content-layout">
-        <article class="content-card">
-          <h3>Director&#x27;s Desk</h3>
-          
-          <p>This page has been created for <strong>Director&#x27;s Desk</strong> under the new Keshav Mahavidyalaya website structure.</p>
-          <p>The layout follows the same professional college website design with proper header, footer, internal navigation, page title, content card, related links and responsive mobile view.</p>
-          <table class="info-table">
-            <tr><th>Page Name</th><td>Director&#x27;s Desk</td></tr>
-            <tr><th>College</th><td>Keshav Mahavidyalaya, Atru</td></tr>
-            <tr><th>Status</th><td>Ready for official content, PDFs, images and CMS data.</td></tr>
-          </table>
-        
+      <div class="container director-lead">
+        <article class="director-message">
+          <h3>Message from the Director</h3>
+
+          <p>
+            Keshav Mahavidyalaya, Atru, is committed to creating an academic environment where students receive quality education, proper guidance and opportunities for overall development. The institution works with the belief that education should prepare students not only for examinations but also for responsible life, professional growth and social contribution.
+          </p>
+
+          <p>
+            The college offers undergraduate, postgraduate and integrated teacher education programmes and continuously strives to strengthen teaching-learning practices, student services and academic support systems. Our aim is to help students develop knowledge, discipline, confidence, communication skills, ethical values and critical thinking.
+          </p>
+
+          <p>
+            As an institution, we give importance to academic planning, transparent communication, student-friendly services and proper access to institutional information. The website has been organized with separate sections for admissions, academics, student zone, NAAC, IQAC, approvals, facilities, gallery and contact information so that every stakeholder can find the required details easily.
+          </p>
+
+          <p>
+            I encourage students to remain focused, disciplined and active in their academic journey. Make use of the facilities, participate in academic activities, seek guidance from faculty members and work consistently toward your goals.
+          </p>
+
+          <div class="director-sign">
+            <strong>Director</strong>
+            <span>Keshav Mahavidyalaya, Atru</span>
+          </div>
         </article>
-        
+
+        <aside class="director-profile">
+          <div>
+            <h3>Academic Leadership</h3>
+            <p>
+              The Director’s Desk reflects the institution’s academic planning, administrative direction and commitment to student development.
+            </p>
+          </div>
+
+          <div class="profile-mini-list">
+            <div class="profile-mini-item">
+              <small>Focus Area</small>
+              Academic planning and student support
+            </div>
+            <div class="profile-mini-item">
+              <small>Institutional Priority</small>
+              Quality education with transparent information access
+            </div>
+            <div class="profile-mini-item">
+              <small>Student Direction</small>
+              Discipline, participation, learning and skill development
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="programme.html">Programmes</a>
+            <a class="btn btn-outline" href="admission-process.html">Admissions</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-title">
+          <span>Academic Administration</span>
+          <h2>Director’s Institutional Priorities</h2>
+          <p>
+            The Director’s role supports the academic and administrative development of the college through planning, coordination and student-focused execution.
+          </p>
+        </div>
+
+        <div class="admin-grid">
+          <div class="admin-card">
+            <span>01</span>
+            <h3>Teaching-Learning Quality</h3>
+            <p>
+              Strengthening classroom learning, academic resources, syllabus access and programme clarity for students.
+            </p>
+          </div>
+
+          <div class="admin-card">
+            <span>02</span>
+            <h3>Academic Planning</h3>
+            <p>
+              Promoting structured academic planning through calendar, departments, curriculum feedback and faculty coordination.
+            </p>
+          </div>
+
+          <div class="admin-card">
+            <span>03</span>
+            <h3>Student Services</h3>
+            <p>
+              Ensuring students can access admission, examination, result, placement and important academic information easily.
+            </p>
+          </div>
+
+          <div class="admin-card">
+            <span>04</span>
+            <h3>Quality Assurance</h3>
+            <p>
+              Supporting NAAC, IQAC, feedback policy, audit information and institutional quality documentation.
+            </p>
+          </div>
+
+          <div class="admin-card">
+            <span>05</span>
+            <h3>Facilities Development</h3>
+            <p>
+              Encouraging use and improvement of laboratories, library, ICT facilities, computer lab and other student support areas.
+            </p>
+          </div>
+
+          <div class="admin-card">
+            <span>06</span>
+            <h3>Stakeholder Communication</h3>
+            <p>
+              Keeping students, parents, faculty members and visitors informed through organized website sections and direct contact details.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container direction-layout">
+        <article class="direction-panel">
+          <h3>Academic Direction for Students</h3>
+          <p>
+            Students are advised to use their college years for disciplined study, active participation and practical skill development. The institution provides academic and support sections to help students remain informed and prepared.
+          </p>
+
+          <div class="direction-list">
+            <div class="direction-item">
+              <div class="direction-icon">A</div>
+              <div>
+                <strong>Understand Your Programme</strong>
+                <p>Students should review programme details, syllabus, academic calendar and examination requirements carefully.</p>
+              </div>
+            </div>
+
+            <div class="direction-item">
+              <div class="direction-icon">B</div>
+              <div>
+                <strong>Stay Updated</strong>
+                <p>Use notice, admission, examination, result and student zone pages to stay informed about important academic updates.</p>
+              </div>
+            </div>
+
+            <div class="direction-item">
+              <div class="direction-icon">C</div>
+              <div>
+                <strong>Use Campus Facilities</strong>
+                <p>Library, laboratories, ICT facilities, computer lab, seminars and workshops should be used for better learning outcomes.</p>
+              </div>
+            </div>
+
+            <div class="direction-item">
+              <div class="direction-icon">D</div>
+              <div>
+                <strong>Develop Overall Personality</strong>
+                <p>Students should build communication skills, leadership, teamwork, discipline, ethical values and social responsibility.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
         <aside class="sidebar">
           <div class="side-box">
-            <h3>Related Links</h3>
-            <ul><li><a href="about-organization.html">About Organization</a></li>
-<li><a href="vision-mission.html">Vision Mission</a></li>
-<li><a href="chairmans-desk.html">Chairman&#x27;s Desk</a></li>
-<li><a href="directors-desk.html">Director&#x27;s Desk</a></li>
-<li><a href="principals-desk.html">Principal&#x27;s Desk</a></li></ul>
+            <h3>Leadership Links</h3>
+            <ul>
+              <li><a href="chairmans-desk.html">Chairman's Desk</a></li>
+              <li><a href="directors-desk.html">Director's Desk</a></li>
+              <li><a href="principals-desk.html">Principal's Desk</a></li>
+              <li><a href="vision-mission.html">Vision Mission</a></li>
+              <li><a href="about-organization.html">About Organization</a></li>
+            </ul>
           </div>
+
+          <div class="side-box">
+            <h3>Academic Links</h3>
+            <ul>
+              <li><a href="programme.html">Programme</a></li>
+              <li><a href="department.html">Department</a></li>
+              <li><a href="academic-calendar.html">Academic Calendar</a></li>
+              <li><a href="syllabus.html">Syllabus</a></li>
+              <li><a href="curriculum-feedback.html">Curriculum Feedback</a></li>
+            </ul>
+          </div>
+
           <div class="side-box">
             <h3>Need Help?</h3>
-            <p>For admission and general enquiry, contact the college office.</p>
+            <p>For admission, programme or academic enquiry, contact the college office.</p>
             <br>
             <a class="btn btn-primary" href="contact.html">Contact Office</a>
           </div>
         </aside>
-
       </div>
     </section>
+
+    <section class="section alt">
+      <div class="container content-layout">
+        <article class="content-card">
+          <h3>Academic and Administrative Areas</h3>
+          <p>
+            The Director’s Desk is connected with the academic and administrative working of the institution. The following areas are important for the smooth functioning of the college and for student support.
+          </p>
+
+          <table class="academic-table">
+            <tr>
+              <th>Admissions</th>
+              <td>Admission process, ITEP admission information, rules and regulations, online application and scholarship link.</td>
+            </tr>
+            <tr>
+              <th>Academics</th>
+              <td>Programme details, departments, academic calendar, syllabus and curriculum feedback.</td>
+            </tr>
+            <tr>
+              <th>Student Zone</th>
+              <td>Examination, result, campus placement, student list, faculty list and FAQs.</td>
+            </tr>
+            <tr>
+              <th>Quality System</th>
+              <td>NAAC repository, IQAC, feedback policy, important audit and institutional documentation.</td>
+            </tr>
+            <tr>
+              <th>Facilities</th>
+              <td>Laboratories, library, playground, NSS, skill development, seminar-workshop, ICT facilities and computer lab.</td>
+            </tr>
+          </table>
+        </article>
+
+        <aside class="sidebar">
+          <div class="side-box">
+            <h3>Quality Sections</h3>
+            <ul>
+              <li><a href="self-study-report-cycle-01.html">Self Study Report</a></li>
+              <li><a href="iqac.html">IQAC</a></li>
+              <li><a href="feedback-policy.html">Feedback Policy</a></li>
+              <li><a href="important-audit.html">Important Audit</a></li>
+              <li><a href="approvals-affiliation.html">Approvals/Affiliation</a></li>
+              <li><a href="national-institutional-ranking-framework-nirf-2026.html">NIRF 2026</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="director-cta">
+          <div>
+            <h2>Explore Academic and Student Services</h2>
+            <p>
+              Visit programme, department, admission, syllabus, examination and contact pages to access important college information.
+            </p>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="programme.html">View Programmes</a>
+            <a class="btn btn-outline" href="department.html">Departments</a>
+            <a class="btn btn-outline" href="contact.html">Contact College</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
@@ -200,6 +739,7 @@
         <p style="margin-top:10px;">Email: <a href="mailto:keshavcollege02@gmail.com">keshavcollege02@gmail.com</a></p>
         <p>Phone: 9929521506, 9636150093, 9460558050</p>
       </div>
+
       <div>
         <h4>Quick Links</h4>
         <ul>
@@ -209,6 +749,7 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
+
       <div>
         <h4>Important</h4>
         <ul>
@@ -218,6 +759,7 @@
           <li><a href="national-institutional-ranking-framework-nirf-2026.html">NIRF 2026</a></li>
         </ul>
       </div>
+
       <div>
         <h4>Student Zone</h4>
         <ul>
@@ -228,10 +770,12 @@
         </ul>
       </div>
     </div>
+
     <div class="footer-bottom">
       <div class="container">Copyright © 2007 All Right Reserved KESHAV MAHAVIDYALAYA</div>
     </div>
   </footer>
+
   <script src="assets/js/main.js"></script>
 </body>
 </html>
