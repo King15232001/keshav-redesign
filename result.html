@@ -4,13 +4,350 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Result | Keshav Mahavidyalaya, Atru</title>
-  <meta name="description" content="Result - Keshav Mahavidyalaya, Atru, Dist. Baran, Rajasthan.">
+  <meta name="description" content="Result - Keshav Mahavidyalaya, Atru, Dist. Baran, Rajasthan. Student result information, result guidance, examination links, academic support and contact details.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    .result-hero-panel {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #ffffff;
+      border-radius: 24px;
+      padding: 36px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .result-hero-panel h2 {
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.2;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+
+    .result-hero-panel p {
+      color: #e5edf6;
+      margin-bottom: 14px;
+    }
+
+    .result-info-box {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    .result-info-box h3 {
+      color: #ffffff;
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .result-info-box ul {
+      color: #e5edf6;
+      margin-left: 18px;
+      font-weight: 700;
+    }
+
+    .result-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .result-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+      transition: 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .result-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .result-card::before {
+      content: "";
+      position: absolute;
+      height: 6px;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: linear-gradient(90deg, var(--primary), var(--accent), var(--secondary));
+    }
+
+    .result-card span {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: #eef6ff;
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      margin-bottom: 13px;
+    }
+
+    .result-card h3 {
+      color: var(--primary);
+      font-size: 19px;
+      margin-bottom: 8px;
+    }
+
+    .result-card p {
+      color: var(--muted);
+      font-size: 15px;
+      margin: 0;
+    }
+
+    .result-layout {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .result-panel {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+    }
+
+    .result-panel h3 {
+      color: var(--primary);
+      font-size: 26px;
+      margin-bottom: 12px;
+    }
+
+    .result-panel p {
+      color: var(--muted);
+      margin-bottom: 13px;
+    }
+
+    .result-guide-list {
+      display: grid;
+      gap: 13px;
+      margin-top: 18px;
+    }
+
+    .result-guide-item {
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 13px;
+      background: #f8fbff;
+      border: 1px solid #e8f1ff;
+      border-radius: 16px;
+      padding: 15px;
+      align-items: flex-start;
+    }
+
+    .result-guide-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: var(--primary);
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+
+    .result-guide-item strong {
+      color: var(--primary);
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .result-guide-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .result-notice-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .result-notice {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      display: grid;
+      grid-template-columns: 110px 1fr auto;
+      gap: 16px;
+      align-items: center;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.04);
+    }
+
+    .result-label {
+      background: #eef6ff;
+      color: var(--primary);
+      border-radius: 14px;
+      padding: 12px;
+      text-align: center;
+      font-weight: 900;
+    }
+
+    .result-notice h3 {
+      color: var(--primary);
+      font-size: 19px;
+      margin-bottom: 4px;
+    }
+
+    .result-notice p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .result-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 18px;
+      background: #ffffff;
+    }
+
+    .result-table th,
+    .result-table td {
+      border: 1px solid var(--border);
+      padding: 13px 14px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .result-table th {
+      background: #eef6ff;
+      color: var(--primary);
+      font-weight: 900;
+    }
+
+    .result-table td {
+      color: var(--muted);
+    }
+
+    .post-result-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .post-result-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+      transition: 0.25s ease;
+    }
+
+    .post-result-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .post-result-card span {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: #eef6ff;
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .post-result-card h3 {
+      color: var(--primary);
+      font-size: 20px;
+      margin-bottom: 9px;
+    }
+
+    .post-result-card p {
+      color: var(--muted);
+      font-size: 15px;
+      margin: 0;
+    }
+
+    .result-cta {
+      background: linear-gradient(115deg, rgba(11, 39, 70, 0.96), rgba(18, 60, 105, 0.9)), url("https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1600&q=80") center/cover;
+      color: #ffffff;
+      border-radius: 24px;
+      padding: 38px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .result-cta h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .result-cta p {
+      color: #e5edf6;
+    }
+
+    @media (max-width: 1080px) {
+      .result-hero-panel,
+      .result-layout,
+      .result-cta {
+        grid-template-columns: 1fr;
+      }
+
+      .result-grid,
+      .post-result-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .result-notice {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .result-grid,
+      .post-result-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .result-hero-panel,
+      .result-panel,
+      .result-cta {
+        padding: 26px;
+      }
+
+      .result-guide-item {
+        grid-template-columns: 1fr;
+      }
+
+      .result-table th,
+      .result-table td {
+        display: block;
+        width: 100%;
+      }
+    }
+  </style>
 </head>
+
 <body>
+
   <div class="topbar">
     <div class="container topbar-inner">
       <div class="topbar-left">
@@ -24,6 +361,7 @@
       </div>
     </div>
   </div>
+
   <header class="header">
     <div class="container header-main">
       <a class="brand" href="index.html">
@@ -33,165 +371,496 @@
           <p>Atru, Dist. Baran, Rajasthan</p>
         </div>
       </a>
+
       <div class="header-actions">
         <a class="btn btn-outline" href="contact.html">Contact</a>
         <a class="btn btn-primary" href="https://forms.gle/" target="_blank" rel="noopener">Apply Online</a>
         <button class="menu-toggle" onclick="toggleMenu()">Menu</button>
       </div>
     </div>
+
     <nav class="nav-wrap" id="mainNav">
       <div class="container">
-<ul class="nav">
-  <li><a href="index.html">Home</a></li>
-  <li>
-    <a href="about-organization.html">About</a>
-    <ul class="dropdown">
-      <li><a href="about-organization.html">About Organization</a></li>
-      <li><a href="vision-mission.html">Vision Mission</a></li>
-      <li><a href="chairmans-desk.html">Chairman's Desk</a></li>
-      <li><a href="directors-desk.html">Director's Desk</a></li>
-      <li><a href="principals-desk.html">Principal's Desk</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="admission-process.html">Admissions</a>
-    <ul class="dropdown">
-      <li><a href="admission-process.html">Admission Process</a></li>
-      <li><a href="itep-admission-2026-27-open.html">ITEP Admission 2026-27 Open</a></li>
-      <li><a href="https://forms.gle/" target="_blank" rel="noopener">Apply Online</a></li>
-      <li><a href="rules-and-regulations.html">Rules and Regulations</a></li>
-      <li><a href="https://sjmsnew.rajasthan.gov.in/" target="_blank" rel="noopener">Scholarship</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="programme.html">Academics</a>
-    <ul class="dropdown">
-      <li><a href="programme.html">Programme</a></li>
-      <li><a href="academic-calendar.html">Academic Calendar</a></li>
-      <li><a href="syllabus.html">Syllabus</a></li>
-      <li><a href="department.html">Department</a></li>
-      <li><a href="curriculum-feedback.html">Curriculum Feedback</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="admission-process.html">Student Zone</a>
-    <ul class="dropdown">
-      <li><a href="admission-process.html">Admission Process</a></li>
-      <li><a href="examination.html">Examination</a></li>
-      <li><a href="result.html">Result</a></li>
-      <li><a href="campus-placement.html">Campus Placement</a></li>
-      <li><a href="student-list-faculty-list.html">Student List & Faculty List</a></li>
-      <li><a href="faqs.html">FAQs</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="self-study-report-cycle-01.html">NAAC</a>
-    <ul class="dropdown mega">
-      <li><a href="self-study-report-cycle-01.html">Self Study Report</a></li>
-      <li><a href="criterion-1-curricular-aspects.html">Criterion 1</a></li>
-      <li><a href="criterion-2-teaching-learning-and-evaluation.html">Criterion 2</a></li>
-      <li><a href="criterion-3.html">Criterion 3</a></li>
-      <li><a href="criterion-4.html">Criterion 4</a></li>
-      <li><a href="criterion-5.html">Criterion 5</a></li>
-      <li><a href="criterion-6.html">Criterion 6</a></li>
-      <li><a href="criterion7.html">Criterion 7</a></li>
-      <li><a href="dvv-clarification.html">DVV Clarification</a></li>
-      <li><a href="naac-certificate.html">NAAC Certificate</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="iqac.html">IQAC</a>
-    <ul class="dropdown">
-      <li><a href="iqac.html">IQAC</a></li>
-      <li><a href="committee.html">Committee</a></li>
-      <li><a href="feedback-policy.html">Feedback Policy</a></li>
-      <li><a href="important-audit.html">Important Audit</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="approvals-affiliation.html">Approvals</a>
-    <ul class="dropdown">
-      <li><a href="govt-noc.html">GOVT NOC</a></li>
-      <li><a href="ncte-order.html">NCTE Order</a></li>
-      <li><a href="university-affiliation.html">University Affiliation</a></li>
-      <li><a href="approvals-affiliation.html">Approvals/Affiliation</a></li>
-      <li><a href="affiliation.html">Affiliation</a></li>
-      <li><a href="national-institutional-ranking-framework-nirf-2026.html">NIRF 2026</a></li>
-      <li><a href="khasra-no-institution.html">Khasra no Institution</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="laboratories.html">Facilities</a>
-    <ul class="dropdown">
-      <li><a href="laboratories.html">Laboratories</a></li>
-      <li><a href="library.html">Library</a></li>
-      <li><a href="playground.html">Playground</a></li>
-      <li><a href="nss.html">NSS</a></li>
-      <li><a href="skill-development.html">Skill Development</a></li>
-      <li><a href="seminar-workshop.html">Seminar-Workshop</a></li>
-      <li><a href="ict-facilities.html">ICT Facilities</a></li>
-      <li><a href="computer-lab.html">Computer Lab</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="photo-gallery.html">Gallery</a>
-    <ul class="dropdown">
-      <li><a href="photo-gallery.html">Photo Gallery</a></li>
-      <li><a href="video-gallery.html">Video Gallery</a></li>
-      <li><a href="downloads.html">Downloads</a></li>
-    </ul>
-  </li>
-  <li><a href="contact.html">Contact</a></li>
-</ul>
-</div>
+        <ul class="nav">
+          <li><a href="index.html">Home</a></li>
+
+          <li>
+            <a href="about-organization.html">About</a>
+            <ul class="dropdown">
+              <li><a href="about-organization.html">About Organization</a></li>
+              <li><a href="vision-mission.html">Vision Mission</a></li>
+              <li><a href="chairmans-desk.html">Chairman's Desk</a></li>
+              <li><a href="directors-desk.html">Director's Desk</a></li>
+              <li><a href="principals-desk.html">Principal's Desk</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="admission-process.html">Admissions</a>
+            <ul class="dropdown">
+              <li><a href="admission-process.html">Admission Process</a></li>
+              <li><a href="itep-admission-2026-27-open.html">ITEP Admission 2026-27 Open</a></li>
+              <li><a href="https://forms.gle/" target="_blank" rel="noopener">Apply Online</a></li>
+              <li><a href="rules-and-regulations.html">Rules and Regulations</a></li>
+              <li><a href="https://sjmsnew.rajasthan.gov.in/" target="_blank" rel="noopener">Scholarship</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="programme.html">Academics</a>
+            <ul class="dropdown">
+              <li><a href="programme.html">Programme</a></li>
+              <li><a href="academic-calendar.html">Academic Calendar</a></li>
+              <li><a href="syllabus.html">Syllabus</a></li>
+              <li><a href="department.html">Department</a></li>
+              <li><a href="curriculum-feedback.html">Curriculum Feedback</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="admission-process.html">Student Zone</a>
+            <ul class="dropdown">
+              <li><a href="admission-process.html">Admission Process</a></li>
+              <li><a href="examination.html">Examination</a></li>
+              <li><a href="result.html">Result</a></li>
+              <li><a href="campus-placement.html">Campus Placement</a></li>
+              <li><a href="student-list-faculty-list.html">Student List & Faculty List</a></li>
+              <li><a href="faqs.html">FAQs</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="self-study-report-cycle-01.html">NAAC</a>
+            <ul class="dropdown mega">
+              <li><a href="self-study-report-cycle-01.html">Self Study Report</a></li>
+              <li><a href="criterion-1-curricular-aspects.html">Criterion 1</a></li>
+              <li><a href="criterion-2-teaching-learning-and-evaluation.html">Criterion 2</a></li>
+              <li><a href="criterion-3.html">Criterion 3</a></li>
+              <li><a href="criterion-4.html">Criterion 4</a></li>
+              <li><a href="criterion-5.html">Criterion 5</a></li>
+              <li><a href="criterion-6.html">Criterion 6</a></li>
+              <li><a href="criterion7.html">Criterion 7</a></li>
+              <li><a href="dvv-clarification.html">DVV Clarification</a></li>
+              <li><a href="naac-certificate.html">NAAC Certificate</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="iqac.html">IQAC</a>
+            <ul class="dropdown">
+              <li><a href="iqac.html">IQAC</a></li>
+              <li><a href="committee.html">Committee</a></li>
+              <li><a href="feedback-policy.html">Feedback Policy</a></li>
+              <li><a href="important-audit.html">Important Audit</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="approvals-affiliation.html">Approvals</a>
+            <ul class="dropdown">
+              <li><a href="govt-noc.html">GOVT NOC</a></li>
+              <li><a href="ncte-order.html">NCTE Order</a></li>
+              <li><a href="university-affiliation.html">University Affiliation</a></li>
+              <li><a href="approvals-affiliation.html">Approvals/Affiliation</a></li>
+              <li><a href="affiliation.html">Affiliation</a></li>
+              <li><a href="national-institutional-ranking-framework-nirf-2026.html">NIRF 2026</a></li>
+              <li><a href="khasra-no-institution.html">Khasra no Institution</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="laboratories.html">Facilities</a>
+            <ul class="dropdown">
+              <li><a href="laboratories.html">Laboratories</a></li>
+              <li><a href="library.html">Library</a></li>
+              <li><a href="playground.html">Playground</a></li>
+              <li><a href="nss.html">NSS</a></li>
+              <li><a href="skill-development.html">Skill Development</a></li>
+              <li><a href="seminar-workshop.html">Seminar-Workshop</a></li>
+              <li><a href="ict-facilities.html">ICT Facilities</a></li>
+              <li><a href="computer-lab.html">Computer Lab</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="photo-gallery.html">Gallery</a>
+            <ul class="dropdown">
+              <li><a href="photo-gallery.html">Photo Gallery</a></li>
+              <li><a href="video-gallery.html">Video Gallery</a></li>
+              <li><a href="downloads.html">Downloads</a></li>
+            </ul>
+          </li>
+
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
 
   <main>
+
     <section class="page-hero">
       <div class="container">
         <div class="breadcrumb"><a href="index.html">Home</a> / Result</div>
         <h2>Result</h2>
-        <p>Student services including admission, syllabus, examination, result and placement.</p>
+        <p>
+          Student result information, result guidance, examination connection and academic support links for Keshav Mahavidyalaya, Atru.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="result-hero-panel">
+          <div>
+            <span class="badge">Student Zone</span>
+            <h2>Result Information and Student Support</h2>
+            <p>
+              The result page helps students access result-related information, important links and post-result guidance. Students should keep their roll number, enrolment details and examination information ready while checking results.
+            </p>
+            <p>
+              Official result links, result PDFs or university result updates can be added to this page whenever available.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="examination.html">Examination</a>
+              <a class="btn btn-outline" href="syllabus.html">Syllabus</a>
+              <a class="btn btn-outline" href="contact.html">Contact Office</a>
+            </div>
+          </div>
+
+          <aside class="result-info-box">
+            <h3>Result Page Covers</h3>
+            <ul>
+              <li>Result checking guidance</li>
+              <li>Post-result academic steps</li>
+              <li>Examination page connection</li>
+              <li>Programme and syllabus links</li>
+              <li>Student office support</li>
+              <li>Future academic planning</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-title">
+          <span>Result Process</span>
+          <h2>How Students Should Check Result Information</h2>
+          <p>
+            Students should follow a careful process while checking results and confirming academic information.
+          </p>
+        </div>
+
+        <div class="result-grid">
+          <div class="result-card">
+            <span>01</span>
+            <h3>Keep Details Ready</h3>
+            <p>Keep roll number, enrolment number, programme details and examination information ready.</p>
+          </div>
+
+          <div class="result-card">
+            <span>02</span>
+            <h3>Check Official Update</h3>
+            <p>Use the official result notice, result link or college result section when available.</p>
+          </div>
+
+          <div class="result-card">
+            <span>03</span>
+            <h3>Verify Information</h3>
+            <p>Check name, roll number, subject details, marks/status and programme information carefully.</p>
+          </div>
+
+          <div class="result-card">
+            <span>04</span>
+            <h3>Save Result Copy</h3>
+            <p>Download or save the result copy for academic records and future reference.</p>
+          </div>
+
+          <div class="result-card">
+            <span>05</span>
+            <h3>Contact Office</h3>
+            <p>For result-related clarification, contact the college office with required student details.</p>
+          </div>
+
+          <div class="result-card">
+            <span>06</span>
+            <h3>Plan Next Step</h3>
+            <p>After checking result, plan next semester/year, admission process or academic progression.</p>
+          </div>
+
+          <div class="result-card">
+            <span>07</span>
+            <h3>Use Student Zone</h3>
+            <p>Check examination, syllabus, programme and student support pages for further academic updates.</p>
+          </div>
+
+          <div class="result-card">
+            <span>08</span>
+            <h3>Stay Updated</h3>
+            <p>Regularly follow college updates, downloads and contact pages for official information.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container result-layout">
+        <article class="result-panel">
+          <h3>Result Guidance for Students</h3>
+          <p>
+            Result checking should be done carefully and responsibly. Students should verify all details and contact the college office if any clarification is required.
+          </p>
+
+          <div class="result-guide-list">
+            <div class="result-guide-item">
+              <div class="result-guide-icon">A</div>
+              <div>
+                <strong>Use Correct Details</strong>
+                <p>Enter roll number, enrolment number or other required details exactly as mentioned in examination records.</p>
+              </div>
+            </div>
+
+            <div class="result-guide-item">
+              <div class="result-guide-icon">B</div>
+              <div>
+                <strong>Check Subject-Wise Information</strong>
+                <p>Review subject names, marks/status and result details carefully after opening the result.</p>
+              </div>
+            </div>
+
+            <div class="result-guide-item">
+              <div class="result-guide-icon">C</div>
+              <div>
+                <strong>Keep a Record</strong>
+                <p>Save or print result information for admission, scholarship, academic and personal record purposes.</p>
+              </div>
+            </div>
+
+            <div class="result-guide-item">
+              <div class="result-guide-icon">D</div>
+              <div>
+                <strong>Ask for Help</strong>
+                <p>Contact the college office if result-related information is unclear or further guidance is required.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <aside class="sidebar">
+          <div class="side-box">
+            <h3>Student Zone</h3>
+            <ul>
+              <li><a href="admission-process.html">Admission Process</a></li>
+              <li><a href="examination.html">Examination</a></li>
+              <li><a href="result.html">Result</a></li>
+              <li><a href="campus-placement.html">Campus Placement</a></li>
+              <li><a href="student-list-faculty-list.html">Student List & Faculty List</a></li>
+              <li><a href="faqs.html">FAQs</a></li>
+            </ul>
+          </div>
+
+          <div class="side-box">
+            <h3>Academic Links</h3>
+            <ul>
+              <li><a href="programme.html">Programme</a></li>
+              <li><a href="department.html">Department</a></li>
+              <li><a href="academic-calendar.html">Academic Calendar</a></li>
+              <li><a href="syllabus.html">Syllabus</a></li>
+              <li><a href="examination.html">Examination</a></li>
+            </ul>
+          </div>
+
+          <div class="side-box">
+            <h3>Need Help?</h3>
+            <p>For result-related clarification, contact the college office.</p>
+            <br>
+            <a class="btn btn-primary" href="contact.html">Contact Office</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-title">
+          <span>Result Updates</span>
+          <h2>Result Information Section</h2>
+          <p>
+            Official result links, notices or result PDFs can be placed here when available.
+          </p>
+        </div>
+
+        <div class="result-notice-list">
+          <div class="result-notice">
+            <div class="result-label">Result</div>
+            <div>
+              <h3>Latest Result Update</h3>
+              <p>Result update or official result link can be added here when published.</p>
+            </div>
+            <a class="btn btn-outline" href="downloads.html">Downloads</a>
+          </div>
+
+          <div class="result-notice">
+            <div class="result-label">Exam</div>
+            <div>
+              <h3>Examination Related Information</h3>
+              <p>Students can visit the examination page for exam instructions, date sheet or related updates.</p>
+            </div>
+            <a class="btn btn-outline" href="examination.html">Examination</a>
+          </div>
+
+          <div class="result-notice">
+            <div class="result-label">Office</div>
+            <div>
+              <h3>Result Clarification Support</h3>
+              <p>For result-related clarification, students may contact the college office with complete details.</p>
+            </div>
+            <a class="btn btn-outline" href="contact.html">Contact</a>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container content-layout">
         <article class="content-card">
-          <h3>Result</h3>
-          
-          <p>This page has been created for <strong>Result</strong> under the new Keshav Mahavidyalaya website structure.</p>
-          <p>The layout follows the same professional college website design with proper header, footer, internal navigation, page title, content card, related links and responsive mobile view.</p>
-          <table class="info-table">
-            <tr><th>Page Name</th><td>Result</td></tr>
-            <tr><th>College</th><td>Keshav Mahavidyalaya, Atru</td></tr>
-            <tr><th>Status</th><td>Ready for official content, PDFs, images and CMS data.</td></tr>
+          <h3>Result Reference Table</h3>
+          <p>
+            This table helps students understand which page to visit for result-related academic support.
+          </p>
+
+          <table class="result-table">
+            <tr>
+              <th>Requirement</th>
+              <th>Purpose</th>
+              <th>Related Page</th>
+            </tr>
+            <tr>
+              <td>Examination</td>
+              <td>Exam notices, preparation guidance and exam-related instructions.</td>
+              <td><a href="examination.html">Examination</a></td>
+            </tr>
+            <tr>
+              <td>Syllabus</td>
+              <td>Subject-wise preparation and academic content reference.</td>
+              <td><a href="syllabus.html">Syllabus</a></td>
+            </tr>
+            <tr>
+              <td>Academic Calendar</td>
+              <td>Academic session planning, activities and examination preparation flow.</td>
+              <td><a href="academic-calendar.html">Academic Calendar</a></td>
+            </tr>
+            <tr>
+              <td>Programme</td>
+              <td>Programme and department-wise academic information.</td>
+              <td><a href="programme.html">Programme</a></td>
+            </tr>
+            <tr>
+              <td>Downloads</td>
+              <td>Result notices, files, forms or related academic documents.</td>
+              <td><a href="downloads.html">Downloads</a></td>
+            </tr>
+            <tr>
+              <td>Contact</td>
+              <td>Office support for result-related clarification and student assistance.</td>
+              <td><a href="contact.html">Contact</a></td>
+            </tr>
           </table>
-        
         </article>
-        
+
         <aside class="sidebar">
           <div class="side-box">
-            <h3>Related Links</h3>
-            <ul><li><a href="rules-and-regulations.html">Rules and Regulations</a></li>
-<li><a href="syllabus.html">Syllabus</a></li>
-<li><a href="examination.html">Examination</a></li>
-<li><a href="result.html">Result</a></li>
-<li><a href="campus-placement.html">Campus Placement</a></li>
-<li><a href="faqs.html">FAQs</a></li>
-<li><a href="student-list-faculty-list.html">Student List &amp; Faculty List</a></li></ul>
+            <h3>Useful Pages</h3>
+            <ul>
+              <li><a href="examination.html">Examination</a></li>
+              <li><a href="syllabus.html">Syllabus</a></li>
+              <li><a href="academic-calendar.html">Academic Calendar</a></li>
+              <li><a href="programme.html">Programmes</a></li>
+              <li><a href="faqs.html">FAQs</a></li>
+            </ul>
           </div>
+
           <div class="side-box">
-            <h3>Need Help?</h3>
-            <p>For admission and general enquiry, contact the college office.</p>
-            <br>
-            <a class="btn btn-primary" href="contact.html">Contact Office</a>
+            <h3>Contact Details</h3>
+            <p>Email: <a href="mailto:keshavcollege02@gmail.com">keshavcollege02@gmail.com</a></p>
+            <p>Phone: 9929521506, 9636150093, 9460558050</p>
           </div>
         </aside>
-
       </div>
     </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-title">
+          <span>After Result</span>
+          <h2>What Students Should Do After Checking Result</h2>
+          <p>
+            Students should use result information to plan their next academic step carefully.
+          </p>
+        </div>
+
+        <div class="post-result-grid">
+          <div class="post-result-card">
+            <span>01</span>
+            <h3>Verify Details</h3>
+            <p>Check personal, programme, subject and result details carefully.</p>
+          </div>
+
+          <div class="post-result-card">
+            <span>02</span>
+            <h3>Save Record</h3>
+            <p>Keep a copy of the result for future academic and administrative use.</p>
+          </div>
+
+          <div class="post-result-card">
+            <span>03</span>
+            <h3>Plan Next Step</h3>
+            <p>Prepare for the next semester/year, further admission, scholarship or academic progression.</p>
+          </div>
+
+          <div class="post-result-card">
+            <span>04</span>
+            <h3>Contact Office</h3>
+            <p>Contact the college office if any information requires clarification.</p>
+          </div>
+
+          <div class="post-result-card">
+            <span>05</span>
+            <h3>Continue Learning</h3>
+            <p>Use syllabus, library, department and academic links for continuous improvement.</p>
+          </div>
+
+          <div class="post-result-card">
+            <span>06</span>
+            <h3>Stay Updated</h3>
+            <p>Keep checking student zone, downloads and official communication for new updates.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="result-cta">
+          <div>
+            <h2>Check Result Information Carefully</h2>
+            <p>
+              Use examination, syllabus, academic calendar and contact sections for complete academic support.
+            </p>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="examination.html">Examination</a>
+            <a class="btn btn-outline" href="syllabus.html">Syllabus</a>
+            <a class="btn btn-outline" href="contact.html">Contact Office</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
@@ -202,6 +871,7 @@
         <p style="margin-top:10px;">Email: <a href="mailto:keshavcollege02@gmail.com">keshavcollege02@gmail.com</a></p>
         <p>Phone: 9929521506, 9636150093, 9460558050</p>
       </div>
+
       <div>
         <h4>Quick Links</h4>
         <ul>
@@ -211,6 +881,7 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
+
       <div>
         <h4>Important</h4>
         <ul>
@@ -220,6 +891,7 @@
           <li><a href="national-institutional-ranking-framework-nirf-2026.html">NIRF 2026</a></li>
         </ul>
       </div>
+
       <div>
         <h4>Student Zone</h4>
         <ul>
@@ -230,10 +902,12 @@
         </ul>
       </div>
     </div>
+
     <div class="footer-bottom">
       <div class="container">Copyright © 2007 All Right Reserved KESHAV MAHAVIDYALAYA</div>
     </div>
   </footer>
+
   <script src="assets/js/main.js"></script>
 </body>
 </html>
