@@ -4,13 +4,350 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Campus Placement | Keshav Mahavidyalaya, Atru</title>
-  <meta name="description" content="Campus Placement - Keshav Mahavidyalaya, Atru, Dist. Baran, Rajasthan.">
+  <meta name="description" content="Campus Placement - Keshav Mahavidyalaya, Atru, Dist. Baran, Rajasthan. Career guidance, student preparation, placement support, skill development and academic links.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    .placement-hero-panel {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #ffffff;
+      border-radius: 24px;
+      padding: 36px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .placement-hero-panel h2 {
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.2;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+
+    .placement-hero-panel p {
+      color: #e5edf6;
+      margin-bottom: 14px;
+    }
+
+    .placement-info-box {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    .placement-info-box h3 {
+      color: #ffffff;
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .placement-info-box ul {
+      color: #e5edf6;
+      margin-left: 18px;
+      font-weight: 700;
+    }
+
+    .placement-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .placement-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+      transition: 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .placement-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .placement-card::before {
+      content: "";
+      position: absolute;
+      height: 6px;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: linear-gradient(90deg, var(--primary), var(--accent), var(--secondary));
+    }
+
+    .placement-card span {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: #eef6ff;
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      margin-bottom: 13px;
+    }
+
+    .placement-card h3 {
+      color: var(--primary);
+      font-size: 19px;
+      margin-bottom: 8px;
+    }
+
+    .placement-card p {
+      color: var(--muted);
+      font-size: 15px;
+      margin: 0;
+    }
+
+    .placement-layout {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .placement-panel {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+    }
+
+    .placement-panel h3 {
+      color: var(--primary);
+      font-size: 26px;
+      margin-bottom: 12px;
+    }
+
+    .placement-panel p {
+      color: var(--muted);
+      margin-bottom: 13px;
+    }
+
+    .prep-list {
+      display: grid;
+      gap: 13px;
+      margin-top: 18px;
+    }
+
+    .prep-item {
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 13px;
+      background: #f8fbff;
+      border: 1px solid #e8f1ff;
+      border-radius: 16px;
+      padding: 15px;
+      align-items: flex-start;
+    }
+
+    .prep-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: var(--primary);
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+
+    .prep-item strong {
+      color: var(--primary);
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .prep-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .career-flow {
+      display: grid;
+      gap: 14px;
+    }
+
+    .career-row {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      display: grid;
+      grid-template-columns: 110px 1fr auto;
+      gap: 16px;
+      align-items: center;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.04);
+    }
+
+    .career-label {
+      background: #eef6ff;
+      color: var(--primary);
+      border-radius: 14px;
+      padding: 12px;
+      text-align: center;
+      font-weight: 900;
+    }
+
+    .career-row h3 {
+      color: var(--primary);
+      font-size: 19px;
+      margin-bottom: 4px;
+    }
+
+    .career-row p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .placement-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 18px;
+      background: #ffffff;
+    }
+
+    .placement-table th,
+    .placement-table td {
+      border: 1px solid var(--border);
+      padding: 13px 14px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .placement-table th {
+      background: #eef6ff;
+      color: var(--primary);
+      font-weight: 900;
+    }
+
+    .placement-table td {
+      color: var(--muted);
+    }
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .skill-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+      transition: 0.25s ease;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .skill-card span {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: #eef6ff;
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .skill-card h3 {
+      color: var(--primary);
+      font-size: 20px;
+      margin-bottom: 9px;
+    }
+
+    .skill-card p {
+      color: var(--muted);
+      font-size: 15px;
+      margin: 0;
+    }
+
+    .placement-cta {
+      background: linear-gradient(115deg, rgba(11, 39, 70, 0.96), rgba(18, 60, 105, 0.9)), url("https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80") center/cover;
+      color: #ffffff;
+      border-radius: 24px;
+      padding: 38px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .placement-cta h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .placement-cta p {
+      color: #e5edf6;
+    }
+
+    @media (max-width: 1080px) {
+      .placement-hero-panel,
+      .placement-layout,
+      .placement-cta {
+        grid-template-columns: 1fr;
+      }
+
+      .placement-grid,
+      .skill-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .career-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .placement-grid,
+      .skill-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .placement-hero-panel,
+      .placement-panel,
+      .placement-cta {
+        padding: 26px;
+      }
+
+      .prep-item {
+        grid-template-columns: 1fr;
+      }
+
+      .placement-table th,
+      .placement-table td {
+        display: block;
+        width: 100%;
+      }
+    }
+  </style>
 </head>
+
 <body>
+
   <div class="topbar">
     <div class="container topbar-inner">
       <div class="topbar-left">
@@ -24,6 +361,7 @@
       </div>
     </div>
   </div>
+
   <header class="header">
     <div class="container header-main">
       <a class="brand" href="index.html">
@@ -33,165 +371,505 @@
           <p>Atru, Dist. Baran, Rajasthan</p>
         </div>
       </a>
+
       <div class="header-actions">
         <a class="btn btn-outline" href="contact.html">Contact</a>
         <a class="btn btn-primary" href="https://forms.gle/" target="_blank" rel="noopener">Apply Online</a>
         <button class="menu-toggle" onclick="toggleMenu()">Menu</button>
       </div>
     </div>
+
     <nav class="nav-wrap" id="mainNav">
       <div class="container">
-<ul class="nav">
-  <li><a href="index.html">Home</a></li>
-  <li>
-    <a href="about-organization.html">About</a>
-    <ul class="dropdown">
-      <li><a href="about-organization.html">About Organization</a></li>
-      <li><a href="vision-mission.html">Vision Mission</a></li>
-      <li><a href="chairmans-desk.html">Chairman's Desk</a></li>
-      <li><a href="directors-desk.html">Director's Desk</a></li>
-      <li><a href="principals-desk.html">Principal's Desk</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="admission-process.html">Admissions</a>
-    <ul class="dropdown">
-      <li><a href="admission-process.html">Admission Process</a></li>
-      <li><a href="itep-admission-2026-27-open.html">ITEP Admission 2026-27 Open</a></li>
-      <li><a href="https://forms.gle/" target="_blank" rel="noopener">Apply Online</a></li>
-      <li><a href="rules-and-regulations.html">Rules and Regulations</a></li>
-      <li><a href="https://sjmsnew.rajasthan.gov.in/" target="_blank" rel="noopener">Scholarship</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="programme.html">Academics</a>
-    <ul class="dropdown">
-      <li><a href="programme.html">Programme</a></li>
-      <li><a href="academic-calendar.html">Academic Calendar</a></li>
-      <li><a href="syllabus.html">Syllabus</a></li>
-      <li><a href="department.html">Department</a></li>
-      <li><a href="curriculum-feedback.html">Curriculum Feedback</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="admission-process.html">Student Zone</a>
-    <ul class="dropdown">
-      <li><a href="admission-process.html">Admission Process</a></li>
-      <li><a href="examination.html">Examination</a></li>
-      <li><a href="result.html">Result</a></li>
-      <li><a href="campus-placement.html">Campus Placement</a></li>
-      <li><a href="student-list-faculty-list.html">Student List & Faculty List</a></li>
-      <li><a href="faqs.html">FAQs</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="self-study-report-cycle-01.html">NAAC</a>
-    <ul class="dropdown mega">
-      <li><a href="self-study-report-cycle-01.html">Self Study Report</a></li>
-      <li><a href="criterion-1-curricular-aspects.html">Criterion 1</a></li>
-      <li><a href="criterion-2-teaching-learning-and-evaluation.html">Criterion 2</a></li>
-      <li><a href="criterion-3.html">Criterion 3</a></li>
-      <li><a href="criterion-4.html">Criterion 4</a></li>
-      <li><a href="criterion-5.html">Criterion 5</a></li>
-      <li><a href="criterion-6.html">Criterion 6</a></li>
-      <li><a href="criterion7.html">Criterion 7</a></li>
-      <li><a href="dvv-clarification.html">DVV Clarification</a></li>
-      <li><a href="naac-certificate.html">NAAC Certificate</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="iqac.html">IQAC</a>
-    <ul class="dropdown">
-      <li><a href="iqac.html">IQAC</a></li>
-      <li><a href="committee.html">Committee</a></li>
-      <li><a href="feedback-policy.html">Feedback Policy</a></li>
-      <li><a href="important-audit.html">Important Audit</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="approvals-affiliation.html">Approvals</a>
-    <ul class="dropdown">
-      <li><a href="govt-noc.html">GOVT NOC</a></li>
-      <li><a href="ncte-order.html">NCTE Order</a></li>
-      <li><a href="university-affiliation.html">University Affiliation</a></li>
-      <li><a href="approvals-affiliation.html">Approvals/Affiliation</a></li>
-      <li><a href="affiliation.html">Affiliation</a></li>
-      <li><a href="national-institutional-ranking-framework-nirf-2026.html">NIRF 2026</a></li>
-      <li><a href="khasra-no-institution.html">Khasra no Institution</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="laboratories.html">Facilities</a>
-    <ul class="dropdown">
-      <li><a href="laboratories.html">Laboratories</a></li>
-      <li><a href="library.html">Library</a></li>
-      <li><a href="playground.html">Playground</a></li>
-      <li><a href="nss.html">NSS</a></li>
-      <li><a href="skill-development.html">Skill Development</a></li>
-      <li><a href="seminar-workshop.html">Seminar-Workshop</a></li>
-      <li><a href="ict-facilities.html">ICT Facilities</a></li>
-      <li><a href="computer-lab.html">Computer Lab</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="photo-gallery.html">Gallery</a>
-    <ul class="dropdown">
-      <li><a href="photo-gallery.html">Photo Gallery</a></li>
-      <li><a href="video-gallery.html">Video Gallery</a></li>
-      <li><a href="downloads.html">Downloads</a></li>
-    </ul>
-  </li>
-  <li><a href="contact.html">Contact</a></li>
-</ul>
-</div>
+        <ul class="nav">
+          <li><a href="index.html">Home</a></li>
+
+          <li>
+            <a href="about-organization.html">About</a>
+            <ul class="dropdown">
+              <li><a href="about-organization.html">About Organization</a></li>
+              <li><a href="vision-mission.html">Vision Mission</a></li>
+              <li><a href="chairmans-desk.html">Chairman's Desk</a></li>
+              <li><a href="directors-desk.html">Director's Desk</a></li>
+              <li><a href="principals-desk.html">Principal's Desk</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="admission-process.html">Admissions</a>
+            <ul class="dropdown">
+              <li><a href="admission-process.html">Admission Process</a></li>
+              <li><a href="itep-admission-2026-27-open.html">ITEP Admission 2026-27 Open</a></li>
+              <li><a href="https://forms.gle/" target="_blank" rel="noopener">Apply Online</a></li>
+              <li><a href="rules-and-regulations.html">Rules and Regulations</a></li>
+              <li><a href="https://sjmsnew.rajasthan.gov.in/" target="_blank" rel="noopener">Scholarship</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="programme.html">Academics</a>
+            <ul class="dropdown">
+              <li><a href="programme.html">Programme</a></li>
+              <li><a href="academic-calendar.html">Academic Calendar</a></li>
+              <li><a href="syllabus.html">Syllabus</a></li>
+              <li><a href="department.html">Department</a></li>
+              <li><a href="curriculum-feedback.html">Curriculum Feedback</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="admission-process.html">Student Zone</a>
+            <ul class="dropdown">
+              <li><a href="admission-process.html">Admission Process</a></li>
+              <li><a href="examination.html">Examination</a></li>
+              <li><a href="result.html">Result</a></li>
+              <li><a href="campus-placement.html">Campus Placement</a></li>
+              <li><a href="student-list-faculty-list.html">Student List & Faculty List</a></li>
+              <li><a href="faqs.html">FAQs</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="self-study-report-cycle-01.html">NAAC</a>
+            <ul class="dropdown mega">
+              <li><a href="self-study-report-cycle-01.html">Self Study Report</a></li>
+              <li><a href="criterion-1-curricular-aspects.html">Criterion 1</a></li>
+              <li><a href="criterion-2-teaching-learning-and-evaluation.html">Criterion 2</a></li>
+              <li><a href="criterion-3.html">Criterion 3</a></li>
+              <li><a href="criterion-4.html">Criterion 4</a></li>
+              <li><a href="criterion-5.html">Criterion 5</a></li>
+              <li><a href="criterion-6.html">Criterion 6</a></li>
+              <li><a href="criterion7.html">Criterion 7</a></li>
+              <li><a href="dvv-clarification.html">DVV Clarification</a></li>
+              <li><a href="naac-certificate.html">NAAC Certificate</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="iqac.html">IQAC</a>
+            <ul class="dropdown">
+              <li><a href="iqac.html">IQAC</a></li>
+              <li><a href="committee.html">Committee</a></li>
+              <li><a href="feedback-policy.html">Feedback Policy</a></li>
+              <li><a href="important-audit.html">Important Audit</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="approvals-affiliation.html">Approvals</a>
+            <ul class="dropdown">
+              <li><a href="govt-noc.html">GOVT NOC</a></li>
+              <li><a href="ncte-order.html">NCTE Order</a></li>
+              <li><a href="university-affiliation.html">University Affiliation</a></li>
+              <li><a href="approvals-affiliation.html">Approvals/Affiliation</a></li>
+              <li><a href="affiliation.html">Affiliation</a></li>
+              <li><a href="national-institutional-ranking-framework-nirf-2026.html">NIRF 2026</a></li>
+              <li><a href="khasra-no-institution.html">Khasra no Institution</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="laboratories.html">Facilities</a>
+            <ul class="dropdown">
+              <li><a href="laboratories.html">Laboratories</a></li>
+              <li><a href="library.html">Library</a></li>
+              <li><a href="playground.html">Playground</a></li>
+              <li><a href="nss.html">NSS</a></li>
+              <li><a href="skill-development.html">Skill Development</a></li>
+              <li><a href="seminar-workshop.html">Seminar-Workshop</a></li>
+              <li><a href="ict-facilities.html">ICT Facilities</a></li>
+              <li><a href="computer-lab.html">Computer Lab</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="photo-gallery.html">Gallery</a>
+            <ul class="dropdown">
+              <li><a href="photo-gallery.html">Photo Gallery</a></li>
+              <li><a href="video-gallery.html">Video Gallery</a></li>
+              <li><a href="downloads.html">Downloads</a></li>
+            </ul>
+          </li>
+
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
 
   <main>
+
     <section class="page-hero">
       <div class="container">
         <div class="breadcrumb"><a href="index.html">Home</a> / Campus Placement</div>
         <h2>Campus Placement</h2>
-        <p>Student services including admission, syllabus, examination, result and placement.</p>
+        <p>
+          Career guidance, employability preparation, placement support and student development information for Keshav Mahavidyalaya, Atru.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="placement-hero-panel">
+          <div>
+            <span class="badge">Career Support</span>
+            <h2>Preparing Students for Career Opportunities</h2>
+            <p>
+              The campus placement section supports students in understanding employability skills, career preparation, interview readiness, communication development and professional growth. It connects academic learning with future opportunities.
+            </p>
+            <p>
+              Placement notices, training details, company information or career guidance updates can be added to this page whenever available.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="skill-development.html">Skill Development</a>
+              <a class="btn btn-outline" href="programme.html">Programmes</a>
+              <a class="btn btn-outline" href="contact.html">Contact Office</a>
+            </div>
+          </div>
+
+          <aside class="placement-info-box">
+            <h3>Placement Page Covers</h3>
+            <ul>
+              <li>Career guidance</li>
+              <li>Employability skills</li>
+              <li>Resume and interview preparation</li>
+              <li>Placement process flow</li>
+              <li>Skill development links</li>
+              <li>Student support and contact</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-title">
+          <span>Placement Support</span>
+          <h2>Career Preparation Areas</h2>
+          <p>
+            Students should prepare for career opportunities through academic knowledge, communication skills, confidence and practical awareness.
+          </p>
+        </div>
+
+        <div class="placement-grid">
+          <div class="placement-card">
+            <span>01</span>
+            <h3>Career Guidance</h3>
+            <p>Students are guided to understand suitable career paths based on their programme and interest.</p>
+          </div>
+
+          <div class="placement-card">
+            <span>02</span>
+            <h3>Resume Preparation</h3>
+            <p>Students should prepare a clear resume with academic details, skills and achievements.</p>
+          </div>
+
+          <div class="placement-card">
+            <span>03</span>
+            <h3>Interview Readiness</h3>
+            <p>Interview preparation helps students build confidence and present themselves professionally.</p>
+          </div>
+
+          <div class="placement-card">
+            <span>04</span>
+            <h3>Communication Skills</h3>
+            <p>Students should improve speaking, writing and professional communication skills.</p>
+          </div>
+
+          <div class="placement-card">
+            <span>05</span>
+            <h3>Skill Development</h3>
+            <p>Skill development activities improve employability, confidence and practical readiness.</p>
+          </div>
+
+          <div class="placement-card">
+            <span>06</span>
+            <h3>Academic Strength</h3>
+            <p>Strong subject knowledge and academic performance support future opportunities.</p>
+          </div>
+
+          <div class="placement-card">
+            <span>07</span>
+            <h3>Professional Values</h3>
+            <p>Discipline, responsibility, punctuality and ethical conduct are important for career growth.</p>
+          </div>
+
+          <div class="placement-card">
+            <span>08</span>
+            <h3>Higher Education</h3>
+            <p>Students may also prepare for higher studies, competitive exams and professional courses.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container placement-layout">
+        <article class="placement-panel">
+          <h3>Student Preparation Guidance</h3>
+          <p>
+            Career preparation should begin during the academic session. Students should use classroom learning, library resources, seminars, workshops, NSS, skill development activities and faculty guidance to prepare for future opportunities.
+          </p>
+
+          <div class="prep-list">
+            <div class="prep-item">
+              <div class="prep-icon">A</div>
+              <div>
+                <strong>Build Academic Foundation</strong>
+                <p>Focus on syllabus, regular classes, subject clarity and examination performance.</p>
+              </div>
+            </div>
+
+            <div class="prep-item">
+              <div class="prep-icon">B</div>
+              <div>
+                <strong>Prepare Professional Profile</strong>
+                <p>Maintain a simple resume with academic details, skills, activities and achievements.</p>
+              </div>
+            </div>
+
+            <div class="prep-item">
+              <div class="prep-icon">C</div>
+              <div>
+                <strong>Improve Communication</strong>
+                <p>Practice speaking, writing, group discussion, basic computer use and interview communication.</p>
+              </div>
+            </div>
+
+            <div class="prep-item">
+              <div class="prep-icon">D</div>
+              <div>
+                <strong>Participate in Activities</strong>
+                <p>Attend seminars, workshops, skill development sessions and campus activities for exposure.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <aside class="sidebar">
+          <div class="side-box">
+            <h3>Student Zone</h3>
+            <ul>
+              <li><a href="admission-process.html">Admission Process</a></li>
+              <li><a href="examination.html">Examination</a></li>
+              <li><a href="result.html">Result</a></li>
+              <li><a href="campus-placement.html">Campus Placement</a></li>
+              <li><a href="student-list-faculty-list.html">Student List & Faculty List</a></li>
+              <li><a href="faqs.html">FAQs</a></li>
+            </ul>
+          </div>
+
+          <div class="side-box">
+            <h3>Career Support Links</h3>
+            <ul>
+              <li><a href="skill-development.html">Skill Development</a></li>
+              <li><a href="seminar-workshop.html">Seminar-Workshop</a></li>
+              <li><a href="library.html">Library</a></li>
+              <li><a href="computer-lab.html">Computer Lab</a></li>
+              <li><a href="ict-facilities.html">ICT Facilities</a></li>
+            </ul>
+          </div>
+
+          <div class="side-box">
+            <h3>Need Help?</h3>
+            <p>For placement or student-support information, contact the college office.</p>
+            <br>
+            <a class="btn btn-primary" href="contact.html">Contact Office</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-title">
+          <span>Placement Flow</span>
+          <h2>Career Support Process</h2>
+          <p>
+            Placement and career support can be organized through the following student preparation flow.
+          </p>
+        </div>
+
+        <div class="career-flow">
+          <div class="career-row">
+            <div class="career-label">Step 01</div>
+            <div>
+              <h3>Student Registration and Interest Collection</h3>
+              <p>Students may provide academic details, career interest and contact information when placement activities are organized.</p>
+            </div>
+            <a class="btn btn-outline" href="contact.html">Contact</a>
+          </div>
+
+          <div class="career-row">
+            <div class="career-label">Step 02</div>
+            <div>
+              <h3>Resume and Document Preparation</h3>
+              <p>Students prepare resume, academic records, certificates and required documents for career opportunities.</p>
+            </div>
+            <a class="btn btn-outline" href="downloads.html">Downloads</a>
+          </div>
+
+          <div class="career-row">
+            <div class="career-label">Step 03</div>
+            <div>
+              <h3>Training and Skill Development</h3>
+              <p>Communication, computer literacy, personality development and interview preparation support student readiness.</p>
+            </div>
+            <a class="btn btn-outline" href="skill-development.html">Skills</a>
+          </div>
+
+          <div class="career-row">
+            <div class="career-label">Step 04</div>
+            <div>
+              <h3>Placement / Career Opportunity Information</h3>
+              <p>Notices related to placement, job opportunities, internships or career guidance can be added here.</p>
+            </div>
+            <a class="btn btn-outline" href="downloads.html">Notices</a>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container content-layout">
         <article class="content-card">
-          <h3>Campus Placement</h3>
-          
-          <p>This page has been created for <strong>Campus Placement</strong> under the new Keshav Mahavidyalaya website structure.</p>
-          <p>The layout follows the same professional college website design with proper header, footer, internal navigation, page title, content card, related links and responsive mobile view.</p>
-          <table class="info-table">
-            <tr><th>Page Name</th><td>Campus Placement</td></tr>
-            <tr><th>College</th><td>Keshav Mahavidyalaya, Atru</td></tr>
-            <tr><th>Status</th><td>Ready for official content, PDFs, images and CMS data.</td></tr>
+          <h3>Placement and Career Support Reference</h3>
+          <p>
+            This table connects placement preparation with useful college sections.
+          </p>
+
+          <table class="placement-table">
+            <tr>
+              <th>Requirement</th>
+              <th>Purpose</th>
+              <th>Related Page</th>
+            </tr>
+            <tr>
+              <td>Academic Programme</td>
+              <td>Programme and department-wise academic background for career planning.</td>
+              <td><a href="programme.html">Programme</a></td>
+            </tr>
+            <tr>
+              <td>Skill Development</td>
+              <td>Employability, confidence, communication and practical skill support.</td>
+              <td><a href="skill-development.html">Skill Development</a></td>
+            </tr>
+            <tr>
+              <td>Seminar-Workshop</td>
+              <td>Exposure, learning activities, expert sessions and student participation.</td>
+              <td><a href="seminar-workshop.html">Seminar-Workshop</a></td>
+            </tr>
+            <tr>
+              <td>Computer Lab</td>
+              <td>Computer literacy, digital learning and technical practice support.</td>
+              <td><a href="computer-lab.html">Computer Lab</a></td>
+            </tr>
+            <tr>
+              <td>Library</td>
+              <td>Reference books, academic resources and study support.</td>
+              <td><a href="library.html">Library</a></td>
+            </tr>
+            <tr>
+              <td>Contact</td>
+              <td>Office support for student and placement-related information.</td>
+              <td><a href="contact.html">Contact</a></td>
+            </tr>
           </table>
-        
         </article>
-        
+
         <aside class="sidebar">
           <div class="side-box">
-            <h3>Related Links</h3>
-            <ul><li><a href="rules-and-regulations.html">Rules and Regulations</a></li>
-<li><a href="syllabus.html">Syllabus</a></li>
-<li><a href="examination.html">Examination</a></li>
-<li><a href="result.html">Result</a></li>
-<li><a href="campus-placement.html">Campus Placement</a></li>
-<li><a href="faqs.html">FAQs</a></li>
-<li><a href="student-list-faculty-list.html">Student List &amp; Faculty List</a></li></ul>
+            <h3>Academic Links</h3>
+            <ul>
+              <li><a href="programme.html">Programme</a></li>
+              <li><a href="department.html">Department</a></li>
+              <li><a href="academic-calendar.html">Academic Calendar</a></li>
+              <li><a href="syllabus.html">Syllabus</a></li>
+              <li><a href="examination.html">Examination</a></li>
+            </ul>
           </div>
+
           <div class="side-box">
-            <h3>Need Help?</h3>
-            <p>For admission and general enquiry, contact the college office.</p>
-            <br>
-            <a class="btn btn-primary" href="contact.html">Contact Office</a>
+            <h3>Contact Details</h3>
+            <p>Email: <a href="mailto:keshavcollege02@gmail.com">keshavcollege02@gmail.com</a></p>
+            <p>Phone: 9929521506, 9636150093, 9460558050</p>
           </div>
         </aside>
-
       </div>
     </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-title">
+          <span>Employability Skills</span>
+          <h2>Skills Students Should Develop</h2>
+          <p>
+            Career preparation depends on a combination of academic knowledge, communication, confidence and professional behavior.
+          </p>
+        </div>
+
+        <div class="skill-grid">
+          <div class="skill-card">
+            <span>01</span>
+            <h3>Communication</h3>
+            <p>Clear speaking, writing and listening skills help in interviews and professional environments.</p>
+          </div>
+
+          <div class="skill-card">
+            <span>02</span>
+            <h3>Digital Skills</h3>
+            <p>Basic computer and digital skills support academic, career and workplace readiness.</p>
+          </div>
+
+          <div class="skill-card">
+            <span>03</span>
+            <h3>Confidence</h3>
+            <p>Confidence improves interview performance, presentation and student participation.</p>
+          </div>
+
+          <div class="skill-card">
+            <span>04</span>
+            <h3>Teamwork</h3>
+            <p>Teamwork helps students work effectively in group activities and professional settings.</p>
+          </div>
+
+          <div class="skill-card">
+            <span>05</span>
+            <h3>Problem Solving</h3>
+            <p>Critical thinking and problem-solving ability are important for career success.</p>
+          </div>
+
+          <div class="skill-card">
+            <span>06</span>
+            <h3>Professional Discipline</h3>
+            <p>Punctuality, responsibility, respect and ethical conduct are essential employability qualities.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="placement-cta">
+          <div>
+            <h2>Prepare for Your Future Career</h2>
+            <p>
+              Use academic learning, skill development, seminars, workshops, library and computer facilities to build a strong career foundation.
+            </p>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="skill-development.html">Skill Development</a>
+            <a class="btn btn-outline" href="seminar-workshop.html">Seminar-Workshop</a>
+            <a class="btn btn-outline" href="contact.html">Contact Office</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
@@ -202,6 +880,7 @@
         <p style="margin-top:10px;">Email: <a href="mailto:keshavcollege02@gmail.com">keshavcollege02@gmail.com</a></p>
         <p>Phone: 9929521506, 9636150093, 9460558050</p>
       </div>
+
       <div>
         <h4>Quick Links</h4>
         <ul>
@@ -211,6 +890,7 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
+
       <div>
         <h4>Important</h4>
         <ul>
@@ -220,6 +900,7 @@
           <li><a href="national-institutional-ranking-framework-nirf-2026.html">NIRF 2026</a></li>
         </ul>
       </div>
+
       <div>
         <h4>Student Zone</h4>
         <ul>
@@ -230,10 +911,12 @@
         </ul>
       </div>
     </div>
+
     <div class="footer-bottom">
       <div class="container">Copyright © 2007 All Right Reserved KESHAV MAHAVIDYALAYA</div>
     </div>
   </footer>
+
   <script src="assets/js/main.js"></script>
 </body>
 </html>
