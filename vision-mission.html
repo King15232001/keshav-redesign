@@ -4,13 +4,285 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vision Mission | Keshav Mahavidyalaya, Atru</title>
-  <meta name="description" content="Vision Mission - Keshav Mahavidyalaya, Atru, Dist. Baran, Rajasthan.">
+  <meta name="description" content="Vision and Mission of Keshav Mahavidyalaya, Atru, Dist. Baran, Rajasthan - institutional vision, mission, objectives, values and student development focus.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    .vm-hero-card {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #ffffff;
+      border-radius: 24px;
+      padding: 34px;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 28px;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .vm-hero-card h2 {
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .vm-hero-card p {
+      color: #e5edf6;
+      margin-bottom: 12px;
+    }
+
+    .vm-points {
+      display: grid;
+      gap: 12px;
+    }
+
+    .vm-point {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 16px;
+      padding: 15px 16px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .vm-point small {
+      display: block;
+      color: #ffe9a6;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      font-weight: 900;
+      margin-bottom: 4px;
+    }
+
+    .vision-mission-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .big-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .big-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: linear-gradient(90deg, var(--primary), var(--accent), var(--secondary));
+    }
+
+    .big-card .card-label {
+      display: inline-flex;
+      background: #eef6ff;
+      color: var(--primary);
+      border-radius: 999px;
+      padding: 8px 13px;
+      font-weight: 900;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      margin-bottom: 16px;
+    }
+
+    .big-card h3 {
+      color: var(--primary);
+      font-size: 28px;
+      margin-bottom: 13px;
+    }
+
+    .big-card p {
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .objective-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .objective-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+      transition: 0.25s ease;
+    }
+
+    .objective-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .objective-card span {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: #eef6ff;
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .objective-card h3 {
+      color: var(--primary);
+      font-size: 20px;
+      margin-bottom: 9px;
+    }
+
+    .objective-card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .values-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .value-row {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 14px;
+      align-items: flex-start;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.04);
+    }
+
+    .value-row-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 15px;
+      background: var(--primary);
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+
+    .value-row h3 {
+      color: var(--primary);
+      font-size: 19px;
+      margin-bottom: 5px;
+    }
+
+    .value-row p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .outcome-band {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+    }
+
+    .outcome-band h3 {
+      color: var(--primary);
+      font-size: 26px;
+      margin-bottom: 12px;
+    }
+
+    .outcome-band p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .outcome-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .outcome-box {
+      background: #f8fbff;
+      border: 1px solid #e8f1ff;
+      border-radius: 16px;
+      padding: 18px;
+      text-align: center;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .vm-cta {
+      background: linear-gradient(115deg, rgba(11, 39, 70, 0.96), rgba(18, 60, 105, 0.9)), url("https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1600&q=80") center/cover;
+      color: #ffffff;
+      border-radius: 24px;
+      padding: 38px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .vm-cta h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .vm-cta p {
+      color: #e5edf6;
+    }
+
+    @media (max-width: 1080px) {
+      .vm-hero-card,
+      .vision-mission-grid,
+      .vm-cta {
+        grid-template-columns: 1fr;
+      }
+
+      .objective-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .outcome-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .objective-grid,
+      .values-list,
+      .outcome-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .vm-hero-card,
+      .vm-cta {
+        padding: 26px;
+      }
+
+      .value-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
+
 <body>
+
   <div class="topbar">
     <div class="container topbar-inner">
       <div class="topbar-left">
@@ -24,6 +296,7 @@
       </div>
     </div>
   </div>
+
   <header class="header">
     <div class="container header-main">
       <a class="brand" href="index.html">
@@ -33,163 +306,405 @@
           <p>Atru, Dist. Baran, Rajasthan</p>
         </div>
       </a>
+
       <div class="header-actions">
         <a class="btn btn-outline" href="contact.html">Contact</a>
         <a class="btn btn-primary" href="https://forms.gle/" target="_blank" rel="noopener">Apply Online</a>
         <button class="menu-toggle" onclick="toggleMenu()">Menu</button>
       </div>
     </div>
+
     <nav class="nav-wrap" id="mainNav">
       <div class="container">
-<ul class="nav">
-  <li><a href="index.html">Home</a></li>
-  <li>
-    <a href="about-organization.html">About</a>
-    <ul class="dropdown">
-      <li><a href="about-organization.html">About Organization</a></li>
-      <li><a href="vision-mission.html">Vision Mission</a></li>
-      <li><a href="chairmans-desk.html">Chairman's Desk</a></li>
-      <li><a href="directors-desk.html">Director's Desk</a></li>
-      <li><a href="principals-desk.html">Principal's Desk</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="admission-process.html">Admissions</a>
-    <ul class="dropdown">
-      <li><a href="admission-process.html">Admission Process</a></li>
-      <li><a href="itep-admission-2026-27-open.html">ITEP Admission 2026-27 Open</a></li>
-      <li><a href="https://forms.gle/" target="_blank" rel="noopener">Apply Online</a></li>
-      <li><a href="rules-and-regulations.html">Rules and Regulations</a></li>
-      <li><a href="https://sjmsnew.rajasthan.gov.in/" target="_blank" rel="noopener">Scholarship</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="programme.html">Academics</a>
-    <ul class="dropdown">
-      <li><a href="programme.html">Programme</a></li>
-      <li><a href="academic-calendar.html">Academic Calendar</a></li>
-      <li><a href="syllabus.html">Syllabus</a></li>
-      <li><a href="department.html">Department</a></li>
-      <li><a href="curriculum-feedback.html">Curriculum Feedback</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="admission-process.html">Student Zone</a>
-    <ul class="dropdown">
-      <li><a href="admission-process.html">Admission Process</a></li>
-      <li><a href="examination.html">Examination</a></li>
-      <li><a href="result.html">Result</a></li>
-      <li><a href="campus-placement.html">Campus Placement</a></li>
-      <li><a href="student-list-faculty-list.html">Student List & Faculty List</a></li>
-      <li><a href="faqs.html">FAQs</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="self-study-report-cycle-01.html">NAAC</a>
-    <ul class="dropdown mega">
-      <li><a href="self-study-report-cycle-01.html">Self Study Report</a></li>
-      <li><a href="criterion-1-curricular-aspects.html">Criterion 1</a></li>
-      <li><a href="criterion-2-teaching-learning-and-evaluation.html">Criterion 2</a></li>
-      <li><a href="criterion-3.html">Criterion 3</a></li>
-      <li><a href="criterion-4.html">Criterion 4</a></li>
-      <li><a href="criterion-5.html">Criterion 5</a></li>
-      <li><a href="criterion-6.html">Criterion 6</a></li>
-      <li><a href="criterion7.html">Criterion 7</a></li>
-      <li><a href="dvv-clarification.html">DVV Clarification</a></li>
-      <li><a href="naac-certificate.html">NAAC Certificate</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="iqac.html">IQAC</a>
-    <ul class="dropdown">
-      <li><a href="iqac.html">IQAC</a></li>
-      <li><a href="committee.html">Committee</a></li>
-      <li><a href="feedback-policy.html">Feedback Policy</a></li>
-      <li><a href="important-audit.html">Important Audit</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="approvals-affiliation.html">Approvals</a>
-    <ul class="dropdown">
-      <li><a href="govt-noc.html">GOVT NOC</a></li>
-      <li><a href="ncte-order.html">NCTE Order</a></li>
-      <li><a href="university-affiliation.html">University Affiliation</a></li>
-      <li><a href="approvals-affiliation.html">Approvals/Affiliation</a></li>
-      <li><a href="affiliation.html">Affiliation</a></li>
-      <li><a href="national-institutional-ranking-framework-nirf-2026.html">NIRF 2026</a></li>
-      <li><a href="khasra-no-institution.html">Khasra no Institution</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="laboratories.html">Facilities</a>
-    <ul class="dropdown">
-      <li><a href="laboratories.html">Laboratories</a></li>
-      <li><a href="library.html">Library</a></li>
-      <li><a href="playground.html">Playground</a></li>
-      <li><a href="nss.html">NSS</a></li>
-      <li><a href="skill-development.html">Skill Development</a></li>
-      <li><a href="seminar-workshop.html">Seminar-Workshop</a></li>
-      <li><a href="ict-facilities.html">ICT Facilities</a></li>
-      <li><a href="computer-lab.html">Computer Lab</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="photo-gallery.html">Gallery</a>
-    <ul class="dropdown">
-      <li><a href="photo-gallery.html">Photo Gallery</a></li>
-      <li><a href="video-gallery.html">Video Gallery</a></li>
-      <li><a href="downloads.html">Downloads</a></li>
-    </ul>
-  </li>
-  <li><a href="contact.html">Contact</a></li>
-</ul>
-</div>
+        <ul class="nav">
+          <li><a href="index.html">Home</a></li>
+
+          <li>
+            <a href="about-organization.html">About</a>
+            <ul class="dropdown">
+              <li><a href="about-organization.html">About Organization</a></li>
+              <li><a href="vision-mission.html">Vision Mission</a></li>
+              <li><a href="chairmans-desk.html">Chairman's Desk</a></li>
+              <li><a href="directors-desk.html">Director's Desk</a></li>
+              <li><a href="principals-desk.html">Principal's Desk</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="admission-process.html">Admissions</a>
+            <ul class="dropdown">
+              <li><a href="admission-process.html">Admission Process</a></li>
+              <li><a href="itep-admission-2026-27-open.html">ITEP Admission 2026-27 Open</a></li>
+              <li><a href="https://forms.gle/" target="_blank" rel="noopener">Apply Online</a></li>
+              <li><a href="rules-and-regulations.html">Rules and Regulations</a></li>
+              <li><a href="https://sjmsnew.rajasthan.gov.in/" target="_blank" rel="noopener">Scholarship</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="programme.html">Academics</a>
+            <ul class="dropdown">
+              <li><a href="programme.html">Programme</a></li>
+              <li><a href="academic-calendar.html">Academic Calendar</a></li>
+              <li><a href="syllabus.html">Syllabus</a></li>
+              <li><a href="department.html">Department</a></li>
+              <li><a href="curriculum-feedback.html">Curriculum Feedback</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="admission-process.html">Student Zone</a>
+            <ul class="dropdown">
+              <li><a href="admission-process.html">Admission Process</a></li>
+              <li><a href="examination.html">Examination</a></li>
+              <li><a href="result.html">Result</a></li>
+              <li><a href="campus-placement.html">Campus Placement</a></li>
+              <li><a href="student-list-faculty-list.html">Student List & Faculty List</a></li>
+              <li><a href="faqs.html">FAQs</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="self-study-report-cycle-01.html">NAAC</a>
+            <ul class="dropdown mega">
+              <li><a href="self-study-report-cycle-01.html">Self Study Report</a></li>
+              <li><a href="criterion-1-curricular-aspects.html">Criterion 1</a></li>
+              <li><a href="criterion-2-teaching-learning-and-evaluation.html">Criterion 2</a></li>
+              <li><a href="criterion-3.html">Criterion 3</a></li>
+              <li><a href="criterion-4.html">Criterion 4</a></li>
+              <li><a href="criterion-5.html">Criterion 5</a></li>
+              <li><a href="criterion-6.html">Criterion 6</a></li>
+              <li><a href="criterion7.html">Criterion 7</a></li>
+              <li><a href="dvv-clarification.html">DVV Clarification</a></li>
+              <li><a href="naac-certificate.html">NAAC Certificate</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="iqac.html">IQAC</a>
+            <ul class="dropdown">
+              <li><a href="iqac.html">IQAC</a></li>
+              <li><a href="committee.html">Committee</a></li>
+              <li><a href="feedback-policy.html">Feedback Policy</a></li>
+              <li><a href="important-audit.html">Important Audit</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="approvals-affiliation.html">Approvals</a>
+            <ul class="dropdown">
+              <li><a href="govt-noc.html">GOVT NOC</a></li>
+              <li><a href="ncte-order.html">NCTE Order</a></li>
+              <li><a href="university-affiliation.html">University Affiliation</a></li>
+              <li><a href="approvals-affiliation.html">Approvals/Affiliation</a></li>
+              <li><a href="affiliation.html">Affiliation</a></li>
+              <li><a href="national-institutional-ranking-framework-nirf-2026.html">NIRF 2026</a></li>
+              <li><a href="khasra-no-institution.html">Khasra no Institution</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="laboratories.html">Facilities</a>
+            <ul class="dropdown">
+              <li><a href="laboratories.html">Laboratories</a></li>
+              <li><a href="library.html">Library</a></li>
+              <li><a href="playground.html">Playground</a></li>
+              <li><a href="nss.html">NSS</a></li>
+              <li><a href="skill-development.html">Skill Development</a></li>
+              <li><a href="seminar-workshop.html">Seminar-Workshop</a></li>
+              <li><a href="ict-facilities.html">ICT Facilities</a></li>
+              <li><a href="computer-lab.html">Computer Lab</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="photo-gallery.html">Gallery</a>
+            <ul class="dropdown">
+              <li><a href="photo-gallery.html">Photo Gallery</a></li>
+              <li><a href="video-gallery.html">Video Gallery</a></li>
+              <li><a href="downloads.html">Downloads</a></li>
+            </ul>
+          </li>
+
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
 
   <main>
+
     <section class="page-hero">
       <div class="container">
         <div class="breadcrumb"><a href="index.html">Home</a> / Vision Mission</div>
         <h2>Vision Mission</h2>
-        <p>About Keshav Mahavidyalaya, its leadership, vision, mission and institutional values.</p>
+        <p>
+          The vision and mission of Keshav Mahavidyalaya guide the institution toward quality education, ethical development, leadership, teamwork, critical thinking and social contribution.
+        </p>
       </div>
     </section>
 
     <section class="section">
-      <div class="container content-layout">
-        <article class="content-card">
-          <h3>Vision Mission</h3>
-          
-          <p>This page has been created for <strong>Vision Mission</strong> under the new Keshav Mahavidyalaya website structure.</p>
-          <p>The layout follows the same professional college website design with proper header, footer, internal navigation, page title, content card, related links and responsive mobile view.</p>
-          <table class="info-table">
-            <tr><th>Page Name</th><td>Vision Mission</td></tr>
-            <tr><th>College</th><td>Keshav Mahavidyalaya, Atru</td></tr>
-            <tr><th>Status</th><td>Ready for official content, PDFs, images and CMS data.</td></tr>
-          </table>
-        
-        </article>
-        
-        <aside class="sidebar">
-          <div class="side-box">
-            <h3>Related Links</h3>
-            <ul><li><a href="about-organization.html">About Organization</a></li>
-<li><a href="vision-mission.html">Vision Mission</a></li>
-<li><a href="chairmans-desk.html">Chairman&#x27;s Desk</a></li>
-<li><a href="directors-desk.html">Director&#x27;s Desk</a></li>
-<li><a href="principals-desk.html">Principal&#x27;s Desk</a></li></ul>
-          </div>
-          <div class="side-box">
-            <h3>Need Help?</h3>
-            <p>For admission and general enquiry, contact the college office.</p>
-            <br>
-            <a class="btn btn-primary" href="contact.html">Contact Office</a>
-          </div>
-        </aside>
+      <div class="container">
+        <div class="vm-hero-card">
+          <div>
+            <span class="badge">Institutional Direction</span>
+            <h2>Building Responsible Learners and Future Leaders</h2>
+            <p>
+              Keshav Mahavidyalaya works with a clear educational purpose: to provide value-added quality education and to help students become responsible individuals who can contribute positively to society.
+            </p>
+            <p>
+              The institution emphasizes academic knowledge, ethical and moral values, leadership qualities, teamwork, critical thinking and a research-oriented learning culture.
+            </p>
 
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="programme.html">View Programmes</a>
+              <a class="btn btn-outline" href="about-organization.html">About College</a>
+            </div>
+          </div>
+
+          <div class="vm-points">
+            <div class="vm-point">
+              <small>Academic Purpose</small>
+              Value-added quality education for meaningful student development.
+            </div>
+            <div class="vm-point">
+              <small>Student Growth</small>
+              Leadership, teamwork, discipline and confidence-building.
+            </div>
+            <div class="vm-point">
+              <small>Social Contribution</small>
+              Education that supports responsible citizenship and community development.
+            </div>
+          </div>
+        </div>
       </div>
     </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-title">
+          <span>Vision & Mission</span>
+          <h2>Our Institutional Commitment</h2>
+          <p>
+            The vision and mission define the long-term direction of the college and the educational responsibilities carried by the institution.
+          </p>
+        </div>
+
+        <div class="vision-mission-grid">
+          <article class="big-card">
+            <span class="card-label">Vision</span>
+            <h3>Our Vision</h3>
+            <p>
+              The vision of KeshavMahavidyalaya is to make leaders who contribute to the betterment of society by developing innovative skills, ethical and moral values, leadership qualities and teamwork, critical thinking, and research culture.
+            </p>
+            <p>
+              The college envisions students as responsible citizens and capable learners who can apply knowledge, values and skills in real-life situations. The institution aims to support students in becoming confident, disciplined and socially aware individuals.
+            </p>
+          </article>
+
+          <article class="big-card">
+            <span class="card-label">Mission</span>
+            <h3>Our Mission</h3>
+            <p>
+              The mission of the college is to provide value-added quality education to all students, with special emphasis on the economically poor sections of society.
+            </p>
+            <p>
+              The institution works to create an academic environment where students can access higher education, develop subject knowledge, build professional confidence, participate in co-curricular learning and prepare themselves for future opportunities.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <span>Objectives</span>
+          <h2>Core Objectives of the Institution</h2>
+          <p>
+            The objectives of Keshav Mahavidyalaya are aligned with academic development, quality education, inclusiveness and overall student growth.
+          </p>
+        </div>
+
+        <div class="objective-grid">
+          <div class="objective-card">
+            <span>01</span>
+            <h3>Promote Quality Education</h3>
+            <p>
+              To provide value-added education that helps students gain academic knowledge, subject clarity and confidence.
+            </p>
+          </div>
+
+          <div class="objective-card">
+            <span>02</span>
+            <h3>Support Inclusive Learning</h3>
+            <p>
+              To support students from different social and economic backgrounds, especially economically weaker sections.
+            </p>
+          </div>
+
+          <div class="objective-card">
+            <span>03</span>
+            <h3>Develop Leadership</h3>
+            <p>
+              To encourage leadership qualities, responsible decision-making, teamwork and active student participation.
+            </p>
+          </div>
+
+          <div class="objective-card">
+            <span>04</span>
+            <h3>Build Ethical Values</h3>
+            <p>
+              To strengthen ethical awareness, moral values, discipline, social responsibility and respect for others.
+            </p>
+          </div>
+
+          <div class="objective-card">
+            <span>05</span>
+            <h3>Encourage Critical Thinking</h3>
+            <p>
+              To develop analytical thinking, problem-solving ability, curiosity and independent learning habits.
+            </p>
+          </div>
+
+          <div class="objective-card">
+            <span>06</span>
+            <h3>Promote Research Culture</h3>
+            <p>
+              To encourage academic inquiry, innovation, research attitude and knowledge-based growth among students.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container content-layout">
+        <article class="content-card">
+          <h3>Values Reflected in the Vision and Mission</h3>
+          <p>
+            The vision and mission are not only formal statements; they define the educational character of the institution. These values shape academic planning, student support, institutional policies and overall campus culture.
+          </p>
+
+          <div class="values-list" style="margin-top:18px;">
+            <div class="value-row">
+              <div class="value-row-icon">A</div>
+              <div>
+                <h3>Academic Excellence</h3>
+                <p>Encouraging students to achieve subject knowledge, learning discipline and academic progress.</p>
+              </div>
+            </div>
+
+            <div class="value-row">
+              <div class="value-row-icon">B</div>
+              <div>
+                <h3>Equity and Access</h3>
+                <p>Supporting meaningful access to higher education for students from all sections of society.</p>
+              </div>
+            </div>
+
+            <div class="value-row">
+              <div class="value-row-icon">C</div>
+              <div>
+                <h3>Integrity</h3>
+                <p>Promoting honesty, responsibility, discipline and ethical conduct in academic and personal life.</p>
+              </div>
+            </div>
+
+            <div class="value-row">
+              <div class="value-row-icon">D</div>
+              <div>
+                <h3>Social Responsibility</h3>
+                <p>Preparing students to contribute positively to society through knowledge, values and service.</p>
+              </div>
+            </div>
+
+            <div class="value-row">
+              <div class="value-row-icon">E</div>
+              <div>
+                <h3>Innovation</h3>
+                <p>Developing innovative skills, problem-solving ability and openness to new ideas.</p>
+              </div>
+            </div>
+
+            <div class="value-row">
+              <div class="value-row-icon">F</div>
+              <div>
+                <h3>Teamwork</h3>
+                <p>Encouraging cooperation, group participation, peer learning and collaborative development.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <aside class="sidebar">
+          <div class="side-box">
+            <h3>About Links</h3>
+            <ul>
+              <li><a href="about-organization.html">About Organization</a></li>
+              <li><a href="vision-mission.html">Vision Mission</a></li>
+              <li><a href="chairmans-desk.html">Chairman's Desk</a></li>
+              <li><a href="directors-desk.html">Director's Desk</a></li>
+              <li><a href="principals-desk.html">Principal's Desk</a></li>
+            </ul>
+          </div>
+
+          <div class="side-box">
+            <h3>Academic Links</h3>
+            <ul>
+              <li><a href="programme.html">Programme</a></li>
+              <li><a href="department.html">Department</a></li>
+              <li><a href="academic-calendar.html">Academic Calendar</a></li>
+              <li><a href="syllabus.html">Syllabus</a></li>
+              <li><a href="admission-process.html">Admission Process</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="outcome-band">
+          <h3>Student Outcomes Expected Through the Vision and Mission</h3>
+          <p>
+            The college seeks to help students grow into informed, skilled, ethical and socially responsible individuals. Through academic programmes, student services, facilities, quality initiatives and institutional support, students are encouraged to develop the following outcomes.
+          </p>
+
+          <div class="outcome-grid">
+            <div class="outcome-box">Subject Knowledge</div>
+            <div class="outcome-box">Communication Skills</div>
+            <div class="outcome-box">Leadership Ability</div>
+            <div class="outcome-box">Team Spirit</div>
+            <div class="outcome-box">Moral Values</div>
+            <div class="outcome-box">Critical Thinking</div>
+            <div class="outcome-box">Research Attitude</div>
+            <div class="outcome-box">Social Awareness</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="vm-cta">
+          <div>
+            <h2>Learn More About the Institution</h2>
+            <p>
+              Explore the About, Academic, Admission, NAAC and IQAC sections to understand the institution’s academic structure and quality initiatives.
+            </p>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="about-organization.html">About Organization</a>
+            <a class="btn btn-outline" href="programme.html">Programmes</a>
+            <a class="btn btn-outline" href="iqac.html">IQAC</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
@@ -200,6 +715,7 @@
         <p style="margin-top:10px;">Email: <a href="mailto:keshavcollege02@gmail.com">keshavcollege02@gmail.com</a></p>
         <p>Phone: 9929521506, 9636150093, 9460558050</p>
       </div>
+
       <div>
         <h4>Quick Links</h4>
         <ul>
@@ -209,6 +725,7 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
+
       <div>
         <h4>Important</h4>
         <ul>
@@ -218,6 +735,7 @@
           <li><a href="national-institutional-ranking-framework-nirf-2026.html">NIRF 2026</a></li>
         </ul>
       </div>
+
       <div>
         <h4>Student Zone</h4>
         <ul>
@@ -228,10 +746,12 @@
         </ul>
       </div>
     </div>
+
     <div class="footer-bottom">
       <div class="container">Copyright © 2007 All Right Reserved KESHAV MAHAVIDYALAYA</div>
     </div>
   </footer>
+
   <script src="assets/js/main.js"></script>
 </body>
 </html>
