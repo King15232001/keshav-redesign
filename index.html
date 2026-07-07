@@ -3,14 +3,291 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home | Keshav Mahavidyalaya, Atru</title>
-  <meta name="description" content="Home - Keshav Mahavidyalaya, Atru, Dist. Baran, Rajasthan.">
+  <title>Keshav Mahavidyalaya, Atru | Official College Website</title>
+  <meta name="description" content="Keshav Mahavidyalaya, Atru, Dist. Baran, Rajasthan - official college website with admission, academic programmes, NAAC, IQAC, approvals, facilities, gallery and contact information.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    .home-intro-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .home-panel {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+    }
+
+    .home-panel h3 {
+      color: var(--primary);
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .home-panel p {
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .highlight-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .highlight-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px;
+      background: #f8fbff;
+      border: 1px solid #e8f1ff;
+      border-radius: 14px;
+    }
+
+    .highlight-item strong {
+      color: var(--primary);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .highlight-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: #eef6ff;
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    .notice-board {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+    }
+
+    .notice-board h3 {
+      background: var(--primary);
+      color: #ffffff;
+      padding: 16px 20px;
+      font-size: 20px;
+    }
+
+    .notice-row {
+      display: flex;
+      gap: 14px;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .notice-row:last-child {
+      border-bottom: 0;
+    }
+
+    .notice-row span {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .notice-row a {
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .admission-feature {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #ffffff;
+      border-radius: 24px;
+      padding: 34px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 26px;
+      align-items: center;
+    }
+
+    .admission-feature h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .admission-feature p {
+      color: #e5edf6;
+      margin-bottom: 18px;
+    }
+
+    .admission-steps {
+      display: grid;
+      gap: 12px;
+    }
+
+    .step-card {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: 15px;
+      padding: 14px 16px;
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .step-card small {
+      display: block;
+      color: #ffe9a6;
+      font-weight: 800;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+    }
+
+    .stats-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 26px;
+    }
+
+    .stats-box {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      text-align: center;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+    }
+
+    .stats-box strong {
+      display: block;
+      color: var(--primary);
+      font-size: 30px;
+      font-weight: 900;
+      line-height: 1.1;
+    }
+
+    .stats-box span {
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .quick-access-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+    }
+
+    .quick-access-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px 14px;
+      text-align: center;
+      font-weight: 800;
+      color: var(--primary);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+      transition: 0.25s ease;
+    }
+
+    .quick-access-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+      background: #eef6ff;
+    }
+
+    .quick-access-card .qa-icon {
+      display: grid;
+      place-items: center;
+      width: 46px;
+      height: 46px;
+      margin: 0 auto 10px;
+      border-radius: 14px;
+      background: #eef6ff;
+      font-size: 22px;
+    }
+
+    .two-column-section {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .cta-band {
+      background: linear-gradient(115deg, rgba(11, 39, 70, 0.96), rgba(18, 60, 105, 0.9)), url("https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80") center/cover;
+      border-radius: 24px;
+      color: #ffffff;
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .cta-band h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .cta-band p {
+      color: #e5edf6;
+    }
+
+    @media (max-width: 1080px) {
+      .home-intro-grid,
+      .admission-feature,
+      .two-column-section,
+      .cta-band {
+        grid-template-columns: 1fr;
+      }
+
+      .quick-access-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .stats-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .quick-access-grid,
+      .stats-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .notice-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .admission-feature,
+      .cta-band {
+        padding: 26px;
+      }
+    }
+  </style>
 </head>
+
 <body>
+
   <div class="topbar">
     <div class="container topbar-inner">
       <div class="topbar-left">
@@ -24,6 +301,7 @@
       </div>
     </div>
   </div>
+
   <header class="header">
     <div class="container header-main">
       <a class="brand" href="index.html">
@@ -33,140 +311,156 @@
           <p>Atru, Dist. Baran, Rajasthan</p>
         </div>
       </a>
+
       <div class="header-actions">
         <a class="btn btn-outline" href="contact.html">Contact</a>
         <a class="btn btn-primary" href="https://forms.gle/" target="_blank" rel="noopener">Apply Online</a>
         <button class="menu-toggle" onclick="toggleMenu()">Menu</button>
       </div>
     </div>
+
     <nav class="nav-wrap" id="mainNav">
       <div class="container">
-<ul class="nav">
-  <li><a href="index.html">Home</a></li>
-  <li>
-    <a href="about-organization.html">About</a>
-    <ul class="dropdown">
-      <li><a href="about-organization.html">About Organization</a></li>
-      <li><a href="vision-mission.html">Vision Mission</a></li>
-      <li><a href="chairmans-desk.html">Chairman's Desk</a></li>
-      <li><a href="directors-desk.html">Director's Desk</a></li>
-      <li><a href="principals-desk.html">Principal's Desk</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="admission-process.html">Admissions</a>
-    <ul class="dropdown">
-      <li><a href="admission-process.html">Admission Process</a></li>
-      <li><a href="itep-admission-2026-27-open.html">ITEP Admission 2026-27 Open</a></li>
-      <li><a href="https://forms.gle/" target="_blank" rel="noopener">Apply Online</a></li>
-      <li><a href="rules-and-regulations.html">Rules and Regulations</a></li>
-      <li><a href="https://sjmsnew.rajasthan.gov.in/" target="_blank" rel="noopener">Scholarship</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="programme.html">Academics</a>
-    <ul class="dropdown">
-      <li><a href="programme.html">Programme</a></li>
-      <li><a href="academic-calendar.html">Academic Calendar</a></li>
-      <li><a href="syllabus.html">Syllabus</a></li>
-      <li><a href="department.html">Department</a></li>
-      <li><a href="curriculum-feedback.html">Curriculum Feedback</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="admission-process.html">Student Zone</a>
-    <ul class="dropdown">
-      <li><a href="admission-process.html">Admission Process</a></li>
-      <li><a href="examination.html">Examination</a></li>
-      <li><a href="result.html">Result</a></li>
-      <li><a href="campus-placement.html">Campus Placement</a></li>
-      <li><a href="student-list-faculty-list.html">Student List & Faculty List</a></li>
-      <li><a href="faqs.html">FAQs</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="self-study-report-cycle-01.html">NAAC</a>
-    <ul class="dropdown mega">
-      <li><a href="self-study-report-cycle-01.html">Self Study Report</a></li>
-      <li><a href="criterion-1-curricular-aspects.html">Criterion 1</a></li>
-      <li><a href="criterion-2-teaching-learning-and-evaluation.html">Criterion 2</a></li>
-      <li><a href="criterion-3.html">Criterion 3</a></li>
-      <li><a href="criterion-4.html">Criterion 4</a></li>
-      <li><a href="criterion-5.html">Criterion 5</a></li>
-      <li><a href="criterion-6.html">Criterion 6</a></li>
-      <li><a href="criterion7.html">Criterion 7</a></li>
-      <li><a href="dvv-clarification.html">DVV Clarification</a></li>
-      <li><a href="naac-certificate.html">NAAC Certificate</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="iqac.html">IQAC</a>
-    <ul class="dropdown">
-      <li><a href="iqac.html">IQAC</a></li>
-      <li><a href="committee.html">Committee</a></li>
-      <li><a href="feedback-policy.html">Feedback Policy</a></li>
-      <li><a href="important-audit.html">Important Audit</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="approvals-affiliation.html">Approvals</a>
-    <ul class="dropdown">
-      <li><a href="govt-noc.html">GOVT NOC</a></li>
-      <li><a href="ncte-order.html">NCTE Order</a></li>
-      <li><a href="university-affiliation.html">University Affiliation</a></li>
-      <li><a href="approvals-affiliation.html">Approvals/Affiliation</a></li>
-      <li><a href="affiliation.html">Affiliation</a></li>
-      <li><a href="national-institutional-ranking-framework-nirf-2026.html">NIRF 2026</a></li>
-      <li><a href="khasra-no-institution.html">Khasra no Institution</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="laboratories.html">Facilities</a>
-    <ul class="dropdown">
-      <li><a href="laboratories.html">Laboratories</a></li>
-      <li><a href="library.html">Library</a></li>
-      <li><a href="playground.html">Playground</a></li>
-      <li><a href="nss.html">NSS</a></li>
-      <li><a href="skill-development.html">Skill Development</a></li>
-      <li><a href="seminar-workshop.html">Seminar-Workshop</a></li>
-      <li><a href="ict-facilities.html">ICT Facilities</a></li>
-      <li><a href="computer-lab.html">Computer Lab</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="photo-gallery.html">Gallery</a>
-    <ul class="dropdown">
-      <li><a href="photo-gallery.html">Photo Gallery</a></li>
-      <li><a href="video-gallery.html">Video Gallery</a></li>
-      <li><a href="downloads.html">Downloads</a></li>
-    </ul>
-  </li>
-  <li><a href="contact.html">Contact</a></li>
-</ul>
-</div>
+        <ul class="nav">
+          <li><a href="index.html">Home</a></li>
+
+          <li>
+            <a href="about-organization.html">About</a>
+            <ul class="dropdown">
+              <li><a href="about-organization.html">About Organization</a></li>
+              <li><a href="vision-mission.html">Vision Mission</a></li>
+              <li><a href="chairmans-desk.html">Chairman's Desk</a></li>
+              <li><a href="directors-desk.html">Director's Desk</a></li>
+              <li><a href="principals-desk.html">Principal's Desk</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="admission-process.html">Admissions</a>
+            <ul class="dropdown">
+              <li><a href="admission-process.html">Admission Process</a></li>
+              <li><a href="itep-admission-2026-27-open.html">ITEP Admission 2026-27 Open</a></li>
+              <li><a href="https://forms.gle/" target="_blank" rel="noopener">Apply Online</a></li>
+              <li><a href="rules-and-regulations.html">Rules and Regulations</a></li>
+              <li><a href="https://sjmsnew.rajasthan.gov.in/" target="_blank" rel="noopener">Scholarship</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="programme.html">Academics</a>
+            <ul class="dropdown">
+              <li><a href="programme.html">Programme</a></li>
+              <li><a href="academic-calendar.html">Academic Calendar</a></li>
+              <li><a href="syllabus.html">Syllabus</a></li>
+              <li><a href="department.html">Department</a></li>
+              <li><a href="curriculum-feedback.html">Curriculum Feedback</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="admission-process.html">Student Zone</a>
+            <ul class="dropdown">
+              <li><a href="admission-process.html">Admission Process</a></li>
+              <li><a href="examination.html">Examination</a></li>
+              <li><a href="result.html">Result</a></li>
+              <li><a href="campus-placement.html">Campus Placement</a></li>
+              <li><a href="student-list-faculty-list.html">Student List & Faculty List</a></li>
+              <li><a href="faqs.html">FAQs</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="self-study-report-cycle-01.html">NAAC</a>
+            <ul class="dropdown mega">
+              <li><a href="self-study-report-cycle-01.html">Self Study Report</a></li>
+              <li><a href="criterion-1-curricular-aspects.html">Criterion 1</a></li>
+              <li><a href="criterion-2-teaching-learning-and-evaluation.html">Criterion 2</a></li>
+              <li><a href="criterion-3.html">Criterion 3</a></li>
+              <li><a href="criterion-4.html">Criterion 4</a></li>
+              <li><a href="criterion-5.html">Criterion 5</a></li>
+              <li><a href="criterion-6.html">Criterion 6</a></li>
+              <li><a href="criterion7.html">Criterion 7</a></li>
+              <li><a href="dvv-clarification.html">DVV Clarification</a></li>
+              <li><a href="naac-certificate.html">NAAC Certificate</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="iqac.html">IQAC</a>
+            <ul class="dropdown">
+              <li><a href="iqac.html">IQAC</a></li>
+              <li><a href="committee.html">Committee</a></li>
+              <li><a href="feedback-policy.html">Feedback Policy</a></li>
+              <li><a href="important-audit.html">Important Audit</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="approvals-affiliation.html">Approvals</a>
+            <ul class="dropdown">
+              <li><a href="govt-noc.html">GOVT NOC</a></li>
+              <li><a href="ncte-order.html">NCTE Order</a></li>
+              <li><a href="university-affiliation.html">University Affiliation</a></li>
+              <li><a href="approvals-affiliation.html">Approvals/Affiliation</a></li>
+              <li><a href="affiliation.html">Affiliation</a></li>
+              <li><a href="national-institutional-ranking-framework-nirf-2026.html">NIRF 2026</a></li>
+              <li><a href="khasra-no-institution.html">Khasra no Institution</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="laboratories.html">Facilities</a>
+            <ul class="dropdown">
+              <li><a href="laboratories.html">Laboratories</a></li>
+              <li><a href="library.html">Library</a></li>
+              <li><a href="playground.html">Playground</a></li>
+              <li><a href="nss.html">NSS</a></li>
+              <li><a href="skill-development.html">Skill Development</a></li>
+              <li><a href="seminar-workshop.html">Seminar-Workshop</a></li>
+              <li><a href="ict-facilities.html">ICT Facilities</a></li>
+              <li><a href="computer-lab.html">Computer Lab</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="photo-gallery.html">Gallery</a>
+            <ul class="dropdown">
+              <li><a href="photo-gallery.html">Photo Gallery</a></li>
+              <li><a href="video-gallery.html">Video Gallery</a></li>
+              <li><a href="downloads.html">Downloads</a></li>
+            </ul>
+          </li>
+
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
 
   <main>
+
     <section class="hero">
       <div class="container hero-grid">
         <div>
           <div class="badge">Admission Open 2026-27</div>
           <h2>Keshav Mahavidyalaya, Atru</h2>
-          <p>One of the prestigious institutions of higher education in Rajasthan, offering UG, PG and Integrated Teacher Education Programmes.</p>
+          <p>
+            A higher education institution in Atru, Dist. Baran, Rajasthan, offering undergraduate, postgraduate and integrated teacher education programmes with a focus on quality learning, discipline, academic growth and student development.
+          </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://forms.gle/" target="_blank" rel="noopener">Apply Online</a>
             <a class="btn btn-outline" href="programme.html">View Programmes</a>
-            <a class="btn btn-outline" href="itep-admission-2026-27-open.html">ITEP Admission</a>
+            <a class="btn btn-outline" href="admission-process.html">Admission Process</a>
           </div>
         </div>
+
         <div class="hero-card">
-          <h3>Integrated Teacher Education Programme</h3>
-          <p>Affiliated to University of Kota, Rajasthan · Recognized by NCTE</p>
+          <h3>Session 2026-27</h3>
+          <p>Admission information, academic programmes and student support links are available through the official website sections.</p>
           <ul>
-            <li>Session 2026-27 admission starts from 01 July 2026.</li>
             <li>UG, PG and Integrated Teacher Education Programmes.</li>
-            <li>Apply online through official application form.</li>
+            <li>ITEP Admission 2026-27 information page available.</li>
+            <li>Student services, NAAC, IQAC and approval pages structured properly.</li>
           </ul>
         </div>
       </div>
@@ -175,21 +469,104 @@
     <div class="notice-strip">
       <div class="container">
         <span>Important: Admission Open for Session 2026-27</span>
-        <a href="itep-admission-2026-27-open.html">View Notice →</a>
+        <a href="itep-admission-2026-27-open.html">View Admission Notice →</a>
       </div>
     </div>
 
     <section class="section">
-      <div class="container">
-        <div class="section-title">
-          <span>About Organization</span>
-          <h2>Keshav Mahavidyalaya</h2>
-          <p>KeshavMahavidyalaya, Atru, is one of the prestigious institutions of higher education in Rajasthan.</p>
+      <div class="container home-intro-grid">
+        <div class="home-panel">
+          <div class="section-title" style="text-align:left;margin:0 0 22px;">
+            <span>About Organization</span>
+            <h2>Keshav Mahavidyalaya</h2>
+          </div>
+
+          <p>
+            KeshavMahavidyalaya, Atru, is one of the prestigious institutions of higher education in Rajasthan. The college works with the objective of providing value-added quality education to students, with special emphasis on accessible and meaningful learning.
+          </p>
+
+          <p>
+            The institution focuses on academic development, ethical values, leadership qualities, teamwork, critical thinking and a research-oriented learning culture. The website has been structured to provide students, parents, faculty members and visitors with direct access to admission, academics, NAAC, IQAC, approvals, facilities and contact information.
+          </p>
+
+          <div class="highlight-list">
+            <div class="highlight-item">
+              <div class="highlight-icon">01</div>
+              <div>
+                <strong>Quality Education</strong>
+                <p>Academic environment focused on value-added learning and student development.</p>
+              </div>
+            </div>
+
+            <div class="highlight-item">
+              <div class="highlight-icon">02</div>
+              <div>
+                <strong>Student-Centric Approach</strong>
+                <p>Dedicated sections for admissions, syllabus, examination, result, placement and student information.</p>
+              </div>
+            </div>
+
+            <div class="highlight-item">
+              <div class="highlight-icon">03</div>
+              <div>
+                <strong>Institutional Transparency</strong>
+                <p>Separate pages for NAAC, IQAC, approvals, affiliation, NCTE order, NIRF and statutory information.</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="grid-3">
-          <a class="card" href="about-organization.html"><div class="card-icon">🏛️</div><h3>About College</h3><p>Institutional profile, vision, mission and leadership information.</p></a>
-          <a class="card" href="programme.html"><div class="card-icon">📘</div><h3>Programmes Offered</h3><p>UG, PG and Integrated Teacher Education Programmes.</p></a>
-          <a class="card" href="admission-process.html"><div class="card-icon">📝</div><h3>Admission Process</h3><p>Admission information for the academic session 2026-27.</p></a>
+
+        <div class="notice-board">
+          <h3>Latest Updates</h3>
+
+          <div class="notice-row">
+            <a href="itep-admission-2026-27-open.html">ITEP Admission 2026-27 Open</a>
+            <span>Admission</span>
+          </div>
+
+          <div class="notice-row">
+            <a href="admission-process.html">Admission Process for Session 2026-27</a>
+            <span>Student Zone</span>
+          </div>
+
+          <div class="notice-row">
+            <a href="national-institutional-ranking-framework-nirf-2026.html">National Institutional Ranking Framework NIRF 2026</a>
+            <span>NIRF</span>
+          </div>
+
+          <div class="notice-row">
+            <a href="self-study-report-cycle-01.html">Self Study Report Cycle 01</a>
+            <span>NAAC</span>
+          </div>
+
+          <div class="notice-row">
+            <a href="iqac.html">Institutional Quality Assurance Cell</a>
+            <span>IQAC</span>
+          </div>
+
+          <div class="notice-row">
+            <a href="downloads.html">Important Downloads</a>
+            <span>Documents</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container stats-strip">
+        <div class="stats-box">
+          <strong>03</strong>
+          <span>UG Programmes</span>
+        </div>
+        <div class="stats-box">
+          <strong>02</strong>
+          <span>PG Programmes</span>
+        </div>
+        <div class="stats-box">
+          <strong>02</strong>
+          <span>Integrated Programmes</span>
+        </div>
+        <div class="stats-box">
+          <strong>2026-27</strong>
+          <span>Admission Session</span>
         </div>
       </div>
     </section>
@@ -197,14 +574,257 @@
     <section class="section alt">
       <div class="container">
         <div class="section-title">
-          <span>Academic Programmes</span>
-          <h2>Programmes Offered</h2>
-          <p>KeshavMahavidyalaya is offering the following programmes through its academic departments.</p>
+          <span>Quick Access</span>
+          <h2>Important College Sections</h2>
+          <p>
+            Students and visitors can use these quick links to directly access the most important areas of the college website.
+          </p>
         </div>
+
+        <div class="quick-access-grid">
+          <a class="quick-access-card" href="admission-process.html">
+            <div class="qa-icon">📝</div>
+            Admission
+          </a>
+
+          <a class="quick-access-card" href="programme.html">
+            <div class="qa-icon">📘</div>
+            Programme
+          </a>
+
+          <a class="quick-access-card" href="syllabus.html">
+            <div class="qa-icon">📄</div>
+            Syllabus
+          </a>
+
+          <a class="quick-access-card" href="examination.html">
+            <div class="qa-icon">🧾</div>
+            Examination
+          </a>
+
+          <a class="quick-access-card" href="result.html">
+            <div class="qa-icon">🏆</div>
+            Result
+          </a>
+
+          <a class="quick-access-card" href="contact.html">
+            <div class="qa-icon">☎️</div>
+            Contact
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="admission-feature">
+          <div>
+            <span class="badge">Admission Help Desk</span>
+            <h2>Admissions Open for Academic Session 2026-27</h2>
+            <p>
+              The admission section has been arranged to help students understand the admission process, rules and regulations, programme options, scholarship link and online application access from one place.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="https://forms.gle/" target="_blank" rel="noopener">Apply Online</a>
+              <a class="btn btn-outline" href="itep-admission-2026-27-open.html">ITEP Admission</a>
+              <a class="btn btn-outline" href="rules-and-regulations.html">Rules & Regulations</a>
+            </div>
+          </div>
+
+          <div class="admission-steps">
+            <div class="step-card">
+              <small>Step 01</small>
+              Check programme details and eligibility information.
+            </div>
+
+            <div class="step-card">
+              <small>Step 02</small>
+              Read the admission process and important instructions.
+            </div>
+
+            <div class="step-card">
+              <small>Step 03</small>
+              Fill the online application form and contact the college office if guidance is required.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-title">
+          <span>Academics</span>
+          <h2>Programmes Offered</h2>
+          <p>
+            The college offers programmes through Education, Social Science and Science departments. Each department section can be expanded further with eligibility, syllabus, faculty and academic resources.
+          </p>
+        </div>
+
         <div class="grid-3">
-          <div class="card"><div class="card-icon">01</div><h3>Department of Education</h3><ul><li>B.Sc.-B.Ed.</li><li>B.A.-B.Ed.</li><li>B.Ed.</li></ul></div>
-          <div class="card"><div class="card-icon">02</div><h3>Department of Social Science</h3><ul><li>B.A. with Compulsory Subjects</li><li>M.A. HindiLitt.</li><li>M.A. Geography</li><li>M.A. Sociology</li><li>M.A. Pol. Science</li></ul></div>
-          <div class="card"><div class="card-icon">03</div><h3>Department of Science</h3><ul><li>B.Sc. with Compulsory Subjects</li><li>M.Sc. Chemistry</li><li>M.Sc. Zoology</li></ul></div>
+          <a class="card" href="programme.html">
+            <div class="card-icon">01</div>
+            <h3>Department of Education</h3>
+            <p>Teacher education programmes focused on professional preparation, pedagogy and academic training.</p>
+            <ul>
+              <li>B.Sc.-B.Ed.</li>
+              <li>B.A.-B.Ed.</li>
+              <li>B.Ed.</li>
+            </ul>
+          </a>
+
+          <a class="card" href="programme.html">
+            <div class="card-icon">02</div>
+            <h3>Department of Social Science</h3>
+            <p>Undergraduate and postgraduate programmes in humanities and social science subjects.</p>
+            <ul>
+              <li>B.A. with Compulsory Subjects</li>
+              <li>M.A. HindiLitt.</li>
+              <li>M.A. Geography</li>
+              <li>M.A. Sociology</li>
+              <li>M.A. Pol. Science</li>
+            </ul>
+          </a>
+
+          <a class="card" href="programme.html">
+            <div class="card-icon">03</div>
+            <h3>Department of Science</h3>
+            <p>Science programmes with practical learning support through laboratories and academic resources.</p>
+            <ul>
+              <li>B.Sc. with Compulsory Subjects</li>
+              <li>M.Sc. Chemistry</li>
+              <li>M.Sc. Zoology</li>
+            </ul>
+          </a>
+        </div>
+
+        <div style="text-align:center;margin-top:28px;">
+          <a class="btn btn-primary" href="programme.html">View Complete Programme Details</a>
+          <a class="btn btn-outline" href="department.html">View Departments</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container two-column-section">
+        <div class="home-panel">
+          <div class="section-title" style="text-align:left;margin:0 0 20px;">
+            <span>Student Zone</span>
+            <h2>Student Services</h2>
+          </div>
+
+          <p>
+            The Student Zone provides direct access to important academic and administrative services. Students can check admission process, syllabus, examination details, result, campus placement, student list, faculty list and FAQs from this section.
+          </p>
+
+          <div class="link-list" style="grid-template-columns:1fr;margin-top:18px;">
+            <a class="link-card" href="syllabus.html">Syllabus <span>→</span></a>
+            <a class="link-card" href="examination.html">Examination <span>→</span></a>
+            <a class="link-card" href="result.html">Result <span>→</span></a>
+            <a class="link-card" href="campus-placement.html">Campus Placement <span>→</span></a>
+            <a class="link-card" href="student-list-faculty-list.html">Student List & Faculty List <span>→</span></a>
+            <a class="link-card" href="faqs.html">FAQs <span>→</span></a>
+          </div>
+        </div>
+
+        <div class="home-panel">
+          <div class="section-title" style="text-align:left;margin:0 0 20px;">
+            <span>Governance & Quality</span>
+            <h2>NAAC, IQAC & Approvals</h2>
+          </div>
+
+          <p>
+            Institutional quality, academic governance and statutory information have been arranged into separate structured sections. This helps visitors find NAAC criteria, IQAC details, approvals, affiliations, NCTE order, NIRF and audit records without confusion.
+          </p>
+
+          <div class="grid-2" style="margin-top:18px;">
+            <a class="card" href="self-study-report-cycle-01.html">
+              <div class="card-icon">📄</div>
+              <h3>NAAC</h3>
+              <p>SSR, criteria, DVV clarification and certificate pages.</p>
+            </a>
+
+            <a class="card" href="iqac.html">
+              <div class="card-icon">✅</div>
+              <h3>IQAC</h3>
+              <p>Quality assurance, committees, feedback policy and audits.</p>
+            </a>
+
+            <a class="card" href="approvals-affiliation.html">
+              <div class="card-icon">🏛️</div>
+              <h3>Approvals</h3>
+              <p>GOVT NOC, NCTE order, university affiliation and statutory pages.</p>
+            </a>
+
+            <a class="card" href="national-institutional-ranking-framework-nirf-2026.html">
+              <div class="card-icon">📊</div>
+              <h3>NIRF 2026</h3>
+              <p>National Institutional Ranking Framework information.</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-title">
+          <span>Campus Support</span>
+          <h2>Facilities & Learning Environment</h2>
+          <p>
+            The facilities section highlights important academic and student-support infrastructure available at the college.
+          </p>
+        </div>
+
+        <div class="grid-4">
+          <a class="card" href="laboratories.html">
+            <div class="card-icon">⚗️</div>
+            <h3>Laboratories</h3>
+            <p>Practical learning and laboratory support for academic programmes.</p>
+          </a>
+
+          <a class="card" href="library.html">
+            <div class="card-icon">📚</div>
+            <h3>Library</h3>
+            <p>Learning resources, reading support and academic reference material.</p>
+          </a>
+
+          <a class="card" href="computer-lab.html">
+            <div class="card-icon">🖥️</div>
+            <h3>Computer Lab</h3>
+            <p>Computer-based learning infrastructure and digital support.</p>
+          </a>
+
+          <a class="card" href="ict-facilities.html">
+            <div class="card-icon">💻</div>
+            <h3>ICT Facilities</h3>
+            <p>Digital teaching and learning support facilities.</p>
+          </a>
+
+          <a class="card" href="playground.html">
+            <div class="card-icon">🏟️</div>
+            <h3>Playground</h3>
+            <p>Sports and physical activity space for students.</p>
+          </a>
+
+          <a class="card" href="nss.html">
+            <div class="card-icon">🤝</div>
+            <h3>NSS</h3>
+            <p>Community service and student engagement activities.</p>
+          </a>
+
+          <a class="card" href="skill-development.html">
+            <div class="card-icon">🧩</div>
+            <h3>Skill Development</h3>
+            <p>Skill enhancement and student development support.</p>
+          </a>
+
+          <a class="card" href="seminar-workshop.html">
+            <div class="card-icon">🎤</div>
+            <h3>Seminar-Workshop</h3>
+            <p>Academic activities, seminars and workshops.</p>
+          </a>
         </div>
       </div>
     </section>
@@ -212,20 +832,52 @@
     <section class="section">
       <div class="container">
         <div class="section-title">
-          <span>Important Tabs</span>
-          <h2>College Website Pages</h2>
-          <p>All important pages are now created as internal static pages for GitHub Pages.</p>
+          <span>Campus Life</span>
+          <h2>Gallery & Activities</h2>
+          <p>
+            The gallery section can be used to showcase college events, seminars, workshops, NSS activities, academic programmes and campus photographs.
+          </p>
         </div>
-        <div class="link-list">
-          <a class="link-card" href="self-study-report-cycle-01.html">NAAC Repository <span>→</span></a>
-          <a class="link-card" href="iqac.html">IQAC <span>→</span></a>
-          <a class="link-card" href="approvals-affiliation.html">Approvals/Affiliation <span>→</span></a>
-          <a class="link-card" href="laboratories.html">Facilities <span>→</span></a>
-          <a class="link-card" href="photo-gallery.html">Photo Gallery <span>→</span></a>
-          <a class="link-card" href="contact.html">Contact <span>→</span></a>
+
+        <div class="gallery-grid">
+          <a class="gallery-item" href="photo-gallery.html">
+            <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=900&q=80" alt="College seminar and student activity">
+          </a>
+
+          <a class="gallery-item" href="photo-gallery.html">
+            <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=900&q=80" alt="College classroom and academic activity">
+          </a>
+
+          <a class="gallery-item" href="photo-gallery.html">
+            <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=900&q=80" alt="Students group activity">
+          </a>
+        </div>
+
+        <div style="text-align:center;margin-top:28px;">
+          <a class="btn btn-primary" href="photo-gallery.html">View Photo Gallery</a>
+          <a class="btn btn-outline" href="video-gallery.html">View Video Gallery</a>
         </div>
       </div>
     </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="cta-band">
+          <div>
+            <h2>Need Admission or College Information?</h2>
+            <p>
+              Students and parents can contact the college office for admission, programme, document, scholarship, examination or general enquiry support.
+            </p>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="contact.html">Contact College</a>
+            <a class="btn btn-outline" href="downloads.html">Important Downloads</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
@@ -236,6 +888,7 @@
         <p style="margin-top:10px;">Email: <a href="mailto:keshavcollege02@gmail.com">keshavcollege02@gmail.com</a></p>
         <p>Phone: 9929521506, 9636150093, 9460558050</p>
       </div>
+
       <div>
         <h4>Quick Links</h4>
         <ul>
@@ -245,6 +898,7 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
+
       <div>
         <h4>Important</h4>
         <ul>
@@ -254,6 +908,7 @@
           <li><a href="national-institutional-ranking-framework-nirf-2026.html">NIRF 2026</a></li>
         </ul>
       </div>
+
       <div>
         <h4>Student Zone</h4>
         <ul>
@@ -264,10 +919,12 @@
         </ul>
       </div>
     </div>
+
     <div class="footer-bottom">
       <div class="container">Copyright © 2007 All Right Reserved KESHAV MAHAVIDYALAYA</div>
     </div>
   </footer>
+
   <script src="assets/js/main.js"></script>
 </body>
 </html>
