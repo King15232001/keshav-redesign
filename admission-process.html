@@ -4,13 +4,354 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admission Process | Keshav Mahavidyalaya, Atru</title>
-  <meta name="description" content="Admission Process - Keshav Mahavidyalaya, Atru, Dist. Baran, Rajasthan.">
+  <meta name="description" content="Admission Process - Keshav Mahavidyalaya, Atru, Dist. Baran, Rajasthan. Admission guide, steps, programme links, documents, scholarship and contact details for session 2026-27.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    .admission-hero-panel {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #ffffff;
+      border-radius: 24px;
+      padding: 36px;
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 28px;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .admission-hero-panel h2 {
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.2;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+
+    .admission-hero-panel p {
+      color: #e5edf6;
+      margin-bottom: 14px;
+    }
+
+    .admission-alert {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: 18px;
+      padding: 20px;
+    }
+
+    .admission-alert h3 {
+      color: #ffffff;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .admission-alert ul {
+      margin-left: 18px;
+      color: #e5edf6;
+      font-weight: 700;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .process-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+      transition: 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .process-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .process-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 6px;
+      width: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--accent), var(--secondary));
+    }
+
+    .process-card span {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: #eef6ff;
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .process-card h3 {
+      color: var(--primary);
+      font-size: 20px;
+      margin-bottom: 9px;
+    }
+
+    .process-card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .programme-admission-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .programme-admission-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+    }
+
+    .programme-admission-card h3 {
+      color: var(--primary);
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
+    .programme-admission-card p {
+      color: var(--muted);
+      margin-bottom: 12px;
+      font-size: 15px;
+    }
+
+    .programme-admission-card ul {
+      margin-left: 18px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .document-section {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .document-panel {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+    }
+
+    .document-panel h3 {
+      color: var(--primary);
+      font-size: 26px;
+      margin-bottom: 12px;
+    }
+
+    .document-panel p {
+      color: var(--muted);
+      margin-bottom: 13px;
+    }
+
+    .document-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .document-item {
+      background: #f8fbff;
+      border: 1px solid #e8f1ff;
+      border-radius: 15px;
+      padding: 14px 15px;
+      font-weight: 800;
+      color: var(--primary);
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .document-item::before {
+      content: "✓";
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #ffffff;
+      display: inline-grid;
+      place-items: center;
+      font-size: 13px;
+      flex: 0 0 auto;
+      margin-top: 1px;
+    }
+
+    .admission-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      background: #ffffff;
+    }
+
+    .admission-table th,
+    .admission-table td {
+      border: 1px solid var(--border);
+      padding: 13px 14px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .admission-table th {
+      background: #eef6ff;
+      color: var(--primary);
+      font-weight: 900;
+      width: 34%;
+    }
+
+    .helpdesk-card {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #ffffff;
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .helpdesk-card h3 {
+      color: #ffffff;
+      font-size: 26px;
+      margin-bottom: 12px;
+    }
+
+    .helpdesk-card p {
+      color: #e5edf6;
+      margin-bottom: 14px;
+    }
+
+    .helpdesk-card a {
+      color: #ffffff;
+      font-weight: 800;
+    }
+
+    .helpdesk-info {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .helpdesk-row {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 15px;
+      padding: 14px 16px;
+      font-weight: 700;
+    }
+
+    .helpdesk-row small {
+      display: block;
+      color: #ffe9a6;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      margin-bottom: 4px;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .faq-item {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.04);
+    }
+
+    .faq-item h3 {
+      color: var(--primary);
+      font-size: 19px;
+      margin-bottom: 6px;
+    }
+
+    .faq-item p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .admission-cta {
+      background: linear-gradient(115deg, rgba(11, 39, 70, 0.96), rgba(18, 60, 105, 0.9)), url("https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1600&q=80") center/cover;
+      color: #ffffff;
+      border-radius: 24px;
+      padding: 38px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .admission-cta h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .admission-cta p {
+      color: #e5edf6;
+    }
+
+    @media (max-width: 1080px) {
+      .admission-hero-panel,
+      .document-section,
+      .admission-cta {
+        grid-template-columns: 1fr;
+      }
+
+      .process-grid,
+      .programme-admission-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .process-grid,
+      .programme-admission-grid,
+      .document-list {
+        grid-template-columns: 1fr;
+      }
+
+      .admission-hero-panel,
+      .document-panel,
+      .helpdesk-card,
+      .admission-cta {
+        padding: 26px;
+      }
+
+      .admission-table th,
+      .admission-table td {
+        display: block;
+        width: 100%;
+      }
+    }
+  </style>
 </head>
+
 <body>
+
   <div class="topbar">
     <div class="container topbar-inner">
       <div class="topbar-left">
@@ -24,6 +365,7 @@
       </div>
     </div>
   </div>
+
   <header class="header">
     <div class="container header-main">
       <a class="brand" href="index.html">
@@ -33,161 +375,502 @@
           <p>Atru, Dist. Baran, Rajasthan</p>
         </div>
       </a>
+
       <div class="header-actions">
         <a class="btn btn-outline" href="contact.html">Contact</a>
         <a class="btn btn-primary" href="https://forms.gle/" target="_blank" rel="noopener">Apply Online</a>
         <button class="menu-toggle" onclick="toggleMenu()">Menu</button>
       </div>
     </div>
+
     <nav class="nav-wrap" id="mainNav">
       <div class="container">
-<ul class="nav">
-  <li><a href="index.html">Home</a></li>
-  <li>
-    <a href="about-organization.html">About</a>
-    <ul class="dropdown">
-      <li><a href="about-organization.html">About Organization</a></li>
-      <li><a href="vision-mission.html">Vision Mission</a></li>
-      <li><a href="chairmans-desk.html">Chairman's Desk</a></li>
-      <li><a href="directors-desk.html">Director's Desk</a></li>
-      <li><a href="principals-desk.html">Principal's Desk</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="admission-process.html">Admissions</a>
-    <ul class="dropdown">
-      <li><a href="admission-process.html">Admission Process</a></li>
-      <li><a href="itep-admission-2026-27-open.html">ITEP Admission 2026-27 Open</a></li>
-      <li><a href="https://forms.gle/" target="_blank" rel="noopener">Apply Online</a></li>
-      <li><a href="rules-and-regulations.html">Rules and Regulations</a></li>
-      <li><a href="https://sjmsnew.rajasthan.gov.in/" target="_blank" rel="noopener">Scholarship</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="programme.html">Academics</a>
-    <ul class="dropdown">
-      <li><a href="programme.html">Programme</a></li>
-      <li><a href="academic-calendar.html">Academic Calendar</a></li>
-      <li><a href="syllabus.html">Syllabus</a></li>
-      <li><a href="department.html">Department</a></li>
-      <li><a href="curriculum-feedback.html">Curriculum Feedback</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="admission-process.html">Student Zone</a>
-    <ul class="dropdown">
-      <li><a href="admission-process.html">Admission Process</a></li>
-      <li><a href="examination.html">Examination</a></li>
-      <li><a href="result.html">Result</a></li>
-      <li><a href="campus-placement.html">Campus Placement</a></li>
-      <li><a href="student-list-faculty-list.html">Student List & Faculty List</a></li>
-      <li><a href="faqs.html">FAQs</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="self-study-report-cycle-01.html">NAAC</a>
-    <ul class="dropdown mega">
-      <li><a href="self-study-report-cycle-01.html">Self Study Report</a></li>
-      <li><a href="criterion-1-curricular-aspects.html">Criterion 1</a></li>
-      <li><a href="criterion-2-teaching-learning-and-evaluation.html">Criterion 2</a></li>
-      <li><a href="criterion-3.html">Criterion 3</a></li>
-      <li><a href="criterion-4.html">Criterion 4</a></li>
-      <li><a href="criterion-5.html">Criterion 5</a></li>
-      <li><a href="criterion-6.html">Criterion 6</a></li>
-      <li><a href="criterion7.html">Criterion 7</a></li>
-      <li><a href="dvv-clarification.html">DVV Clarification</a></li>
-      <li><a href="naac-certificate.html">NAAC Certificate</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="iqac.html">IQAC</a>
-    <ul class="dropdown">
-      <li><a href="iqac.html">IQAC</a></li>
-      <li><a href="committee.html">Committee</a></li>
-      <li><a href="feedback-policy.html">Feedback Policy</a></li>
-      <li><a href="important-audit.html">Important Audit</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="approvals-affiliation.html">Approvals</a>
-    <ul class="dropdown">
-      <li><a href="govt-noc.html">GOVT NOC</a></li>
-      <li><a href="ncte-order.html">NCTE Order</a></li>
-      <li><a href="university-affiliation.html">University Affiliation</a></li>
-      <li><a href="approvals-affiliation.html">Approvals/Affiliation</a></li>
-      <li><a href="affiliation.html">Affiliation</a></li>
-      <li><a href="national-institutional-ranking-framework-nirf-2026.html">NIRF 2026</a></li>
-      <li><a href="khasra-no-institution.html">Khasra no Institution</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="laboratories.html">Facilities</a>
-    <ul class="dropdown">
-      <li><a href="laboratories.html">Laboratories</a></li>
-      <li><a href="library.html">Library</a></li>
-      <li><a href="playground.html">Playground</a></li>
-      <li><a href="nss.html">NSS</a></li>
-      <li><a href="skill-development.html">Skill Development</a></li>
-      <li><a href="seminar-workshop.html">Seminar-Workshop</a></li>
-      <li><a href="ict-facilities.html">ICT Facilities</a></li>
-      <li><a href="computer-lab.html">Computer Lab</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="photo-gallery.html">Gallery</a>
-    <ul class="dropdown">
-      <li><a href="photo-gallery.html">Photo Gallery</a></li>
-      <li><a href="video-gallery.html">Video Gallery</a></li>
-      <li><a href="downloads.html">Downloads</a></li>
-    </ul>
-  </li>
-  <li><a href="contact.html">Contact</a></li>
-</ul>
-</div>
+        <ul class="nav">
+          <li><a href="index.html">Home</a></li>
+
+          <li>
+            <a href="about-organization.html">About</a>
+            <ul class="dropdown">
+              <li><a href="about-organization.html">About Organization</a></li>
+              <li><a href="vision-mission.html">Vision Mission</a></li>
+              <li><a href="chairmans-desk.html">Chairman's Desk</a></li>
+              <li><a href="directors-desk.html">Director's Desk</a></li>
+              <li><a href="principals-desk.html">Principal's Desk</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="admission-process.html">Admissions</a>
+            <ul class="dropdown">
+              <li><a href="admission-process.html">Admission Process</a></li>
+              <li><a href="itep-admission-2026-27-open.html">ITEP Admission 2026-27 Open</a></li>
+              <li><a href="https://forms.gle/" target="_blank" rel="noopener">Apply Online</a></li>
+              <li><a href="rules-and-regulations.html">Rules and Regulations</a></li>
+              <li><a href="https://sjmsnew.rajasthan.gov.in/" target="_blank" rel="noopener">Scholarship</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="programme.html">Academics</a>
+            <ul class="dropdown">
+              <li><a href="programme.html">Programme</a></li>
+              <li><a href="academic-calendar.html">Academic Calendar</a></li>
+              <li><a href="syllabus.html">Syllabus</a></li>
+              <li><a href="department.html">Department</a></li>
+              <li><a href="curriculum-feedback.html">Curriculum Feedback</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="admission-process.html">Student Zone</a>
+            <ul class="dropdown">
+              <li><a href="admission-process.html">Admission Process</a></li>
+              <li><a href="examination.html">Examination</a></li>
+              <li><a href="result.html">Result</a></li>
+              <li><a href="campus-placement.html">Campus Placement</a></li>
+              <li><a href="student-list-faculty-list.html">Student List & Faculty List</a></li>
+              <li><a href="faqs.html">FAQs</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="self-study-report-cycle-01.html">NAAC</a>
+            <ul class="dropdown mega">
+              <li><a href="self-study-report-cycle-01.html">Self Study Report</a></li>
+              <li><a href="criterion-1-curricular-aspects.html">Criterion 1</a></li>
+              <li><a href="criterion-2-teaching-learning-and-evaluation.html">Criterion 2</a></li>
+              <li><a href="criterion-3.html">Criterion 3</a></li>
+              <li><a href="criterion-4.html">Criterion 4</a></li>
+              <li><a href="criterion-5.html">Criterion 5</a></li>
+              <li><a href="criterion-6.html">Criterion 6</a></li>
+              <li><a href="criterion7.html">Criterion 7</a></li>
+              <li><a href="dvv-clarification.html">DVV Clarification</a></li>
+              <li><a href="naac-certificate.html">NAAC Certificate</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="iqac.html">IQAC</a>
+            <ul class="dropdown">
+              <li><a href="iqac.html">IQAC</a></li>
+              <li><a href="committee.html">Committee</a></li>
+              <li><a href="feedback-policy.html">Feedback Policy</a></li>
+              <li><a href="important-audit.html">Important Audit</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="approvals-affiliation.html">Approvals</a>
+            <ul class="dropdown">
+              <li><a href="govt-noc.html">GOVT NOC</a></li>
+              <li><a href="ncte-order.html">NCTE Order</a></li>
+              <li><a href="university-affiliation.html">University Affiliation</a></li>
+              <li><a href="approvals-affiliation.html">Approvals/Affiliation</a></li>
+              <li><a href="affiliation.html">Affiliation</a></li>
+              <li><a href="national-institutional-ranking-framework-nirf-2026.html">NIRF 2026</a></li>
+              <li><a href="khasra-no-institution.html">Khasra no Institution</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="laboratories.html">Facilities</a>
+            <ul class="dropdown">
+              <li><a href="laboratories.html">Laboratories</a></li>
+              <li><a href="library.html">Library</a></li>
+              <li><a href="playground.html">Playground</a></li>
+              <li><a href="nss.html">NSS</a></li>
+              <li><a href="skill-development.html">Skill Development</a></li>
+              <li><a href="seminar-workshop.html">Seminar-Workshop</a></li>
+              <li><a href="ict-facilities.html">ICT Facilities</a></li>
+              <li><a href="computer-lab.html">Computer Lab</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="photo-gallery.html">Gallery</a>
+            <ul class="dropdown">
+              <li><a href="photo-gallery.html">Photo Gallery</a></li>
+              <li><a href="video-gallery.html">Video Gallery</a></li>
+              <li><a href="downloads.html">Downloads</a></li>
+            </ul>
+          </li>
+
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
 
   <main>
+
     <section class="page-hero">
       <div class="container">
         <div class="breadcrumb"><a href="index.html">Home</a> / Admission Process</div>
         <h2>Admission Process</h2>
-        <p>Admission information, application links, important dates and student guidance.</p>
+        <p>
+          Admission information for Keshav Mahavidyalaya, Atru. Students can check programme details, admission steps, required documents, important links and contact information.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="admission-hero-panel">
+          <div>
+            <span class="badge">Admission Open 2026-27</span>
+            <h2>Apply for Keshav Mahavidyalaya</h2>
+            <p>
+              Keshav Mahavidyalaya, Atru offers undergraduate, postgraduate and integrated teacher education programmes. The admission process section is designed to guide students and parents through programme selection, application, document preparation and college contact support.
+            </p>
+            <p>
+              Students should carefully review programme details, eligibility requirements, rules and regulations, scholarship information and official admission instructions before submitting the application.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="https://forms.gle/" target="_blank" rel="noopener">Apply Online</a>
+              <a class="btn btn-outline" href="programme.html">View Programmes</a>
+              <a class="btn btn-outline" href="contact.html">Contact Office</a>
+            </div>
+          </div>
+
+          <aside class="admission-alert">
+            <h3>Important Admission Information</h3>
+            <ul>
+              <li>Admission Session: 2026-27</li>
+              <li>ITEP Admission information page available</li>
+              <li>Students should keep documents ready before applying</li>
+              <li>For admission help, contact the college office</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-title">
+          <span>Admission Steps</span>
+          <h2>How to Apply</h2>
+          <p>
+            Follow the admission steps carefully. Students should confirm programme details and contact the college office for any admission-related clarification.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-card">
+            <span>01</span>
+            <h3>Select Programme</h3>
+            <p>
+              Review the available UG, PG and integrated programmes and select the course according to your academic interest and eligibility.
+            </p>
+          </div>
+
+          <div class="process-card">
+            <span>02</span>
+            <h3>Read Instructions</h3>
+            <p>
+              Read admission process, rules and regulations, important dates and document requirements before filling the application.
+            </p>
+          </div>
+
+          <div class="process-card">
+            <span>03</span>
+            <h3>Fill Application</h3>
+            <p>
+              Submit the online application form with correct student, academic and contact details.
+            </p>
+          </div>
+
+          <div class="process-card">
+            <span>04</span>
+            <h3>Submit Documents</h3>
+            <p>
+              Keep academic certificates, identity proof, photographs and other required documents ready for verification.
+            </p>
+          </div>
+
+          <div class="process-card">
+            <span>05</span>
+            <h3>Contact Office</h3>
+            <p>
+              Contact the college office for confirmation, counselling, document verification and admission guidance.
+            </p>
+          </div>
+
+          <div class="process-card">
+            <span>06</span>
+            <h3>Fee & Confirmation</h3>
+            <p>
+              Complete the fee-related formalities as instructed by the college and keep admission receipt/confirmation safely.
+            </p>
+          </div>
+
+          <div class="process-card">
+            <span>07</span>
+            <h3>Academic Start</h3>
+            <p>
+              After admission, students should follow academic calendar, syllabus, class schedule and college instructions.
+            </p>
+          </div>
+
+          <div class="process-card">
+            <span>08</span>
+            <h3>Stay Updated</h3>
+            <p>
+              Regularly check student zone, examination, result, downloads and contact pages for important updates.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <span>Programmes</span>
+          <h2>Programmes Available for Admission</h2>
+          <p>
+            Keshav Mahavidyalaya offers programmes through Education, Social Science and Science departments.
+          </p>
+        </div>
+
+        <div class="programme-admission-grid">
+          <div class="programme-admission-card">
+            <h3>Department of Education</h3>
+            <p>Integrated and teacher education programmes for students preparing for the education field.</p>
+            <ul>
+              <li>B.Sc.-B.Ed.</li>
+              <li>B.A.-B.Ed.</li>
+              <li>B.Ed.</li>
+            </ul>
+            <br>
+            <a class="btn btn-outline" href="programme.html">View Details</a>
+          </div>
+
+          <div class="programme-admission-card">
+            <h3>Department of Social Science</h3>
+            <p>Undergraduate and postgraduate programmes in humanities and social science subjects.</p>
+            <ul>
+              <li>B.A. with Compulsory Subjects</li>
+              <li>M.A. HindiLitt.</li>
+              <li>M.A. Geography</li>
+              <li>M.A. Sociology</li>
+              <li>M.A. Pol. Science</li>
+            </ul>
+            <br>
+            <a class="btn btn-outline" href="programme.html">View Details</a>
+          </div>
+
+          <div class="programme-admission-card">
+            <h3>Department of Science</h3>
+            <p>Science programmes with academic and practical learning support.</p>
+            <ul>
+              <li>B.Sc. with Compulsory Subjects</li>
+              <li>M.Sc. Chemistry</li>
+              <li>M.Sc. Zoology</li>
+            </ul>
+            <br>
+            <a class="btn btn-outline" href="programme.html">View Details</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container document-section">
+        <article class="document-panel">
+          <h3>Documents Required for Admission</h3>
+          <p>
+            Students should keep the required documents ready before applying. The final document list and verification process should be confirmed from the college office.
+          </p>
+
+          <div class="document-list">
+            <div class="document-item">Recent passport-size photographs</div>
+            <div class="document-item">Class 10 marksheet/certificate</div>
+            <div class="document-item">Class 12 marksheet/certificate</div>
+            <div class="document-item">Graduation marksheet, if applicable</div>
+            <div class="document-item">Transfer Certificate, if applicable</div>
+            <div class="document-item">Migration Certificate, if applicable</div>
+            <div class="document-item">Aadhaar Card / identity proof</div>
+            <div class="document-item">Caste/category certificate, if applicable</div>
+            <div class="document-item">Domicile certificate, if required</div>
+            <div class="document-item">Other documents as instructed by college</div>
+          </div>
+        </article>
+
+        <aside class="helpdesk-card">
+          <h3>Admission Help Desk</h3>
+          <p>
+            For admission guidance, document clarification or programme enquiry, students and parents can contact the college office.
+          </p>
+
+          <div class="helpdesk-info">
+            <div class="helpdesk-row">
+              <small>Email</small>
+              <a href="mailto:keshavcollege02@gmail.com">keshavcollege02@gmail.com</a>
+            </div>
+
+            <div class="helpdesk-row">
+              <small>Phone</small>
+              <a href="tel:+919929521506">9929521506</a>, <a href="tel:+919636150093">9636150093</a>, <a href="tel:+919460558050">9460558050</a>
+            </div>
+
+            <div class="helpdesk-row">
+              <small>Address</small>
+              Atru, Dist. Baran, Rajasthan, Pincode - 325218
+            </div>
+          </div>
+
+          <div style="margin-top:22px;">
+            <a class="btn btn-primary" href="contact.html">Contact College</a>
+          </div>
+        </aside>
       </div>
     </section>
 
     <section class="section">
       <div class="container content-layout">
         <article class="content-card">
-          <h3>Admission Process</h3>
-          
-          <p>Admission Open for Session 2026-27.</p>
-          <p>For admission-related details, students can use the Apply Online button and contact the college office for assistance.</p>
-          <table class="info-table">
-            <tr><th>Session</th><td>2026-27</td></tr>
-            <tr><th>Admission Start</th><td>01 July 2026</td></tr>
-            <tr><th>Apply</th><td><a href="https://forms.gle/" target="_blank" rel="noopener">Apply Online</a></td></tr>
+          <h3>Important Admission Links</h3>
+          <p>
+            The following links help students access important admission and student support sections directly.
+          </p>
+
+          <table class="admission-table">
+            <tr>
+              <th>Apply Online</th>
+              <td><a href="https://forms.gle/" target="_blank" rel="noopener">Open Online Application Form</a></td>
+            </tr>
+            <tr>
+              <th>ITEP Admission 2026-27</th>
+              <td><a href="itep-admission-2026-27-open.html">View ITEP Admission Information</a></td>
+            </tr>
+            <tr>
+              <th>Rules and Regulations</th>
+              <td><a href="rules-and-regulations.html">Read Rules and Regulations</a></td>
+            </tr>
+            <tr>
+              <th>Scholarship</th>
+              <td><a href="https://sjmsnew.rajasthan.gov.in/" target="_blank" rel="noopener">Open Scholarship Portal</a></td>
+            </tr>
+            <tr>
+              <th>Programme Details</th>
+              <td><a href="programme.html">View Programmes Offered</a></td>
+            </tr>
+            <tr>
+              <th>Syllabus</th>
+              <td><a href="syllabus.html">View Syllabus Page</a></td>
+            </tr>
+            <tr>
+              <th>Academic Calendar</th>
+              <td><a href="academic-calendar.html">View Academic Calendar</a></td>
+            </tr>
+            <tr>
+              <th>Contact</th>
+              <td><a href="contact.html">Contact Admission Office</a></td>
+            </tr>
           </table>
-        
         </article>
-        
+
         <aside class="sidebar">
           <div class="side-box">
-            <h3>Related Links</h3>
-            <ul><li><a href="admission-process.html">Admission Process</a></li>
-<li><a href="itep-admission-2026-27-open.html">ITEP Admission 2026-27 Open</a></li>
-<li><a href="itep-required-loi-response-screenshot-documents.html">ITEP Required LOI Response Screenshot Documents</a></li></ul>
+            <h3>Admission Links</h3>
+            <ul>
+              <li><a href="admission-process.html">Admission Process</a></li>
+              <li><a href="itep-admission-2026-27-open.html">ITEP Admission 2026-27 Open</a></li>
+              <li><a href="rules-and-regulations.html">Rules and Regulations</a></li>
+              <li><a href="programme.html">Programme</a></li>
+              <li><a href="contact.html">Contact Office</a></li>
+            </ul>
           </div>
+
           <div class="side-box">
-            <h3>Need Help?</h3>
-            <p>For admission and general enquiry, contact the college office.</p>
-            <br>
-            <a class="btn btn-primary" href="contact.html">Contact Office</a>
+            <h3>Student Zone</h3>
+            <ul>
+              <li><a href="syllabus.html">Syllabus</a></li>
+              <li><a href="examination.html">Examination</a></li>
+              <li><a href="result.html">Result</a></li>
+              <li><a href="student-list-faculty-list.html">Student List & Faculty List</a></li>
+              <li><a href="faqs.html">FAQs</a></li>
+            </ul>
           </div>
         </aside>
-
       </div>
     </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-title">
+          <span>Admission FAQs</span>
+          <h2>Common Admission Questions</h2>
+          <p>
+            These common questions help students understand the admission process more clearly.
+          </p>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3>How can I apply for admission?</h3>
+            <p>
+              Students can use the Apply Online link and contact the college office for admission guidance and confirmation.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Which programmes are offered by the college?</h3>
+            <p>
+              The college offers UG, PG and integrated teacher education programmes through Education, Social Science and Science departments.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Where can I check ITEP admission information?</h3>
+            <p>
+              Students can visit the ITEP Admission 2026-27 Open page from the Admissions menu.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Whom should I contact for document clarification?</h3>
+            <p>
+              For document-related clarification, students should contact the college office through the phone numbers or email mentioned on this page.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Where can I find scholarship information?</h3>
+            <p>
+              The scholarship link is available in the Admissions menu and Important Admission Links section.
+            </p>
+          </div>
+        </div>
+
+        <div style="text-align:center;margin-top:28px;">
+          <a class="btn btn-primary" href="faqs.html">View FAQs Page</a>
+          <a class="btn btn-outline" href="contact.html">Ask Admission Office</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="admission-cta">
+          <div>
+            <h2>Ready to Start Your Admission Process?</h2>
+            <p>
+              Review programme details, keep documents ready and contact the college office for any admission-related assistance.
+            </p>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://forms.gle/" target="_blank" rel="noopener">Apply Online</a>
+            <a class="btn btn-outline" href="programme.html">Programmes</a>
+            <a class="btn btn-outline" href="contact.html">Contact Office</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
@@ -198,6 +881,7 @@
         <p style="margin-top:10px;">Email: <a href="mailto:keshavcollege02@gmail.com">keshavcollege02@gmail.com</a></p>
         <p>Phone: 9929521506, 9636150093, 9460558050</p>
       </div>
+
       <div>
         <h4>Quick Links</h4>
         <ul>
@@ -207,6 +891,7 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
+
       <div>
         <h4>Important</h4>
         <ul>
@@ -216,6 +901,7 @@
           <li><a href="national-institutional-ranking-framework-nirf-2026.html">NIRF 2026</a></li>
         </ul>
       </div>
+
       <div>
         <h4>Student Zone</h4>
         <ul>
@@ -226,10 +912,12 @@
         </ul>
       </div>
     </div>
+
     <div class="footer-bottom">
       <div class="container">Copyright © 2007 All Right Reserved KESHAV MAHAVIDYALAYA</div>
     </div>
   </footer>
+
   <script src="assets/js/main.js"></script>
 </body>
 </html>
