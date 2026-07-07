@@ -4,13 +4,327 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Syllabus | Keshav Mahavidyalaya, Atru</title>
-  <meta name="description" content="Syllabus - Keshav Mahavidyalaya, Atru, Dist. Baran, Rajasthan.">
+  <meta name="description" content="Syllabus - Keshav Mahavidyalaya, Atru, Dist. Baran, Rajasthan. Department-wise syllabus guidance for UG, PG and integrated teacher education programmes.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    .syllabus-hero-panel {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #ffffff;
+      border-radius: 24px;
+      padding: 36px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .syllabus-hero-panel h2 {
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.2;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+
+    .syllabus-hero-panel p {
+      color: #e5edf6;
+      margin-bottom: 14px;
+    }
+
+    .syllabus-info-box {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    .syllabus-info-box h3 {
+      color: #ffffff;
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .syllabus-info-box ul {
+      color: #e5edf6;
+      margin-left: 18px;
+      font-weight: 700;
+    }
+
+    .syllabus-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .syllabus-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+      transition: 0.25s ease;
+    }
+
+    .syllabus-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .syllabus-card-head {
+      padding: 24px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #ffffff;
+    }
+
+    .syllabus-card-head span {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .syllabus-card-head h3 {
+      color: #ffffff;
+      font-size: 22px;
+      margin-bottom: 8px;
+      line-height: 1.25;
+    }
+
+    .syllabus-card-head p {
+      color: #e5edf6;
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .syllabus-card-body {
+      padding: 24px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .syllabus-link {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      background: #f8fbff;
+      border: 1px solid #e8f1ff;
+      border-radius: 14px;
+      padding: 14px 15px;
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .syllabus-link span {
+      color: var(--accent);
+      font-weight: 900;
+    }
+
+    .study-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .study-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+      transition: 0.25s ease;
+    }
+
+    .study-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .study-card span {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: #eef6ff;
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      margin-bottom: 13px;
+    }
+
+    .study-card h3 {
+      color: var(--primary);
+      font-size: 19px;
+      margin-bottom: 8px;
+    }
+
+    .study-card p {
+      color: var(--muted);
+      font-size: 15px;
+      margin: 0;
+    }
+
+    .syllabus-layout {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .syllabus-panel {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+    }
+
+    .syllabus-panel h3 {
+      color: var(--primary);
+      font-size: 26px;
+      margin-bottom: 12px;
+    }
+
+    .syllabus-panel p {
+      color: var(--muted);
+      margin-bottom: 13px;
+    }
+
+    .study-guide-list {
+      display: grid;
+      gap: 13px;
+      margin-top: 18px;
+    }
+
+    .study-guide-item {
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 13px;
+      background: #f8fbff;
+      border: 1px solid #e8f1ff;
+      border-radius: 16px;
+      padding: 15px;
+      align-items: flex-start;
+    }
+
+    .study-guide-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: var(--primary);
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+
+    .study-guide-item strong {
+      color: var(--primary);
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .study-guide-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .syllabus-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 18px;
+      background: #ffffff;
+    }
+
+    .syllabus-table th,
+    .syllabus-table td {
+      border: 1px solid var(--border);
+      padding: 13px 14px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .syllabus-table th {
+      background: #eef6ff;
+      color: var(--primary);
+      font-weight: 900;
+    }
+
+    .syllabus-table td {
+      color: var(--muted);
+    }
+
+    .syllabus-cta {
+      background: linear-gradient(115deg, rgba(11, 39, 70, 0.96), rgba(18, 60, 105, 0.9)), url("https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1600&q=80") center/cover;
+      color: #ffffff;
+      border-radius: 24px;
+      padding: 38px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .syllabus-cta h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .syllabus-cta p {
+      color: #e5edf6;
+    }
+
+    @media (max-width: 1080px) {
+      .syllabus-hero-panel,
+      .syllabus-layout,
+      .syllabus-cta {
+        grid-template-columns: 1fr;
+      }
+
+      .syllabus-grid,
+      .study-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .syllabus-grid,
+      .study-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .syllabus-hero-panel,
+      .syllabus-panel,
+      .syllabus-cta {
+        padding: 26px;
+      }
+
+      .study-guide-item {
+        grid-template-columns: 1fr;
+      }
+
+      .syllabus-table th,
+      .syllabus-table td {
+        display: block;
+        width: 100%;
+      }
+    }
+  </style>
 </head>
+
 <body>
+
   <div class="topbar">
     <div class="container topbar-inner">
       <div class="topbar-left">
@@ -24,6 +338,7 @@
       </div>
     </div>
   </div>
+
   <header class="header">
     <div class="container header-main">
       <a class="brand" href="index.html">
@@ -33,165 +348,457 @@
           <p>Atru, Dist. Baran, Rajasthan</p>
         </div>
       </a>
+
       <div class="header-actions">
         <a class="btn btn-outline" href="contact.html">Contact</a>
         <a class="btn btn-primary" href="https://forms.gle/" target="_blank" rel="noopener">Apply Online</a>
         <button class="menu-toggle" onclick="toggleMenu()">Menu</button>
       </div>
     </div>
+
     <nav class="nav-wrap" id="mainNav">
       <div class="container">
-<ul class="nav">
-  <li><a href="index.html">Home</a></li>
-  <li>
-    <a href="about-organization.html">About</a>
-    <ul class="dropdown">
-      <li><a href="about-organization.html">About Organization</a></li>
-      <li><a href="vision-mission.html">Vision Mission</a></li>
-      <li><a href="chairmans-desk.html">Chairman's Desk</a></li>
-      <li><a href="directors-desk.html">Director's Desk</a></li>
-      <li><a href="principals-desk.html">Principal's Desk</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="admission-process.html">Admissions</a>
-    <ul class="dropdown">
-      <li><a href="admission-process.html">Admission Process</a></li>
-      <li><a href="itep-admission-2026-27-open.html">ITEP Admission 2026-27 Open</a></li>
-      <li><a href="https://forms.gle/" target="_blank" rel="noopener">Apply Online</a></li>
-      <li><a href="rules-and-regulations.html">Rules and Regulations</a></li>
-      <li><a href="https://sjmsnew.rajasthan.gov.in/" target="_blank" rel="noopener">Scholarship</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="programme.html">Academics</a>
-    <ul class="dropdown">
-      <li><a href="programme.html">Programme</a></li>
-      <li><a href="academic-calendar.html">Academic Calendar</a></li>
-      <li><a href="syllabus.html">Syllabus</a></li>
-      <li><a href="department.html">Department</a></li>
-      <li><a href="curriculum-feedback.html">Curriculum Feedback</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="admission-process.html">Student Zone</a>
-    <ul class="dropdown">
-      <li><a href="admission-process.html">Admission Process</a></li>
-      <li><a href="examination.html">Examination</a></li>
-      <li><a href="result.html">Result</a></li>
-      <li><a href="campus-placement.html">Campus Placement</a></li>
-      <li><a href="student-list-faculty-list.html">Student List & Faculty List</a></li>
-      <li><a href="faqs.html">FAQs</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="self-study-report-cycle-01.html">NAAC</a>
-    <ul class="dropdown mega">
-      <li><a href="self-study-report-cycle-01.html">Self Study Report</a></li>
-      <li><a href="criterion-1-curricular-aspects.html">Criterion 1</a></li>
-      <li><a href="criterion-2-teaching-learning-and-evaluation.html">Criterion 2</a></li>
-      <li><a href="criterion-3.html">Criterion 3</a></li>
-      <li><a href="criterion-4.html">Criterion 4</a></li>
-      <li><a href="criterion-5.html">Criterion 5</a></li>
-      <li><a href="criterion-6.html">Criterion 6</a></li>
-      <li><a href="criterion7.html">Criterion 7</a></li>
-      <li><a href="dvv-clarification.html">DVV Clarification</a></li>
-      <li><a href="naac-certificate.html">NAAC Certificate</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="iqac.html">IQAC</a>
-    <ul class="dropdown">
-      <li><a href="iqac.html">IQAC</a></li>
-      <li><a href="committee.html">Committee</a></li>
-      <li><a href="feedback-policy.html">Feedback Policy</a></li>
-      <li><a href="important-audit.html">Important Audit</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="approvals-affiliation.html">Approvals</a>
-    <ul class="dropdown">
-      <li><a href="govt-noc.html">GOVT NOC</a></li>
-      <li><a href="ncte-order.html">NCTE Order</a></li>
-      <li><a href="university-affiliation.html">University Affiliation</a></li>
-      <li><a href="approvals-affiliation.html">Approvals/Affiliation</a></li>
-      <li><a href="affiliation.html">Affiliation</a></li>
-      <li><a href="national-institutional-ranking-framework-nirf-2026.html">NIRF 2026</a></li>
-      <li><a href="khasra-no-institution.html">Khasra no Institution</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="laboratories.html">Facilities</a>
-    <ul class="dropdown">
-      <li><a href="laboratories.html">Laboratories</a></li>
-      <li><a href="library.html">Library</a></li>
-      <li><a href="playground.html">Playground</a></li>
-      <li><a href="nss.html">NSS</a></li>
-      <li><a href="skill-development.html">Skill Development</a></li>
-      <li><a href="seminar-workshop.html">Seminar-Workshop</a></li>
-      <li><a href="ict-facilities.html">ICT Facilities</a></li>
-      <li><a href="computer-lab.html">Computer Lab</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="photo-gallery.html">Gallery</a>
-    <ul class="dropdown">
-      <li><a href="photo-gallery.html">Photo Gallery</a></li>
-      <li><a href="video-gallery.html">Video Gallery</a></li>
-      <li><a href="downloads.html">Downloads</a></li>
-    </ul>
-  </li>
-  <li><a href="contact.html">Contact</a></li>
-</ul>
-</div>
+        <ul class="nav">
+          <li><a href="index.html">Home</a></li>
+
+          <li>
+            <a href="about-organization.html">About</a>
+            <ul class="dropdown">
+              <li><a href="about-organization.html">About Organization</a></li>
+              <li><a href="vision-mission.html">Vision Mission</a></li>
+              <li><a href="chairmans-desk.html">Chairman's Desk</a></li>
+              <li><a href="directors-desk.html">Director's Desk</a></li>
+              <li><a href="principals-desk.html">Principal's Desk</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="admission-process.html">Admissions</a>
+            <ul class="dropdown">
+              <li><a href="admission-process.html">Admission Process</a></li>
+              <li><a href="itep-admission-2026-27-open.html">ITEP Admission 2026-27 Open</a></li>
+              <li><a href="https://forms.gle/" target="_blank" rel="noopener">Apply Online</a></li>
+              <li><a href="rules-and-regulations.html">Rules and Regulations</a></li>
+              <li><a href="https://sjmsnew.rajasthan.gov.in/" target="_blank" rel="noopener">Scholarship</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="programme.html">Academics</a>
+            <ul class="dropdown">
+              <li><a href="programme.html">Programme</a></li>
+              <li><a href="academic-calendar.html">Academic Calendar</a></li>
+              <li><a href="syllabus.html">Syllabus</a></li>
+              <li><a href="department.html">Department</a></li>
+              <li><a href="curriculum-feedback.html">Curriculum Feedback</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="admission-process.html">Student Zone</a>
+            <ul class="dropdown">
+              <li><a href="admission-process.html">Admission Process</a></li>
+              <li><a href="examination.html">Examination</a></li>
+              <li><a href="result.html">Result</a></li>
+              <li><a href="campus-placement.html">Campus Placement</a></li>
+              <li><a href="student-list-faculty-list.html">Student List & Faculty List</a></li>
+              <li><a href="faqs.html">FAQs</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="self-study-report-cycle-01.html">NAAC</a>
+            <ul class="dropdown mega">
+              <li><a href="self-study-report-cycle-01.html">Self Study Report</a></li>
+              <li><a href="criterion-1-curricular-aspects.html">Criterion 1</a></li>
+              <li><a href="criterion-2-teaching-learning-and-evaluation.html">Criterion 2</a></li>
+              <li><a href="criterion-3.html">Criterion 3</a></li>
+              <li><a href="criterion-4.html">Criterion 4</a></li>
+              <li><a href="criterion-5.html">Criterion 5</a></li>
+              <li><a href="criterion-6.html">Criterion 6</a></li>
+              <li><a href="criterion7.html">Criterion 7</a></li>
+              <li><a href="dvv-clarification.html">DVV Clarification</a></li>
+              <li><a href="naac-certificate.html">NAAC Certificate</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="iqac.html">IQAC</a>
+            <ul class="dropdown">
+              <li><a href="iqac.html">IQAC</a></li>
+              <li><a href="committee.html">Committee</a></li>
+              <li><a href="feedback-policy.html">Feedback Policy</a></li>
+              <li><a href="important-audit.html">Important Audit</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="approvals-affiliation.html">Approvals</a>
+            <ul class="dropdown">
+              <li><a href="govt-noc.html">GOVT NOC</a></li>
+              <li><a href="ncte-order.html">NCTE Order</a></li>
+              <li><a href="university-affiliation.html">University Affiliation</a></li>
+              <li><a href="approvals-affiliation.html">Approvals/Affiliation</a></li>
+              <li><a href="affiliation.html">Affiliation</a></li>
+              <li><a href="national-institutional-ranking-framework-nirf-2026.html">NIRF 2026</a></li>
+              <li><a href="khasra-no-institution.html">Khasra no Institution</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="laboratories.html">Facilities</a>
+            <ul class="dropdown">
+              <li><a href="laboratories.html">Laboratories</a></li>
+              <li><a href="library.html">Library</a></li>
+              <li><a href="playground.html">Playground</a></li>
+              <li><a href="nss.html">NSS</a></li>
+              <li><a href="skill-development.html">Skill Development</a></li>
+              <li><a href="seminar-workshop.html">Seminar-Workshop</a></li>
+              <li><a href="ict-facilities.html">ICT Facilities</a></li>
+              <li><a href="computer-lab.html">Computer Lab</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="photo-gallery.html">Gallery</a>
+            <ul class="dropdown">
+              <li><a href="photo-gallery.html">Photo Gallery</a></li>
+              <li><a href="video-gallery.html">Video Gallery</a></li>
+              <li><a href="downloads.html">Downloads</a></li>
+            </ul>
+          </li>
+
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
 
   <main>
+
     <section class="page-hero">
       <div class="container">
         <div class="breadcrumb"><a href="index.html">Home</a> / Syllabus</div>
         <h2>Syllabus</h2>
-        <p>Student services including admission, syllabus, examination, result and placement.</p>
+        <p>
+          Department-wise syllabus guidance for students of Keshav Mahavidyalaya, Atru, covering UG, PG and integrated teacher education programmes.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="syllabus-hero-panel">
+          <div>
+            <span class="badge">Academic Resource</span>
+            <h2>Programme-Wise Syllabus Access</h2>
+            <p>
+              The syllabus page helps students understand subject structure, course content, academic expectations and study planning for their selected programme. Students should use the syllabus along with the academic calendar, department information and examination updates.
+            </p>
+            <p>
+              Exact syllabus PDFs or university syllabus links can be added in the sections below whenever official files are available.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="programme.html">View Programmes</a>
+              <a class="btn btn-outline" href="academic-calendar.html">Academic Calendar</a>
+              <a class="btn btn-outline" href="examination.html">Examination</a>
+            </div>
+          </div>
+
+          <aside class="syllabus-info-box">
+            <h3>Syllabus Page Covers</h3>
+            <ul>
+              <li>Department-wise syllabus categories</li>
+              <li>UG, PG and integrated programme guidance</li>
+              <li>Study planning support</li>
+              <li>Examination preparation links</li>
+              <li>Academic calendar connection</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-title">
+          <span>Department-Wise Syllabus</span>
+          <h2>Syllabus Categories</h2>
+          <p>
+            Students can use the department-wise sections below to locate the syllabus category for their programme.
+          </p>
+        </div>
+
+        <div class="syllabus-grid">
+          <article class="syllabus-card">
+            <div class="syllabus-card-head">
+              <span>01</span>
+              <h3>Department of Education</h3>
+              <p>Syllabus guidance for teacher education and integrated education programmes.</p>
+            </div>
+
+            <div class="syllabus-card-body">
+              <a class="syllabus-link" href="programme.html">B.Sc.-B.Ed. <span>→</span></a>
+              <a class="syllabus-link" href="programme.html">B.A.-B.Ed. <span>→</span></a>
+              <a class="syllabus-link" href="programme.html">B.Ed. <span>→</span></a>
+              <a class="btn btn-outline" href="department.html">View Department</a>
+            </div>
+          </article>
+
+          <article class="syllabus-card">
+            <div class="syllabus-card-head">
+              <span>02</span>
+              <h3>Department of Social Science</h3>
+              <p>Syllabus guidance for humanities and social science programmes.</p>
+            </div>
+
+            <div class="syllabus-card-body">
+              <a class="syllabus-link" href="programme.html">B.A. <span>→</span></a>
+              <a class="syllabus-link" href="programme.html">M.A. HindiLitt. <span>→</span></a>
+              <a class="syllabus-link" href="programme.html">M.A. Geography <span>→</span></a>
+              <a class="syllabus-link" href="programme.html">M.A. Sociology <span>→</span></a>
+              <a class="syllabus-link" href="programme.html">M.A. Pol. Science <span>→</span></a>
+              <a class="btn btn-outline" href="department.html">View Department</a>
+            </div>
+          </article>
+
+          <article class="syllabus-card">
+            <div class="syllabus-card-head">
+              <span>03</span>
+              <h3>Department of Science</h3>
+              <p>Syllabus guidance for science programmes and practical learning areas.</p>
+            </div>
+
+            <div class="syllabus-card-body">
+              <a class="syllabus-link" href="programme.html">B.Sc. <span>→</span></a>
+              <a class="syllabus-link" href="programme.html">M.Sc. Chemistry <span>→</span></a>
+              <a class="syllabus-link" href="programme.html">M.Sc. Zoology <span>→</span></a>
+              <a class="btn btn-outline" href="department.html">View Department</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <span>Study Planning</span>
+          <h2>How Students Should Use the Syllabus</h2>
+          <p>
+            A syllabus is the main academic reference for every student. It should be used for regular study, assignments, practical work and examination preparation.
+          </p>
+        </div>
+
+        <div class="study-grid">
+          <div class="study-card">
+            <span>01</span>
+            <h3>Understand Course Structure</h3>
+            <p>Check subjects, papers, units and learning areas before beginning regular study.</p>
+          </div>
+
+          <div class="study-card">
+            <span>02</span>
+            <h3>Plan Weekly Study</h3>
+            <p>Divide syllabus topics weekly with the help of academic calendar and class guidance.</p>
+          </div>
+
+          <div class="study-card">
+            <span>03</span>
+            <h3>Prepare Notes</h3>
+            <p>Maintain subject-wise notes, important questions and revision points for every unit.</p>
+          </div>
+
+          <div class="study-card">
+            <span>04</span>
+            <h3>Use Library Resources</h3>
+            <p>Use library books and reference material for deeper understanding of syllabus topics.</p>
+          </div>
+
+          <div class="study-card">
+            <span>05</span>
+            <h3>Complete Assignments</h3>
+            <p>Assignments and practical work should be completed according to syllabus requirements.</p>
+          </div>
+
+          <div class="study-card">
+            <span>06</span>
+            <h3>Follow Faculty Guidance</h3>
+            <p>Discuss syllabus doubts with faculty members and attend classes regularly.</p>
+          </div>
+
+          <div class="study-card">
+            <span>07</span>
+            <h3>Revise Before Exams</h3>
+            <p>Use syllabus units to revise systematically before internal and final examinations.</p>
+          </div>
+
+          <div class="study-card">
+            <span>08</span>
+            <h3>Track Progress</h3>
+            <p>Mark completed topics and identify pending areas for focused preparation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container syllabus-layout">
+        <article class="syllabus-panel">
+          <h3>Syllabus and Examination Preparation</h3>
+          <p>
+            Students should connect syllabus preparation with the examination page and academic calendar. This helps in better time management, revision planning and academic performance.
+          </p>
+
+          <div class="study-guide-list">
+            <div class="study-guide-item">
+              <div class="study-guide-icon">A</div>
+              <div>
+                <strong>Read the Complete Syllabus</strong>
+                <p>Do not study only selected topics. Read the complete syllabus and understand the course structure properly.</p>
+              </div>
+            </div>
+
+            <div class="study-guide-item">
+              <div class="study-guide-icon">B</div>
+              <div>
+                <strong>Connect with Academic Calendar</strong>
+                <p>Use the academic calendar to manage study schedule, internal work and examination preparation.</p>
+              </div>
+            </div>
+
+            <div class="study-guide-item">
+              <div class="study-guide-icon">C</div>
+              <div>
+                <strong>Check Examination Updates</strong>
+                <p>Follow the examination page for notices, instructions and exam-related information.</p>
+              </div>
+            </div>
+
+            <div class="study-guide-item">
+              <div class="study-guide-icon">D</div>
+              <div>
+                <strong>Ask for Academic Support</strong>
+                <p>Contact faculty members or the college office if syllabus or examination-related clarification is required.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <aside class="sidebar">
+          <div class="side-box">
+            <h3>Academic Links</h3>
+            <ul>
+              <li><a href="programme.html">Programme</a></li>
+              <li><a href="department.html">Department</a></li>
+              <li><a href="academic-calendar.html">Academic Calendar</a></li>
+              <li><a href="syllabus.html">Syllabus</a></li>
+              <li><a href="curriculum-feedback.html">Curriculum Feedback</a></li>
+            </ul>
+          </div>
+
+          <div class="side-box">
+            <h3>Student Zone</h3>
+            <ul>
+              <li><a href="examination.html">Examination</a></li>
+              <li><a href="result.html">Result</a></li>
+              <li><a href="student-list-faculty-list.html">Student List & Faculty List</a></li>
+              <li><a href="faqs.html">FAQs</a></li>
+              <li><a href="contact.html">Contact Office</a></li>
+            </ul>
+          </div>
+
+          <div class="side-box">
+            <h3>Facilities</h3>
+            <ul>
+              <li><a href="library.html">Library</a></li>
+              <li><a href="laboratories.html">Laboratories</a></li>
+              <li><a href="computer-lab.html">Computer Lab</a></li>
+              <li><a href="ict-facilities.html">ICT Facilities</a></li>
+            </ul>
+          </div>
+        </aside>
       </div>
     </section>
 
     <section class="section">
       <div class="container content-layout">
         <article class="content-card">
-          <h3>Syllabus</h3>
-          
-          <p>This page has been created for <strong>Syllabus</strong> under the new Keshav Mahavidyalaya website structure.</p>
-          <p>The layout follows the same professional college website design with proper header, footer, internal navigation, page title, content card, related links and responsive mobile view.</p>
-          <table class="info-table">
-            <tr><th>Page Name</th><td>Syllabus</td></tr>
-            <tr><th>College</th><td>Keshav Mahavidyalaya, Atru</td></tr>
-            <tr><th>Status</th><td>Ready for official content, PDFs, images and CMS data.</td></tr>
+          <h3>Syllabus Reference Table</h3>
+          <p>
+            This table shows where each student group should start while looking for syllabus-related information.
+          </p>
+
+          <table class="syllabus-table">
+            <tr>
+              <th>Academic Area</th>
+              <th>Programmes</th>
+              <th>Related Support</th>
+            </tr>
+            <tr>
+              <td>Education</td>
+              <td>B.Sc.-B.Ed., B.A.-B.Ed., B.Ed.</td>
+              <td>Programme page, department page, academic calendar, examination page and library resources.</td>
+            </tr>
+            <tr>
+              <td>Social Science</td>
+              <td>B.A.; M.A. HindiLitt.; M.A. Geography; M.A. Sociology; M.A. Pol. Science</td>
+              <td>Programme page, department page, syllabus planning, academic calendar and examination support.</td>
+            </tr>
+            <tr>
+              <td>Science</td>
+              <td>B.Sc.; M.Sc. Chemistry; M.Sc. Zoology</td>
+              <td>Programme page, laboratories, library, academic calendar, examination and result pages.</td>
+            </tr>
           </table>
-        
         </article>
-        
+
         <aside class="sidebar">
           <div class="side-box">
-            <h3>Related Links</h3>
-            <ul><li><a href="rules-and-regulations.html">Rules and Regulations</a></li>
-<li><a href="syllabus.html">Syllabus</a></li>
-<li><a href="examination.html">Examination</a></li>
-<li><a href="result.html">Result</a></li>
-<li><a href="campus-placement.html">Campus Placement</a></li>
-<li><a href="faqs.html">FAQs</a></li>
-<li><a href="student-list-faculty-list.html">Student List &amp; Faculty List</a></li></ul>
+            <h3>Admission Links</h3>
+            <ul>
+              <li><a href="admission-process.html">Admission Process</a></li>
+              <li><a href="itep-admission-2026-27-open.html">ITEP Admission 2026-27 Open</a></li>
+              <li><a href="rules-and-regulations.html">Rules and Regulations</a></li>
+              <li><a href="https://forms.gle/" target="_blank" rel="noopener">Apply Online</a></li>
+              <li><a href="contact.html">Contact Office</a></li>
+            </ul>
           </div>
+
           <div class="side-box">
-            <h3>Need Help?</h3>
-            <p>For admission and general enquiry, contact the college office.</p>
-            <br>
-            <a class="btn btn-primary" href="contact.html">Contact Office</a>
+            <h3>Useful Pages</h3>
+            <ul>
+              <li><a href="programme.html">Programmes Offered</a></li>
+              <li><a href="department.html">Departments</a></li>
+              <li><a href="academic-calendar.html">Academic Calendar</a></li>
+              <li><a href="examination.html">Examination</a></li>
+              <li><a href="result.html">Result</a></li>
+            </ul>
           </div>
         </aside>
-
       </div>
     </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="syllabus-cta">
+          <div>
+            <h2>Use the Syllabus for Better Academic Planning</h2>
+            <p>
+              Students should review syllabus details, follow the academic calendar and prepare for examinations with a clear study plan.
+            </p>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="academic-calendar.html">Academic Calendar</a>
+            <a class="btn btn-outline" href="examination.html">Examination</a>
+            <a class="btn btn-outline" href="programme.html">Programmes</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
@@ -202,6 +809,7 @@
         <p style="margin-top:10px;">Email: <a href="mailto:keshavcollege02@gmail.com">keshavcollege02@gmail.com</a></p>
         <p>Phone: 9929521506, 9636150093, 9460558050</p>
       </div>
+
       <div>
         <h4>Quick Links</h4>
         <ul>
@@ -211,6 +819,7 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
+
       <div>
         <h4>Important</h4>
         <ul>
@@ -220,6 +829,7 @@
           <li><a href="national-institutional-ranking-framework-nirf-2026.html">NIRF 2026</a></li>
         </ul>
       </div>
+
       <div>
         <h4>Student Zone</h4>
         <ul>
@@ -230,10 +840,12 @@
         </ul>
       </div>
     </div>
+
     <div class="footer-bottom">
       <div class="container">Copyright © 2007 All Right Reserved KESHAV MAHAVIDYALAYA</div>
     </div>
   </footer>
+
   <script src="assets/js/main.js"></script>
 </body>
 </html>
